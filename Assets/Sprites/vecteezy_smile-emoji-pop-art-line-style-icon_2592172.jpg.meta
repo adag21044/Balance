@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2bcc50d2cdc58ec4593c26ec29ee74ea
+guid: 1c9486f1586739d4692550027e872567
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5189691121816951081
-    second: card_0
+      213: -1186880539512170049
+    second: vecteezy_smile-emoji-pop-art-line-style-icon_2592172_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: card_0
+      name: vecteezy_smile-emoji-pop-art-line-style-icon_2592172_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 256
+        width: 7678
+        height: 7678
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 929d5e1449c750840800000000000000
-      internalID: 5189691121816951081
+      spriteID: fb99d8b007a578fe0800000000000000
+      internalID: -1186880539512170049
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      card_0: 5189691121816951081
+      vecteezy_smile-emoji-pop-art-line-style-icon_2592172_0: -1186880539512170049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

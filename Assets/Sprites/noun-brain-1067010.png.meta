@@ -1,0 +1,918 @@
+fileFormatVersion: 2
+guid: e8bac1d01bca79444975d97b2a306dec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 632751014241738225
+    second: noun-brain-1067010_0
+  - first:
+      213: -1967075212171915078
+    second: noun-brain-1067010_1
+  - first:
+      213: 2456116815518299771
+    second: noun-brain-1067010_2
+  - first:
+      213: -805191587108989494
+    second: noun-brain-1067010_3
+  - first:
+      213: 7697677763033504976
+    second: noun-brain-1067010_4
+  - first:
+      213: -6974679724118517097
+    second: noun-brain-1067010_5
+  - first:
+      213: -4338083967674568126
+    second: noun-brain-1067010_6
+  - first:
+      213: 7304866998907817665
+    second: noun-brain-1067010_7
+  - first:
+      213: 771828996177937177
+    second: noun-brain-1067010_8
+  - first:
+      213: 7312991330728959642
+    second: noun-brain-1067010_9
+  - first:
+      213: -7002713330269301457
+    second: noun-brain-1067010_10
+  - first:
+      213: 5435600913551889269
+    second: noun-brain-1067010_11
+  - first:
+      213: -5350887172001421712
+    second: noun-brain-1067010_12
+  - first:
+      213: 4205647408125944938
+    second: noun-brain-1067010_13
+  - first:
+      213: 8717565880352301427
+    second: noun-brain-1067010_14
+  - first:
+      213: -1552716271104172545
+    second: noun-brain-1067010_15
+  - first:
+      213: -7813800186301504727
+    second: noun-brain-1067010_16
+  - first:
+      213: -1070147631464613587
+    second: noun-brain-1067010_17
+  - first:
+      213: -7676477584862736722
+    second: noun-brain-1067010_18
+  - first:
+      213: 2948112972701637532
+    second: noun-brain-1067010_19
+  - first:
+      213: 5038663920428668971
+    second: noun-brain-1067010_20
+  - first:
+      213: -6442162134753788709
+    second: noun-brain-1067010_21
+  - first:
+      213: 4139477047711003964
+    second: noun-brain-1067010_22
+  - first:
+      213: -3877580452779429623
+    second: noun-brain-1067010_23
+  - first:
+      213: 3338774107274026892
+    second: noun-brain-1067010_24
+  - first:
+      213: -5034705477827789934
+    second: noun-brain-1067010_25
+  - first:
+      213: -8967104447069296784
+    second: noun-brain-1067010_26
+  - first:
+      213: -2840423624577210951
+    second: noun-brain-1067010_27
+  - first:
+      213: -6990643432724795211
+    second: noun-brain-1067010_28
+  - first:
+      213: -7460635603729386235
+    second: noun-brain-1067010_29
+  - first:
+      213: -3878389329828457816
+    second: noun-brain-1067010_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: noun-brain-1067010_0
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 154
+        width: 231
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd952be1bbf7c800800000000000000
+      internalID: 632751014241738225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_1
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 154
+        width: 231
+        height: 492
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab0540c348b83b4e0800000000000000
+      internalID: -1967075212171915078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_2
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 67
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b76f4db0b31e51220800000000000000
+      internalID: 2456116815518299771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_3
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 67
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac55c32848263d4f0800000000000000
+      internalID: -805191587108989494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_4
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 67
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc19053425a3da60800000000000000
+      internalID: 7697677763033504976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 67
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79adbcd8eb5f43f90800000000000000
+      internalID: -6974679724118517097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_6
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 67
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242b0f49d970cc3c0800000000000000
+      internalID: -4338083967674568126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_7
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 67
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cecf5925d9106560800000000000000
+      internalID: 7304866998907817665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_8
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 67
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9134888f16616ba00800000000000000
+      internalID: 771828996177937177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_9
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 62
+        width: 16
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9e5c919ed6fc7560800000000000000
+      internalID: 7312991330728959642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_10
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 67
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f25d76df35d51de90800000000000000
+      internalID: -7002713330269301457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_11
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 67
+        width: 25
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5739c095b322f6b40800000000000000
+      internalID: 5435600913551889269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_12
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 67
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07629af9774ddb5b0800000000000000
+      internalID: -5350887172001421712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_13
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 67
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a64a3e309067d5a30800000000000000
+      internalID: 4205647408125944938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_14
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 67
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371e6740bf30bf870800000000000000
+      internalID: 8717565880352301427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_15
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 67
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffddddf27c4a37ae0800000000000000
+      internalID: -1552716271104172545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_16
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 67
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9232e9d312ecf8390800000000000000
+      internalID: -7813800186301504727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_17
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 67
+        width: 18
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29735926621621f0800000000000000
+      internalID: -1070147631464613587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_18
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 41
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eae020cee4ca77590800000000000000
+      internalID: -7676477584862736722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_19
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 41
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b1a9ff02dc9e820800000000000000
+      internalID: 2948112972701637532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 41
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b285abfb32eece540800000000000000
+      internalID: 5038663920428668971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_21
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 41
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdc3784aba7d896a0800000000000000
+      internalID: -6442162134753788709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 41
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3572b86170627930800000000000000
+      internalID: 4139477047711003964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_23
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 41
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901751c5f11103ac0800000000000000
+      internalID: -3877580452779429623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_24
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 41
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8f17596c55b55e20800000000000000
+      internalID: 3338774107274026892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_25
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 41
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29b7c5dfa02212ab0800000000000000
+      internalID: -5034705477827789934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_26
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 41
+        width: 23
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077eb90e3027e8380800000000000000
+      internalID: -8967104447069296784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_27
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 36
+        width: 7
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5a27d33c9c498d0800000000000000
+      internalID: -2840423624577210951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_28
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 41
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b0750106de3cfe90800000000000000
+      internalID: -6990643432724795211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_29
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 41
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505f311527f767890800000000000000
+      internalID: -7460635603729386235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: noun-brain-1067010_30
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 41
+        width: 10
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a2d8eef3713d2ac0800000000000000
+      internalID: -3878389329828457816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
