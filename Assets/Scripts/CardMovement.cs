@@ -1,69 +1,77 @@
-using System.Collections;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
-public class CardMovement : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndDragHandler
+public class CardMovement : MonoBehaviour,
+                            IDragHandler, IBeginDragHandler, IEndDragHandler
 {
-    private Vector3 initialPosition;
-    private float distanceMoved;
-    private bool swipeLeft;
+    // --- Configurable fields ---
+    [SerializeField] private float swipeThreshold = 0.4f;   // 40 % of screen width
+    [SerializeField] private float swipeDuration  = 0.4f;
+    [SerializeField] private float returnDuration = 0.25f;
+    [SerializeField] private float maxTiltAngle   = 12f;    // ± derece
 
-    public void OnDrag(PointerEventData eventData)
+    // --- Private state ---
+    private Vector3 initialPos;
+    private bool    draggedLeft;
+    private Image   img;
+
+    private void Awake() => img = GetComponent<Image>();
+
+    // ------------------------------------------------------------------ DRAG
+    public void OnBeginDrag(PointerEventData _)
     {
-        transform.localPosition = new Vector2(transform.localPosition.x + eventData.delta.x,
-                                              transform.localPosition.y);
+        initialPos = transform.localPosition;
     }
 
-    public void OnBeginDrag(PointerEventData eventData)
+    public void OnDrag(PointerEventData data)
     {
-        initialPosition = transform.localPosition;
+        // Move horizontally
+        transform.localPosition += new Vector3(data.delta.x, 0, 0);
+
+        // Live tilt proportional to displacement
+        float displacementX = transform.localPosition.x - initialPos.x;
+        float normalized    = Mathf.Clamp(displacementX / (Screen.width * 0.5f), -1f, 1f);
+        float zAngle        = -normalized * maxTiltAngle;          // left = +, right = –
+        transform.localRotation = Quaternion.Euler(0, 0, zAngle);
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData _)
     {
-        distanceMoved = Mathf.Abs(transform.localPosition.x - initialPosition.x);
+        float moved = Mathf.Abs(transform.localPosition.x - initialPos.x);
 
-        if (distanceMoved < 0.4f * Screen.width)
+        if (moved < Screen.width * swipeThreshold)
         {
-            transform.localPosition = initialPosition;
+            // Return to origin + zero rotation
+            transform.DOLocalMove(initialPos, returnDuration)
+                     .SetEase(Ease.OutBack);
+            transform.DOLocalRotate(Vector3.zero, returnDuration)
+                     .SetEase(Ease.OutBack);
         }
         else
         {
-            if (transform.localPosition.x > initialPosition.x)
-            {
-                swipeLeft = false;
-            }
-            else
-            {
-                swipeLeft = true;
-            }
-
-            StartCoroutine(MoveCard());
+            draggedLeft = transform.localPosition.x < initialPos.x;
+            AnimateAndDispose();
         }
     }
 
-    private IEnumerator MoveCard()
+    // ----------------------------------------------------------- ANIMATION
+    private void AnimateAndDispose()
     {
-        float time = 0f;
-        Image image = GetComponent<Image>();
+        float offscreenX = draggedLeft
+            ? transform.localPosition.x - Screen.width
+            : transform.localPosition.x + Screen.width;
 
-        while (image.color.a > 0)
-        {
-            time += Time.deltaTime;
+        float targetAngle = draggedLeft ? +maxTiltAngle * 2 : -maxTiltAngle * 2;
 
-            float newX = swipeLeft
-                ? Mathf.SmoothStep(transform.localPosition.x, transform.localPosition.x - Screen.width, 4 * time)
-                : Mathf.SmoothStep(transform.localPosition.x, transform.localPosition.x + Screen.width, 4 * time);
+        Sequence seq = DOTween.Sequence();
 
-            transform.localPosition = new Vector3(newX, transform.localPosition.y, 0);
-
-            image.color = new Color(1, 1, 1, Mathf.SmoothStep(1, 0, 4 * time));
-
-            yield return null;
-        }
-
-        Destroy(gameObject);
+        seq.Append(transform.DOLocalMoveX(offscreenX, swipeDuration)
+                           .SetEase(Ease.InQuad))
+           .Join(transform.DOLocalRotate(
+                     new Vector3(0, 0, targetAngle), swipeDuration))
+           .Join(img.DOFade(0f, swipeDuration))
+           .OnComplete(() => Destroy(gameObject));
     }
-
 }
