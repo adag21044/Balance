@@ -444,7 +444,7 @@ GameObject:
   - component: {fileID: 718729013}
   - component: {fileID: 718729012}
   m_Layer: 0
-  m_Name: Happiness
+  m_Name: happiness
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -821,7 +821,7 @@ GameObject:
   - component: {fileID: 1891738138}
   - component: {fileID: 1891738137}
   m_Layer: 0
-  m_Name: brain
+  m_Name: career
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
