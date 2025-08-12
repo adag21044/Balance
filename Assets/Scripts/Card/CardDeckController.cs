@@ -11,7 +11,7 @@ public class CardDeckController : MonoBehaviour
 
     [Header("Layout")]
     [SerializeField] private int keepOnScreen = 1; 
-    [SerializeField] private bool destroyOnSwipe = false; 
+    [SerializeField] private bool destroyOnSwipe = true; 
 
     private int index = 0;
     private List<CardController> liveCards = new();

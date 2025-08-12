@@ -748,7 +748,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feed: {fileID: 11400000, guid: 90a0a6c8209ac2441b90b3e798f9c90b, type: 2}
   factory: {fileID: 1887549966}
-  keepOnScreen: 1
+  keepOnScreen: 3
   destroyOnSwipe: 1
 --- !u!4 &955066658
 Transform:
@@ -870,7 +870,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1381719360}
-  parentForSpawn: {fileID: 1381719356}
+  parentForSpawn: {fileID: 1905358465}
 --- !u!4 &1151455932
 Transform:
   m_ObjectHideFlags: 0
