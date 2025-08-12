@@ -10,7 +10,7 @@ public class CardDeckController : MonoBehaviour
     [SerializeField] private CardFactory factory;
 
     [Header("Layout")]
-    [SerializeField] private int keepOnScreen = 1; 
+    [SerializeField] private int keepOnScreen = 3; 
     [SerializeField] private bool destroyOnSwipe = true; 
 
     private int index = 0;
