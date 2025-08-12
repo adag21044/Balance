@@ -77,8 +77,6 @@ public class CardController : MonoBehaviour,
             });
     }
 
-    // CardController.cs (küçük ek)
-    // ...
     public void Init(CardSO so)
     {
         this.cardSO = so;

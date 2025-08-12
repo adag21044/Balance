@@ -12,15 +12,14 @@ public class CardDeckController : MonoBehaviour
     [SerializeField] private CardFactory factory;
 
     [Header("Layout")]
-    [SerializeField] private int keepOnScreen = 1; // aynı anda kaç kart
-    [SerializeField] private bool destroyOnSwipe = false; // pool kullanıyorsan false kalabilir
+    [SerializeField] private int keepOnScreen = 1; 
+    [SerializeField] private bool destroyOnSwipe = false; 
 
     private int index = 0;
     private List<CardController> liveCards = new();
 
     private void Start()
     {
-        // Başlangıçta ekranda hedef sayıda kart üret
         for (int i = 0; i < keepOnScreen; i++)
             TrySpawnNext();
     }
@@ -31,24 +30,22 @@ public class CardDeckController : MonoBehaviour
         if (next == null) return;
 
         var card = factory.Create(next);
-        // Kartın domain event’ine abone ol: swipe olunca yenisini üret
+        
         card.Model.Swiped += OnCardSwiped;
         liveCards.Add(card);
     }
 
     private void OnCardSwiped(CardModel model, SwipeDirection dir)
     {
-        // Model’den CardController’ı bul
+        
         var ctrl = liveCards.Find(c => ReferenceEquals(c.Model, model));
         if (ctrl != null)
         {
-            // Ekrandan aldıktan biraz sonra havuza döndür (animasyon bitince destroy ediliyorsa bu satır gerekmez)
-            // Burada CardController içindeki destroyOnSwipe kapalı olmalı. Aksi halde pool yerine Destroy çalışır.
+            
             factory.Despawn(ctrl);
             liveCards.Remove(ctrl);
         }
 
-        // Boşalan slot için yenisini üret
         TrySpawnNext();
     }
 

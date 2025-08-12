@@ -17,11 +17,9 @@ public class CardView : MonoBehaviour
 
     private RectTransform rt;
     private Vector3 initialLocalPos;
-
     public RectTransform RectT => rt;
-
-    // en üste ekle
     private bool initialized = false;
+
     private void EnsureInit()
     {
         if (initialized) return;
@@ -33,7 +31,6 @@ public class CardView : MonoBehaviour
 
     private void Awake() => EnsureInit();
 
-    // --- Aşağıdaki public metotların başına EnsureInit() ekle ---
     public void SetContent(CardSO config)
     {
         EnsureInit();
