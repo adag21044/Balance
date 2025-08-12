@@ -24,15 +24,22 @@ public class CardController : MonoBehaviour,
         Model = new CardModel(cardSO);
 
         screenHalf = Screen.width * 0.5f;
+    }
 
-        // View setup
+    private void Start()
+    {
         view.SetContent(cardSO);
         view.CaptureInitial();
         initialLocalPos = view.RectT.localPosition;
+    }
 
-        // (Opsiyonel) üst sistem dinlemek isterse:
-        // Model.Swiped += (m, dir) => { /* deck handles */ };
-        // Model.ResetRequested += m => { /* deck handles */ };
+    private void OnEnable()
+    {
+        if (view)
+        {
+            view.CaptureInitial();
+            initialLocalPos = view.RectT.localPosition;
+        }
     }
 
     public void OnBeginDrag(PointerEventData _)
@@ -69,4 +76,17 @@ public class CardController : MonoBehaviour,
                 if (destroyOnSwipe) Destroy(gameObject); // ya da pool’a iade
             });
     }
+
+    // CardController.cs (küçük ek)
+    // ...
+    public void Init(CardSO so)
+    {
+        this.cardSO = so;
+        this.Model = new CardModel(cardSO);
+        if (!view) view = GetComponent<CardView>();
+
+        view.SetContent(cardSO);   // sprite vs. bağla
+        view.CaptureInitial();
+    }
+
 }

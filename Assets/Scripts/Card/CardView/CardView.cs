@@ -20,35 +20,46 @@ public class CardView : MonoBehaviour
 
     public RectTransform RectT => rt;
 
-    private void Awake()
+    // en üste ekle
+    private bool initialized = false;
+    private void EnsureInit()
     {
+        if (initialized) return;
         rt = GetComponent<RectTransform>();
-        if (!canvasGroup) canvasGroup = gameObject.GetComponent<CanvasGroup>() 
-                             ?? gameObject.AddComponent<CanvasGroup>();
+        if (!canvasGroup)
+            canvasGroup = gameObject.GetComponent<CanvasGroup>() ?? gameObject.AddComponent<CanvasGroup>();
+        initialized = true;
     }
 
-    // Bind static data
+    private void Awake() => EnsureInit();
+
+    // --- Aşağıdaki public metotların başına EnsureInit() ekle ---
     public void SetContent(CardSO config)
     {
+        EnsureInit();
         if (artworkImage) artworkImage.sprite = config.Artwork;
         canvasGroup.alpha = 1f;
     }
 
-    public void CaptureInitial() => initialLocalPos = rt.localPosition;
+    public void CaptureInitial()
+    {
+        EnsureInit();
+        initialLocalPos = rt.localPosition;
+    }
 
-    // Live drag visuals (position + tilt)
     public void SetDragVisual(float deltaX, float screenHalfWidth)
     {
+        EnsureInit();
         rt.localPosition += new Vector3(deltaX, 0f, 0f);
-
         float displacementX = rt.localPosition.x - initialLocalPos.x;
         float normalizedX   = Mathf.Clamp(displacementX / screenHalfWidth, -1f, 1f);
-        float zAngle        = -normalizedX * maxTiltAngle; // left=+, right=-
+        float zAngle        = -normalizedX * maxTiltAngle;
         rt.localRotation    = Quaternion.Euler(0f, 0f, zAngle);
     }
 
     public Tween AnimateReturn()
     {
+        EnsureInit();
         return DOTween.Sequence()
             .Append(rt.DOLocalMove(initialLocalPos, returnDuration).SetEase(Ease.OutBack))
             .Join(rt.DOLocalRotate(Vector3.zero, returnDuration).SetEase(Ease.OutBack));
@@ -56,8 +67,9 @@ public class CardView : MonoBehaviour
 
     public Tween AnimateSwipeOut(bool toLeft, float offscreenDistance)
     {
+        EnsureInit();
         float targetX     = toLeft ? rt.localPosition.x - offscreenDistance
-                                   : rt.localPosition.x + offscreenDistance;
+                                : rt.localPosition.x + offscreenDistance;
         float targetAngle = toLeft ? +maxTiltAngle * 2f : -maxTiltAngle * 2f;
 
         return DOTween.Sequence()
@@ -66,11 +78,12 @@ public class CardView : MonoBehaviour
             .Join(canvasGroup.DOFade(0f, swipeDuration));
     }
 
-    // Hard reset for re-use (pooling-friendly)
     public void ResetVisuals()
     {
+        EnsureInit();
         rt.localPosition = initialLocalPos;
         rt.localRotation = Quaternion.identity;
         canvasGroup.alpha = 1f;
     }
+
 }
