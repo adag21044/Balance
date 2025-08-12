@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card1
+  m_Name: Card5
   m_EditorClassIdentifier: 
-  Id: card_001
-  Title: Morning Run
-  Description: A friend invites you to go for a morning run. Do you accept?
+  Id: card_005
+  Title: Extreme Sports
+  Description: An opportunity for bungee jumping arises. Do you take it?
   Artwork: {fileID: 5189691121816951081, guid: 2bcc50d2cdc58ec4593c26ec29ee74ea, type: 3}
-  heartImpact: 5
+  heartImpact: -6
   careerImpact: 0
-  happinessImpact: 1
+  happinessImpact: 89
