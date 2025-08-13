@@ -2,6 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 [RequireComponent(typeof(RectTransform))]
 public class CardView : MonoBehaviour
@@ -9,6 +10,8 @@ public class CardView : MonoBehaviour
     [Header("Visual Refs")]
     [SerializeField] private Image artworkImage;
     [SerializeField] private CanvasGroup canvasGroup;
+    [SerializeField] private TMP_Text QuoteText;
+    [SerializeField] private TMP_Text NameText;
 
     [Header("Animation")]
     [SerializeField] private float maxTiltAngle   = 12f;
@@ -36,6 +39,9 @@ public class CardView : MonoBehaviour
         EnsureInit();
         if (artworkImage) artworkImage.sprite = config.Artwork;
         canvasGroup.alpha = 1f;
+
+        if (QuoteText) QuoteText.text = config.Description;
+        if (NameText) NameText.text = config.Title;
     }
 
     public void CaptureInitial()

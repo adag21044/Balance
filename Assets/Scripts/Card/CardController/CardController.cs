@@ -7,7 +7,7 @@ public class CardController : MonoBehaviour,
 {
     [Header("Wiring")]
     [SerializeField] private CardSO cardSO;
-    [SerializeField] private CardView view;
+    [SerializeField] private CardView cardView;
 
     [Header("Swipe Params")]
     [SerializeField, Range(0.1f, 0.9f)] private float swipeThreshold = 0.4f; // % of screen width
@@ -20,7 +20,7 @@ public class CardController : MonoBehaviour,
 
     private void Awake()
     {
-        if (!view) view = GetComponent<CardView>();
+        if (!cardView) cardView = GetComponent<CardView>();
         Model = new CardModel(cardSO);
 
         screenHalf = Screen.width * 0.5f;
@@ -28,48 +28,50 @@ public class CardController : MonoBehaviour,
 
     private void Start()
     {
-        view.SetContent(cardSO);
-        view.CaptureInitial();
-        initialLocalPos = view.RectT.localPosition;
+        cardView.SetContent(cardSO);
+        cardView.CaptureInitial();
+        initialLocalPos = cardView.RectT.localPosition;
+
+        cardView.SetContent(cardSO);
     }
 
     private void OnEnable()
     {
-        if (view)
+        if (cardView)
         {
-            view.CaptureInitial();
-            initialLocalPos = view.RectT.localPosition;
+            cardView.CaptureInitial();
+            initialLocalPos = cardView.RectT.localPosition;
         }
     }
 
     public void OnBeginDrag(PointerEventData _)
     {
         if (Model.IsLocked) return;
-        initialLocalPos = view.RectT.localPosition;
+        initialLocalPos = cardView.RectT.localPosition;
     }
 
     public void OnDrag(PointerEventData data)
     {
         if (Model.IsLocked) return;
-        view.SetDragVisual(data.delta.x, screenHalf);
+        cardView.SetDragVisual(data.delta.x, screenHalf);
     }
 
     public void OnEndDrag(PointerEventData _)
     {
         if (Model.IsLocked) return;
 
-        float moved = Mathf.Abs(view.RectT.localPosition.x - initialLocalPos.x);
+        float moved = Mathf.Abs(cardView.RectT.localPosition.x - initialLocalPos.x);
         float threshold = Screen.width * swipeThreshold;
 
         if (moved < threshold)
         {
-            view.AnimateReturn().OnComplete(() => Model.RequestReset());
+            cardView.AnimateReturn().OnComplete(() => Model.RequestReset());
             return;
         }
 
-        bool toLeft = view.RectT.localPosition.x < initialLocalPos.x;
+        bool toLeft = cardView.RectT.localPosition.x < initialLocalPos.x;
 
-        view.AnimateSwipeOut(toLeft, Screen.width)
+        cardView.AnimateSwipeOut(toLeft, Screen.width)
             .OnComplete(() =>
             {
                 Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
@@ -81,10 +83,10 @@ public class CardController : MonoBehaviour,
     {
         this.cardSO = so;
         this.Model = new CardModel(cardSO);
-        if (!view) view = GetComponent<CardView>();
+        if (!cardView) cardView = GetComponent<CardView>();
 
-        view.SetContent(cardSO);   // sprite vs. bağla
-        view.CaptureInitial();
+        cardView.SetContent(cardSO);   // sprite vs. bağla
+        cardView.CaptureInitial();
     }
 
 }

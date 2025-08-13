@@ -1621,6 +1621,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   artworkImage: {fileID: 277316340}
   canvasGroup: {fileID: 1381719359}
+  QuoteText: {fileID: 679684178}
+  NameText: {fileID: 974240564}
   maxTiltAngle: 12
   swipeDuration: 0.4
   returnDuration: 0.25
@@ -1649,7 +1651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardSO: {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
-  view: {fileID: 1381719358}
+  cardView: {fileID: 1381719358}
   swipeThreshold: 0.4
   destroyOnSwipe: 1
 --- !u!1 &1559346417
