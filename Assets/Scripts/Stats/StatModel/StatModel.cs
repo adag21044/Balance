@@ -8,11 +8,11 @@ public class StatModel
     public int CareerPercantage { get; set; }
     public int HappinessPercantage { get; set; }
 
-    public event Action<int> OnHeartChanged;
-    public event Action<int> OnCareerChanged;
-    public event Action<int> OnHappinessChanged;
+    public event Action<float> OnHeartChanged;
+    public event Action<float> OnCareerChanged;
+    public event Action<float> OnHappinessChanged;
 
-    private StatModel()
+    public StatModel()
     {
         HeartPercantage = 0;
         CareerPercantage = 0;
