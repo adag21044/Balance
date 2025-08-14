@@ -15,6 +15,17 @@ public class StatView : MonoBehaviour
 
     [SerializeField] private float duration = 0.5f;
 
+    private Vector3 heartBaseScale;
+    private Vector3 careerBaseScale;
+    private Vector3 happinessBaseScale;
+
+    private void Awake()
+    {
+        heartBaseScale = heartPointer.rectTransform.localScale;
+        careerBaseScale = careerPointer.rectTransform.localScale;
+        happinessBaseScale = happinessPointer.rectTransform.localScale;
+    }
+
     [Method]
     public void UpdateHeartValue(float value)
     {
@@ -41,16 +52,35 @@ public class StatView : MonoBehaviour
 
     public void ShowHeartPointer(bool show)
     {
-        heartPointer.gameObject.SetActive(show);
+        AnimatePointer(heartPointer, show, heartBaseScale);
     }
 
     public void ShowCareerPointer(bool show)
     {
-        careerPointer.gameObject.SetActive(show);
+        AnimatePointer(careerPointer, show, careerBaseScale);
     }
 
     public void ShowHappinessPointer(bool show)
     {
-        happinessPointer.gameObject.SetActive(show);
+        AnimatePointer(happinessPointer, show, happinessBaseScale);
+    }
+
+    private void AnimatePointer(Image pointer, bool show, Vector3 baseScale)
+    {
+        pointer.gameObject.SetActive(true);
+
+        float targetAlpha = show ? 1f : 0f;
+        Vector3 targetScale = show ? baseScale : baseScale * 0.8f;
+
+        pointer.DOFade(targetAlpha, duration)
+            .SetEase(Ease.InOutSine)
+            .OnComplete(() =>
+            {
+                if (!show)
+                    pointer.gameObject.SetActive(false);
+            });
+
+        pointer.rectTransform.DOScale(targetScale, duration)
+            .SetEase(Ease.OutBack);
     }
 }
