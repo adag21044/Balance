@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class StatController : MonoBehaviour
 {
-    [SerializeField] private StatView statView;
-    private StatModel statModel;
+    public StatView statView;
+    public StatModel statModel;
 
     private void Awake()
     {
@@ -11,5 +11,9 @@ public class StatController : MonoBehaviour
         statModel.OnHeartChanged += statView.UpdateHeartValue;
         statModel.OnCareerChanged += statView.UpdateCareerValue;
         statModel.OnHappinessChanged += statView.UpdateHappinessValue;
+
+        StatModel.OnHeartAffected += () => statView.ShowHeartPointer(true);
+        StatModel.OnCareerAffected += () => statView.ShowCareerPointer(true);
+        StatModel.OnHappinessAffected += () => statView.ShowHappinessPointer(true);
     }
 }

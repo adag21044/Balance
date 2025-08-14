@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Card/CardSO")]
@@ -18,4 +19,14 @@ public class CardSO : ScriptableObject
 
     [Header("Right Answer")]
     public string rightAnswer;
+
+    [Header("Impact Type")]
+    public List<ImpactType> impactType;
+}
+
+public enum ImpactType
+{
+    Heart,
+    Career,
+    Happiness
 }

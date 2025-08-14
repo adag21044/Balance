@@ -8,6 +8,11 @@ public class StatView : MonoBehaviour
     [SerializeField] private Image careerImage;
     [SerializeField] private Image happinessImage;
 
+    [Header("Pointers")]
+    [SerializeField] private Image heartPointer;
+    [SerializeField] private Image careerPointer;
+    [SerializeField] private Image happinessPointer;
+
     [SerializeField] private float duration = 0.5f;
 
     [Method]
@@ -32,5 +37,20 @@ public class StatView : MonoBehaviour
         happinessImage.DOFillAmount(value, duration)
             .SetEase(Ease.InOutSine)
             .OnComplete(() => Debug.Log("Happiness value updated to: " + value));
+    }
+
+    public void ShowHeartPointer(bool show)
+    {
+        heartPointer.gameObject.SetActive(show);
+    }
+
+    public void ShowCareerPointer(bool show)
+    {
+        careerPointer.gameObject.SetActive(show);
+    }
+
+    public void ShowHappinessPointer(bool show)
+    {
+        happinessPointer.gameObject.SetActive(show);
     }
 }

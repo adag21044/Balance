@@ -17,6 +17,7 @@ public class CardController : MonoBehaviour,
 
     private Vector3 initialLocalPos;
     private float screenHalf;
+    [SerializeField] private StatView statView;
 
     private void Awake()
     {
@@ -47,6 +48,10 @@ public class CardController : MonoBehaviour,
     public void OnBeginDrag(PointerEventData _)
     {
         if (Model.IsLocked) return;
+
+        // Pointer preview
+        StatModel.PreviewImpacts(cardSO);
+
         initialLocalPos = cardView.RectT.localPosition;
     }
 
@@ -75,7 +80,7 @@ public class CardController : MonoBehaviour,
             cardView.LeftAnswerText.text = "";
         }
     }
-    
+
     public void OnEndDrag(PointerEventData _)
     {
         if (Model.IsLocked) return;
@@ -103,6 +108,12 @@ public class CardController : MonoBehaviour,
         // Drag bitince yazıları temizle
         cardView.LeftAnswerText.text = "";
         cardView.RightAnswerText.text = "";
+        
+        // Pointerları kapat
+        statView.ShowHeartPointer(false);
+        statView.ShowCareerPointer(false);
+        statView.ShowHappinessPointer(false);
+
     }
 
     public void Init(CardSO so)

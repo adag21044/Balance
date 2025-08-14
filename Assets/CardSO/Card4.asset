@@ -21,3 +21,4 @@ MonoBehaviour:
   happinessImpact: 3
   leftAnswer: Left4
   rightAnswer: Right4
+  impactType: 0000000002000000

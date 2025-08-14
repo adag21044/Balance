@@ -12,12 +12,24 @@ public class StatModel
     public event Action<float> OnCareerChanged;
     public event Action<float> OnHappinessChanged;
 
+    public static event Action OnHeartAffected;
+    public static event Action OnCareerAffected;
+    public static event Action OnHappinessAffected;
+
     public StatModel()
     {
         HeartPercantage = 0;
         CareerPercantage = 0;
         HappinessPercantage = 0;
     }
+
+    public static void PreviewImpacts(CardSO card)
+    {
+        if (card.heartImpact != 0) OnHeartAffected?.Invoke();
+        if (card.careerImpact != 0) OnCareerAffected?.Invoke();
+        if (card.happinessImpact != 0) OnHappinessAffected?.Invoke();
+    }
+
 
     public void IncreaseHeart(int amount)
     {
