@@ -15,5 +15,9 @@ public class StatController : MonoBehaviour
         StatModel.OnHeartAffected += () => statView.ShowHeartPointer(true);
         StatModel.OnCareerAffected += () => statView.ShowCareerPointer(true);
         StatModel.OnHappinessAffected += () => statView.ShowHappinessPointer(true);
+
+        statView.ShowHeartPointer(false);
+        statView.ShowCareerPointer(false);
+        statView.ShowHappinessPointer(false);
     }
 }
