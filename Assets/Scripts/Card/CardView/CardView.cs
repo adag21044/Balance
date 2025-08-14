@@ -16,8 +16,8 @@ public class CardView : MonoBehaviour
     [SerializeField] public TMP_Text RightAnswerText;
 
     [Header("Animation")]
-    [SerializeField] private float maxTiltAngle   = 12f;
-    [SerializeField] private float swipeDuration  = 0.4f;
+    [SerializeField] private float maxTiltAngle = 12f;
+    [SerializeField] private float swipeDuration = 0.4f;
     [SerializeField] private float returnDuration = 0.25f;
 
     private RectTransform rt;
@@ -57,9 +57,9 @@ public class CardView : MonoBehaviour
         EnsureInit();
         rt.localPosition += new Vector3(deltaX, 0f, 0f);
         float displacementX = rt.localPosition.x - initialLocalPos.x;
-        float normalizedX   = Mathf.Clamp(displacementX / screenHalfWidth, -1f, 1f);
-        float zAngle        = -normalizedX * maxTiltAngle;
-        rt.localRotation    = Quaternion.Euler(0f, 0f, zAngle);
+        float normalizedX = Mathf.Clamp(displacementX / screenHalfWidth, -1f, 1f);
+        float zAngle = -normalizedX * maxTiltAngle;
+        rt.localRotation = Quaternion.Euler(0f, 0f, zAngle);
     }
 
     public Tween AnimateReturn()
@@ -70,10 +70,10 @@ public class CardView : MonoBehaviour
             // overshoot
             .Append(rt.DOLocalMove(overshootPos, returnDuration * 0.6f)
                 .SetEase(Ease.OutQuad))
-            
+
             .Append(rt.DOLocalMove(initialLocalPos, returnDuration * 0.4f)
                 .SetEase(Ease.InOutSine))
-            
+
             .Join(rt.DOLocalRotate(Vector3.zero, returnDuration)
                 .SetEase(Ease.OutSine));
     }
@@ -82,7 +82,7 @@ public class CardView : MonoBehaviour
     public Tween AnimateSwipeOut(bool toLeft, float offscreenDistance)
     {
         EnsureInit();
-        float targetX     = toLeft ? rt.localPosition.x - offscreenDistance
+        float targetX = toLeft ? rt.localPosition.x - offscreenDistance
                                 : rt.localPosition.x + offscreenDistance;
         float targetAngle = toLeft ? +maxTiltAngle * 2f : -maxTiltAngle * 2f;
 
@@ -100,4 +100,23 @@ public class CardView : MonoBehaviour
         canvasGroup.alpha = 1f;
     }
 
+    
+    public void SetAnswerText(TMP_Text textComponent, string newText)
+    {
+        // Eğer zaten aynı yazıysa direkt return
+        if (textComponent.text == newText) return;
+
+        // Önce varsa eski yazıyı fade-out yap
+        DOTween.Kill(textComponent); // önceki tweenleri öldür
+        textComponent.DOFade(0f, 0.15f).OnComplete(() =>
+        {
+            textComponent.text = newText;
+
+            if (!string.IsNullOrEmpty(newText))
+            {
+                textComponent.DOFade(1f, 0.25f)
+                            .SetEase(Ease.InOutSine);
+            }
+        });
+    }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using TMPro;
 
 public class CardController : MonoBehaviour,
                               IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -63,21 +64,21 @@ public class CardController : MonoBehaviour,
         // Local position ile displacement hesapla
         float displacementX = cardView.RectT.localPosition.x - initialLocalPos.x;
 
-        // Merkeze yakınsa yazıları temizle (tolerans: 10px)
-        if (Mathf.Abs(displacementX) < 10f)
+        // Merkeze yakınsa yazıları temizle (tolerans: 1px)
+        if (Mathf.Abs(displacementX) == 0)
         {
-            cardView.LeftAnswerText.text = "";
-            cardView.RightAnswerText.text = "";
+            cardView.SetAnswerText(cardView.LeftAnswerText, "");
+            cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
         else if (displacementX > 0) // Swipe Right
         {
-            cardView.LeftAnswerText.text = cardSO.leftAnswer;
-            cardView.RightAnswerText.text = "";
+            cardView.SetAnswerText(cardView.LeftAnswerText, cardSO.leftAnswer);
+            cardView.SetAnswerText(cardView.LeftAnswerText, "");
         }
         else // Swipe Left
         {
-            cardView.RightAnswerText.text = cardSO.rightAnswer;
-            cardView.LeftAnswerText.text = "";
+            cardView.SetAnswerText(cardView.RightAnswerText, cardSO.rightAnswer);
+            cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
     }
 
@@ -108,7 +109,7 @@ public class CardController : MonoBehaviour,
         // Drag bitince yazıları temizle
         cardView.LeftAnswerText.text = "";
         cardView.RightAnswerText.text = "";
-        
+
         // Pointerları kapat
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
@@ -125,5 +126,24 @@ public class CardController : MonoBehaviour,
         cardView.SetContent(cardSO);   // sprite vs. bağla
         cardView.CaptureInitial();
     }
+    
+    // CardView.cs içine ekle
+    public void SetAnswerText(TMP_Text textComponent, string newText)
+    {
+        // Eğer zaten aynı yazıysa direkt return
+        if (textComponent.text == newText) return;
 
+        // Önce varsa eski yazıyı fade-out yap
+        DOTween.Kill(textComponent); // önceki tweenleri öldür
+        textComponent.DOFade(0f, 0.15f).OnComplete(() =>
+        {
+            textComponent.text = newText;
+
+            if (!string.IsNullOrEmpty(newText))
+            {
+                textComponent.DOFade(1f, 0.25f)
+                            .SetEase(Ease.InOutSine);
+            }
+        });
+    }
 }
