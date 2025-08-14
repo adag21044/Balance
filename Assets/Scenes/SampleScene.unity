@@ -1398,7 +1398,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feed: {fileID: 11400000, guid: 90a0a6c8209ac2441b90b3e798f9c90b, type: 2}
   factory: {fileID: 1887549966}
-  keepOnScreen: 3
+  keepOnScreen: 10
   destroyOnSwipe: 1
 --- !u!4 &955066658
 Transform:
