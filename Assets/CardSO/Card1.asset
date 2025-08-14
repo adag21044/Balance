@@ -19,3 +19,5 @@ MonoBehaviour:
   heartImpact: 5
   careerImpact: 0
   happinessImpact: 1
+  leftAnswer: Left1
+  rightAnswer: Right1

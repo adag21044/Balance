@@ -54,8 +54,28 @@ public class CardController : MonoBehaviour,
     {
         if (Model.IsLocked) return;
         cardView.SetDragVisual(data.delta.x, screenHalf);
-    }
 
+        // Local position ile displacement hesapla
+        float displacementX = cardView.RectT.localPosition.x - initialLocalPos.x;
+
+        // Merkeze yakınsa yazıları temizle (tolerans: 10px)
+        if (Mathf.Abs(displacementX) < 10f)
+        {
+            cardView.LeftAnswerText.text = "";
+            cardView.RightAnswerText.text = "";
+        }
+        else if (displacementX > 0) // Swipe Right
+        {
+            cardView.LeftAnswerText.text = cardSO.leftAnswer;
+            cardView.RightAnswerText.text = "";
+        }
+        else // Swipe Left
+        {
+            cardView.RightAnswerText.text = cardSO.rightAnswer;
+            cardView.LeftAnswerText.text = "";
+        }
+    }
+    
     public void OnEndDrag(PointerEventData _)
     {
         if (Model.IsLocked) return;
@@ -63,20 +83,26 @@ public class CardController : MonoBehaviour,
         float moved = Mathf.Abs(cardView.RectT.localPosition.x - initialLocalPos.x);
         float threshold = Screen.width * swipeThreshold;
 
+        // Drag kısa ise geri dön
         if (moved < threshold)
         {
             cardView.AnimateReturn().OnComplete(() => Model.RequestReset());
-            return;
+        }
+        else
+        {
+            bool toLeft = cardView.RectT.localPosition.x < initialLocalPos.x;
+
+            cardView.AnimateSwipeOut(toLeft, Screen.width)
+                .OnComplete(() =>
+                {
+                    Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
+                    if (destroyOnSwipe) Destroy(gameObject); // pool’a iade edilebilir
+                });
         }
 
-        bool toLeft = cardView.RectT.localPosition.x < initialLocalPos.x;
-
-        cardView.AnimateSwipeOut(toLeft, Screen.width)
-            .OnComplete(() =>
-            {
-                Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
-                if (destroyOnSwipe) Destroy(gameObject); // ya da pool’a iade
-            });
+        // Drag bitince yazıları temizle
+        cardView.LeftAnswerText.text = "";
+        cardView.RightAnswerText.text = "";
     }
 
     public void Init(CardSO so)

@@ -12,6 +12,8 @@ public class CardView : MonoBehaviour
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TMP_Text QuoteText;
     [SerializeField] private TMP_Text NameText;
+    [SerializeField] public TMP_Text LeftAnswerText;
+    [SerializeField] public TMP_Text RightAnswerText;
 
     [Header("Animation")]
     [SerializeField] private float maxTiltAngle   = 12f;
@@ -63,10 +65,19 @@ public class CardView : MonoBehaviour
     public Tween AnimateReturn()
     {
         EnsureInit();
+        Vector3 overshootPos = initialLocalPos + new Vector3(10f, 0f, 0f); // 10 px ileri
         return DOTween.Sequence()
-            .Append(rt.DOLocalMove(initialLocalPos, returnDuration).SetEase(Ease.OutBack))
-            .Join(rt.DOLocalRotate(Vector3.zero, returnDuration).SetEase(Ease.OutBack));
+            // overshoot
+            .Append(rt.DOLocalMove(overshootPos, returnDuration * 0.6f)
+                .SetEase(Ease.OutQuad))
+            
+            .Append(rt.DOLocalMove(initialLocalPos, returnDuration * 0.4f)
+                .SetEase(Ease.InOutSine))
+            
+            .Join(rt.DOLocalRotate(Vector3.zero, returnDuration)
+                .SetEase(Ease.OutSine));
     }
+
 
     public Tween AnimateSwipeOut(bool toLeft, float offscreenDistance)
     {

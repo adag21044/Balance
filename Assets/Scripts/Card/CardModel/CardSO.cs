@@ -12,4 +12,10 @@ public class CardSO : ScriptableObject
     public int heartImpact;
     public int careerImpact;
     public int happinessImpact;
+
+    [Header("Left Answer")]
+    public string leftAnswer;
+
+    [Header("Right Answer")]
+    public string rightAnswer;
 }
