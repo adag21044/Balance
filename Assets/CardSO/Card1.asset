@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_001
   Title: Morning Run
   Description: A friend invites you to go for a morning run. Do you accept?
-  Artwork: {fileID: 5189691121816951081, guid: 2bcc50d2cdc58ec4593c26ec29ee74ea, type: 3}
+  Artwork: {fileID: 6284052155964432312, guid: 6a7ef0cf5172d144b86478cc4d949610, type: 3}
   heartImpact: 5
   careerImpact: 0
   happinessImpact: 1
