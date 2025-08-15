@@ -34,8 +34,6 @@ public class CardController : MonoBehaviour,
         cardView.SetContent(cardSO);
         cardView.CaptureInitial();
         initialLocalPos = cardView.RectT.localPosition;
-
-        cardView.SetContent(cardSO);
     }
 
     private void OnEnable()
