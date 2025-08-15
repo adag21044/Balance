@@ -19,6 +19,7 @@ public class CardController : MonoBehaviour,
     private Vector3 initialLocalPos;
     private float screenHalf;
     [SerializeField] private StatView statView;
+    //public StatController statController; 
 
     private void Awake()
     {
@@ -91,35 +92,36 @@ public class CardController : MonoBehaviour,
 
         float moved = Mathf.Abs(cardView.RectT.localPosition.x - initialLocalPos.x);
         float threshold = Screen.width * swipeThreshold;
+        bool toLeft = cardView.RectT.localPosition.x < initialLocalPos.x;
 
-        // Drag kısa ise geri dön
         if (moved < threshold)
         {
             cardView.AnimateReturn().OnComplete(() => Model.RequestReset());
         }
         else
         {
-            bool toLeft = cardView.RectT.localPosition.x < initialLocalPos.x;
-
             cardView.AnimateSwipeOut(toLeft, Screen.width)
                 .OnComplete(() =>
                 {
                     Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
-                    if (destroyOnSwipe) Destroy(gameObject); // pool’a iade edilebilir
+
+                    // Stat değişikliklerini uygula
+                    StatModel.Instance.ApplyCard(cardSO);
+
+                    if (destroyOnSwipe) Destroy(gameObject);
                 });
         }
 
         // Drag bitince yazıları temizle
-        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
-
 
         // Pointerları kapat
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
         statView.ShowHappinessPointer(false);
-
     }
+
 
     public void Init(CardSO so)
     {

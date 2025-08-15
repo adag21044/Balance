@@ -14,7 +14,7 @@ public class CardDeckController : MonoBehaviour
     [SerializeField] private bool destroyOnSwipe = true; 
 
     private int index = 0;
-    private List<CardController> liveCards = new();
+    [SerializeField] private List<CardController> liveCards = new();
 
     private void Start()
     {
