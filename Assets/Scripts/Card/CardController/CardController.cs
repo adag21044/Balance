@@ -61,26 +61,29 @@ public class CardController : MonoBehaviour,
         if (Model.IsLocked) return;
         cardView.SetDragVisual(data.delta.x, screenHalf);
 
-        // Local position ile displacement hesapla
-        float displacementX = cardView.RectT.localPosition.x - initialLocalPos.x;
+        float dx = cardView.RectT.localPosition.x - initialLocalPos.x;
+        const float DEAD_ZONE_PX = 8f;
 
-        // Merkeze yakınsa yazıları temizle (tolerans: 1px)
-        if (Mathf.Abs(displacementX) == 0)
+        // near center → both hidden
+        if (Mathf.Abs(dx) <= DEAD_ZONE_PX)
         {
-            cardView.SetAnswerText(cardView.LeftAnswerText, "");
+            cardView.SetAnswerText(cardView.LeftAnswerText,  "");
             cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
-        else if (displacementX > 0) // Swipe Right
+        else if (dx > 0f)
         {
-            cardView.SetAnswerText(cardView.LeftAnswerText, cardSO.leftAnswer);
-            cardView.SetAnswerText(cardView.LeftAnswerText, "");
+            // turning right → LEFT visible, RIGHT hidden
+            cardView.SetAnswerText(cardView.LeftAnswerText,  cardSO.leftAnswer);
+            cardView.SetAnswerText(cardView.RightAnswerText, ""); // <-- fix here
         }
-        else // Swipe Left
+        else
         {
+            // turning left → RIGHT visible, LEFT hidden
+            cardView.SetAnswerText(cardView.LeftAnswerText,  ""); // <-- and fix here
             cardView.SetAnswerText(cardView.RightAnswerText, cardSO.rightAnswer);
-            cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
     }
+
 
     public void OnEndDrag(PointerEventData _)
     {
@@ -107,8 +110,9 @@ public class CardController : MonoBehaviour,
         }
 
         // Drag bitince yazıları temizle
-        cardView.LeftAnswerText.text = "";
-        cardView.RightAnswerText.text = "";
+        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.RightAnswerText, "");
+
 
         // Pointerları kapat
         statView.ShowHeartPointer(false);
