@@ -7,7 +7,7 @@ public class StatController : MonoBehaviour
 
     private void Awake()
     {
-        statModel = StatModel.Instance; 
+        statModel = StatModel.Instance;
         statModel.OnHeartChanged += statView.UpdateHeartValue;
         statModel.OnCareerChanged += statView.UpdateCareerValue;
         statModel.OnHappinessChanged += statView.UpdateHappinessValue;
@@ -19,5 +19,7 @@ public class StatController : MonoBehaviour
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
         statView.ShowHappinessPointer(false);
+        
+        statView.SnapToModel(statModel);
     }
 }
