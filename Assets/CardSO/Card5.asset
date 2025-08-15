@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_005
   Title: Extreme Sports
   Description: An opportunity for bungee jumping arises. Do you take it?
-  Artwork: {fileID: 5189691121816951081, guid: 2bcc50d2cdc58ec4593c26ec29ee74ea, type: 3}
+  Artwork: {fileID: 9170336767706615490, guid: 1878778cee10d84468f75ab739c0f900, type: 3}
   heartImpact: -6
   careerImpact: 0
   happinessImpact: 89
