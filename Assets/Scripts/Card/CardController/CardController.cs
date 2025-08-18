@@ -2,12 +2,13 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using DG.Tweening;
 using TMPro;
+using System;
 
 public class CardController : MonoBehaviour,
                               IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Wiring")]
-    [SerializeField] private CardSO cardSO;
+    [SerializeField] private CardSO[] cardSO;
     [SerializeField] private CardView cardView;
 
     [Header("Swipe Params")]
@@ -15,23 +16,25 @@ public class CardController : MonoBehaviour,
     [SerializeField] private bool destroyOnSwipe = true;
 
     public CardModel Model { get; private set; }
-
+    private CardSO currentData;
     private Vector3 initialLocalPos;
     private float screenHalf;
     [SerializeField] private StatView statView;
     //public StatController statController; 
 
+    public event Action BeginDragRequested;
+
     private void Awake()
     {
         if (!cardView) cardView = GetComponent<CardView>();
-        Model = new CardModel(cardSO);
+        Model = new CardModel(cardSO[UnityEngine.Random.Range(0, cardSO.Length)]);
 
         screenHalf = Screen.width * 0.5f;
     }
 
     private void Start()
     {
-        cardView.SetContent(cardSO);
+        cardView.SetContent(cardSO[UnityEngine.Random.Range(0, cardSO.Length)]);
         cardView.CaptureInitial();
         initialLocalPos = cardView.RectT.localPosition;
     }
@@ -50,7 +53,7 @@ public class CardController : MonoBehaviour,
         if (Model.IsLocked) return;
 
         // Pointer preview
-        StatModel.PreviewImpacts(cardSO);
+        StatModel.PreviewImpacts(cardSO[UnityEngine.Random.Range(0, cardSO.Length)]);
 
         initialLocalPos = cardView.RectT.localPosition;
     }
@@ -66,20 +69,20 @@ public class CardController : MonoBehaviour,
         // near center → both hidden
         if (Mathf.Abs(dx) <= DEAD_ZONE_PX)
         {
-            cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+            cardView.SetAnswerText(cardView.LeftAnswerText, "");
             cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
         else if (dx > 0f)
         {
             // turning right → LEFT visible, RIGHT hidden
-            cardView.SetAnswerText(cardView.LeftAnswerText,  cardSO.leftAnswer);
+            cardView.SetAnswerText(cardView.LeftAnswerText, cardSO[UnityEngine.Random.Range(0, cardSO.Length)].leftAnswer);
             cardView.SetAnswerText(cardView.RightAnswerText, ""); // <-- fix here
         }
         else
         {
             // turning left → RIGHT visible, LEFT hidden
-            cardView.SetAnswerText(cardView.LeftAnswerText,  ""); // <-- and fix here
-            cardView.SetAnswerText(cardView.RightAnswerText, cardSO.rightAnswer);
+            cardView.SetAnswerText(cardView.LeftAnswerText, ""); // <-- and fix here
+            cardView.SetAnswerText(cardView.RightAnswerText, cardSO[UnityEngine.Random.Range(0, cardSO.Length)].rightAnswer);
         }
     }
 
@@ -104,7 +107,7 @@ public class CardController : MonoBehaviour,
                     Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
 
                     // Stat değişikliklerini uygula
-                    StatModel.Instance.ApplyCard(cardSO);
+                    StatModel.Instance.ApplyCard(cardSO[UnityEngine.Random.Range(0, cardSO.Length)]);
 
                     if (destroyOnSwipe) Destroy(gameObject);
                 });
@@ -121,16 +124,20 @@ public class CardController : MonoBehaviour,
     }
 
 
-    public void Init(CardSO so)
+    public void Init(CardSO data)
     {
-        this.cardSO = so;
-        this.Model = new CardModel(cardSO);
-        if (!cardView) cardView = GetComponent<CardView>();
+        // Unhook old model
+        if (Model != null)
+            Model.Swiped -= OnSwipedInternal;
 
-        cardView.SetContent(cardSO);   // sprite vs. bağla
-        cardView.CaptureInitial();
+        currentData = data;
+        Model = new CardModel(currentData);
+        Model.Swiped += OnSwipedInternal;
+
+        cardView.ResetVisuals();
+        cardView.SetContent(currentData);
     }
-    
+
     // CardView.cs içine ekle
     public void SetAnswerText(TMP_Text textComponent, string newText)
     {
@@ -149,5 +156,16 @@ public class CardController : MonoBehaviour,
                             .SetEase(Ease.InOutSine);
             }
         });
+    }
+
+    private void OnDestroy()
+    {
+        if (Model != null)
+            Model.Swiped -= OnSwipedInternal;
+    }
+    
+    private void OnSwipedInternal(CardModel m, SwipeDirection dir)
+    {
+        // Intentionally empty: Deck subscribes to Model.Swiped directly if preferred.
     }
 }

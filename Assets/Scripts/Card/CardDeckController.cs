@@ -9,64 +9,89 @@ public class CardDeckController : MonoBehaviour
     [Header("Factory/Pool")]
     [SerializeField] private CardFactory factory;
 
-    [Header("Layout")]
-    [SerializeField] private int keepOnScreen = 3; 
-    [SerializeField] private bool destroyOnSwipe = true; 
+    private CardController front; // visible one when idle
+    private CardController back;  // preloaded under front during drag
 
     private int index = 0;
-    [SerializeField] private List<CardController> liveCards = new();
 
     private void Start()
     {
-        for (int i = 0; i < keepOnScreen; i++)
-            TrySpawnNext();
+        Debug.Log("[Deck] Start()");
+
+        SpawnFront(); // exactly one card on scene initially
     }
 
-    private void TrySpawnNext()
+    private void SpawnFront()
     {
         var next = GetNextSO();
+        Debug.Log($"[Deck] SpawnFront() -> {next?.name}");
         if (next == null) return;
 
-        var card = factory.Create(next);
-        
-        card.Model.Swiped += OnCardSwiped;
-        liveCards.Add(card);
+        front = factory.Create(next);
+        front.transform.SetSiblingIndex(1); // keep on top when we later add 'back'
+        front.BeginDragRequested += OnFrontBeginDrag;
+        front.Model.Swiped += OnFrontSwiped;
     }
 
-    private void OnCardSwiped(CardModel model, SwipeDirection dir)
+    private void OnFrontBeginDrag()
     {
-        
-        var ctrl = liveCards.Find(c => ReferenceEquals(c.Model, model));
-        if (ctrl != null)
+        // If no back yet, preload immediately under the front
+        if (back == null)
         {
-            
-            factory.Despawn(ctrl);
-            liveCards.Remove(ctrl);
-        }
+            var next = GetNextSO();
+            if (next == null) return;
 
-        TrySpawnNext();
+            back = factory.Create(next);
+            // Put back UNDER the front visually
+            back.transform.SetSiblingIndex(0);
+            // We do NOT subscribe to back's events yet; it will become new front after swipe
+        }
+    }
+
+    private void OnFrontSwiped(CardModel m, SwipeDirection dir)
+    {
+        // 1) Remove current front
+        front.BeginDragRequested -= OnFrontBeginDrag;
+        front.Model.Swiped -= OnFrontSwiped;
+        factory.Despawn(front);
+
+        // 2) Promote back -> new front
+        if (back != null)
+        {
+            front = back;
+            back = null;
+
+            // Now that it's the new front, wire its events
+            front.BeginDragRequested += OnFrontBeginDrag;
+            front.Model.Swiped += OnFrontSwiped;
+
+            // Ensure order (only one card currently, so index 1 is fine)
+            front.transform.SetSiblingIndex(1);
+        }
+        else
+        {
+            // No back existed (edge case): just spawn a new front
+            SpawnFront();
+        }
     }
 
     private CardSO GetNextSO()
     {
-        if (feed == null || feed.items == null || feed.items.Length == 0) return null;
+        if (feed == null || feed.items == null || feed.items.Length == 0)
+            return null;
 
         switch (feed.mode)
         {
             case CardFeedSO.Mode.Loop:
-                var so = feed.items[index % feed.items.Length];
-                index++;
-                return so;
+                if (index >= feed.items.Length) index = 0;
+                return feed.items[index++];
 
             case CardFeedSO.Mode.Shuffle:
-                int r = UnityEngine.Random.Range(0, feed.items.Length);
-                return feed.items[r];
+                return feed.items[Random.Range(0, feed.items.Length)];
 
             case CardFeedSO.Mode.Once:
                 if (index >= feed.items.Length) return null;
-                var once = feed.items[index];
-                index++;
-                return once;
+                return feed.items[index++];
         }
         return null;
     }

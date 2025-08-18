@@ -1473,9 +1473,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feed: {fileID: 11400000, guid: 90a0a6c8209ac2441b90b3e798f9c90b, type: 2}
   factory: {fileID: 1887549966}
-  keepOnScreen: 10
-  destroyOnSwipe: 1
-  liveCards: []
 --- !u!4 &955066658
 Transform:
   m_ObjectHideFlags: 0
@@ -1926,6 +1923,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   artworkImage: {fileID: 75779357}
+  backgroundImage: {fileID: 277316340}
   canvasGroup: {fileID: 1381719359}
   QuoteText: {fileID: 679684178}
   NameText: {fileID: 974240564}
@@ -1958,7 +1956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfef58e6e4cedf44b40585b92207a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardSO: {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
+  cardSO:
+  - {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
+  - {fileID: 11400000, guid: 76c379596e00d8044935c13e3b198858, type: 2}
   cardView: {fileID: 1381719358}
   swipeThreshold: 0.4
   destroyOnSwipe: 1

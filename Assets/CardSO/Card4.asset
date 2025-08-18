@@ -16,6 +16,7 @@ MonoBehaviour:
   Title: Family Dinner
   Description: Your parents invite you for a family dinner.
   Artwork: {fileID: 2273637850481659594, guid: 8de0db7a7d5570b4a9ae0e7b3f828d67, type: 3}
+  Background: {fileID: 5189691121816951081, guid: 2bcc50d2cdc58ec4593c26ec29ee74ea, type: 3}
   heartImpact: 2
   careerImpact: 0
   happinessImpact: 3

@@ -8,6 +8,7 @@ public class CardSO : ScriptableObject
     public string Title;
     [TextArea] public string Description;
     public Sprite Artwork;
+    public Sprite Background; 
 
     [Header("Card Impacts")]
     public int heartImpact;

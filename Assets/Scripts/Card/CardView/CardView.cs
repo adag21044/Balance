@@ -9,6 +9,7 @@ public class CardView : MonoBehaviour
 {
     [Header("Visual Refs")]
     [SerializeField] private Image artworkImage;
+    [SerializeField] private Image backgroundImage;
     [SerializeField] private CanvasGroup canvasGroup;
     [SerializeField] private TMP_Text QuoteText;
     [SerializeField] private TMP_Text NameText;
@@ -40,6 +41,8 @@ public class CardView : MonoBehaviour
     {
         EnsureInit();
         if (artworkImage) artworkImage.sprite = config.Artwork;
+        if (backgroundImage) backgroundImage.sprite = config.Background;
+        
         canvasGroup.alpha = 1f;
 
         if (QuoteText) QuoteText.text = config.Description;
