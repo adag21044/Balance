@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardPool : MonoBehaviour
 {
-    [SerializeField] private CardController prefab;
+    /*[SerializeField] private CardController prefab;
     [SerializeField] private Transform parentForSpawn;
 
     private readonly Stack<CardController> pool = new();
@@ -24,5 +24,5 @@ public class CardPool : MonoBehaviour
     {
         card.gameObject.SetActive(false);
         pool.Push(card);
-    }
+    }*/
 }

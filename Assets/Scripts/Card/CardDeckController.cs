@@ -27,10 +27,10 @@ public class CardDeckController : MonoBehaviour
         var next = GetNextSO();
         if (next == null) return;
 
-        var card = factory.Create(next);
+        //var card = factory.Create(next);
         
-        card.Model.Swiped += OnCardSwiped;
-        liveCards.Add(card);
+        //card.Model.Swiped += OnCardSwiped;
+        //liveCards.Add(card);
     }
 
     private void OnCardSwiped(CardModel model, SwipeDirection dir)
@@ -40,7 +40,7 @@ public class CardDeckController : MonoBehaviour
         if (ctrl != null)
         {
             
-            factory.Despawn(ctrl);
+            //factory.Despawn(ctrl);
             liveCards.Remove(ctrl);
         }
 

@@ -1731,8 +1731,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1276d50317d4344ba84b5f41de2fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1381719360}
-  parentForSpawn: {fileID: 1905358465}
 --- !u!4 &1151455932
 Transform:
   m_ObjectHideFlags: 0
@@ -1958,6 +1956,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfef58e6e4cedf44b40585b92207a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardSOs:
+  - {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
+  - {fileID: 11400000, guid: 76c379596e00d8044935c13e3b198858, type: 2}
+  - {fileID: 11400000, guid: 2deec6741b185a240ae97d440c4be8ef, type: 2}
+  - {fileID: 11400000, guid: 34641358ccdb3634bb66321ab869a9cd, type: 2}
+  - {fileID: 11400000, guid: 683ec0df72716df40ae3e8a0a1bd0c36, type: 2}
   cardSO: {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
   cardView: {fileID: 1381719358}
   swipeThreshold: 0.4

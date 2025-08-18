@@ -7,6 +7,7 @@ public class CardController : MonoBehaviour,
                               IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [Header("Wiring")]
+    [SerializeField] private CardSO[] cardSOs;
     [SerializeField] private CardSO cardSO;
     [SerializeField] private CardView cardView;
 
@@ -24,6 +25,7 @@ public class CardController : MonoBehaviour,
     private void Awake()
     {
         if (!cardView) cardView = GetComponent<CardView>();
+        cardSO = cardSOs[Random.Range(0, cardSOs.Length)];
         Model = new CardModel(cardSO);
 
         screenHalf = Screen.width * 0.5f;
