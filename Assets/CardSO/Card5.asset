@@ -18,7 +18,7 @@ MonoBehaviour:
   Artwork: {fileID: 9170336767706615490, guid: 1878778cee10d84468f75ab739c0f900, type: 3}
   heartImpact: -6
   careerImpact: 0
-  happinessImpact: 89
+  happinessImpact: 10
   leftAnswer: Left5
   rightAnswer: Right5
   impactType: 0000000002000000
