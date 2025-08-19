@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_003
   Title: Weekend Trip
   Description: Your friends are going on a spontaneous weekend trip.
-  Artwork: {fileID: -3733744629007151920, guid: 380671e4cbc3f024d9b074aaf9601e0f, type: 3}
+  Artwork: {fileID: 8284676879855425092, guid: 0d89bfc4b2babd0449714393081e43a5, type: 3}
   heartImpact: 1
   careerImpact: -2
   happinessImpact: 6

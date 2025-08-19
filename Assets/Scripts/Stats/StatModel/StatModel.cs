@@ -7,7 +7,7 @@ public class StatModel
 
     private float heartPercantage;
     public float HeartPercantage => heartPercantage;
-    
+
     private float careerPercantage;
     public float CareerPercantage => careerPercantage;
 
@@ -21,6 +21,8 @@ public class StatModel
     public static event Action OnHeartAffected;
     public static event Action OnCareerAffected;
     public static event Action OnHappinessAffected;
+
+    public static event Action OnPreviewCancelled;
 
     public const float IMPACT_SCALE = 0.01f;
 
@@ -42,7 +44,7 @@ public class StatModel
     public void ApplyCard(CardSO card)
     {
         Debug.Log($"Applying card impacts: {card.name}");
-        
+
         if (card == null) return;
 
         if (card.heartImpact != 0)
@@ -54,7 +56,7 @@ public class StatModel
         if (card.happinessImpact != 0)
             ApplyAndRaise(ref happinessPercantage, card.happinessImpact * IMPACT_SCALE, OnHappinessChanged);
     }
-    
+
 
     private void ApplyAndRaise(ref float statValue, float delta, Action<float> evt)
     {
@@ -62,5 +64,10 @@ public class StatModel
         statValue = Mathf.Clamp01(statValue + delta);
         Debug.Log($"[StatModel] stat before={before:F2}, delta={delta:F2}, after={statValue:F2}");
         evt?.Invoke(statValue);
+    }
+    
+    public static void CancelPreview()
+    {
+        OnPreviewCancelled?.Invoke();
     }
 }

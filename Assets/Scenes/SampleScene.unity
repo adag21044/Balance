@@ -1965,7 +1965,7 @@ MonoBehaviour:
   cardSO: {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
   cardView: {fileID: 1381719358}
   swipeThreshold: 0.4
-  destroyOnSwipe: 1
+  destroyOnSwipe: 0
   statView: {fileID: 1559346418}
 --- !u!1 &1559346417
 GameObject:
