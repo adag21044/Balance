@@ -111,7 +111,7 @@ public class CardController : MonoBehaviour,
                     Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
 
                     // Apply stat changes of the card
-                    StatModel.Instance.ApplyCard(cardSO);
+                     StatModel.Instance.ApplyCard(decidedCard, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
 
                     // --- KEY PART: reload instead of destroy ---
                     if (destroyOnSwipe)
@@ -138,7 +138,7 @@ public class CardController : MonoBehaviour,
     private void OnSwipedByMovement(bool toLeft)
     {
         Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
-        StatModel.Instance.ApplyCard(cardSO);
+        StatModel.Instance.ApplyCard(cardSO, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
         ReloadWithRandomCard(); // yeni random SO bağla
     }
 

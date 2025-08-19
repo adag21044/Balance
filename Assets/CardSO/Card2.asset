@@ -16,9 +16,12 @@ MonoBehaviour:
   Title: Overtime
   Description: Your boss asks you to stay late to finish a project.
   Artwork: {fileID: -3733744629007151920, guid: 380671e4cbc3f024d9b074aaf9601e0f, type: 3}
-  heartImpact: -3
-  careerImpact: 7
-  happinessImpact: -2
-  leftAnswer: Left2
-  rightAnswer: Right2
+  leftAnswer: No
+  rightAnswer: Yes
+  leftHeartImpact: -5
+  leftCareerImpact: 10
+  leftHappinessImpact: -5
+  rightHeartImpact: 2
+  rightCareerImpact: -10
+  rightHappinessImpact: 5
   impactType: 000000000100000002000000

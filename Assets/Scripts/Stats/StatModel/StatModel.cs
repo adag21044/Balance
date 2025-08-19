@@ -33,30 +33,46 @@ public class StatModel
         happinessPercantage = 0.5f;
     }
 
+    /// <summary>
+    /// Preview pointers while user starts dragging.
+    /// We don't know direction yet, so show pointers for any stat that will change on either side.
+    /// </summary>
     public static void PreviewImpacts(CardSO card)
     {
-        if (card.heartImpact != 0) OnHeartAffected?.Invoke();
-        if (card.careerImpact != 0) OnCareerAffected?.Invoke();
-        if (card.happinessImpact != 0) OnHappinessAffected?.Invoke();
-    }
-
-
-    public void ApplyCard(CardSO card)
-    {
-        Debug.Log($"Applying card impacts: {card.name}");
-
         if (card == null) return;
 
-        if (card.heartImpact != 0)
-            ApplyAndRaise(ref heartPercantage, card.heartImpact * IMPACT_SCALE, OnHeartChanged);
-
-        if (card.careerImpact != 0)
-            ApplyAndRaise(ref careerPercantage, card.careerImpact * IMPACT_SCALE, OnCareerChanged);
-
-        if (card.happinessImpact != 0)
-            ApplyAndRaise(ref happinessPercantage, card.happinessImpact * IMPACT_SCALE, OnHappinessChanged);
+        if (card.leftHeartImpact != 0 || card.rightHeartImpact != 0) OnHeartAffected?.Invoke();
+        if (card.leftCareerImpact != 0 || card.rightCareerImpact != 0) OnCareerAffected?.Invoke();
+        if (card.leftHappinessImpact != 0 || card.rightHappinessImpact != 0) OnHappinessAffected?.Invoke();
     }
 
+    /// <summary>
+    /// Apply impacts according to swipe direction.
+    /// </summary>
+    public void ApplyCard(CardSO card, SwipeDirection dir)
+    {
+        Debug.Log($"Applying {dir} impacts: {card?.name}");
+        if (card == null) return;
+
+        if (dir == SwipeDirection.Left)
+        {
+            if (card.leftHeartImpact != 0)
+                ApplyAndRaise(ref heartPercantage, card.leftHeartImpact * IMPACT_SCALE, OnHeartChanged);
+            if (card.leftCareerImpact != 0)
+                ApplyAndRaise(ref careerPercantage, card.leftCareerImpact * IMPACT_SCALE, OnCareerChanged);
+            if (card.leftHappinessImpact != 0)
+                ApplyAndRaise(ref happinessPercantage, card.leftHappinessImpact * IMPACT_SCALE, OnHappinessChanged);
+        }
+        else // Right
+        {
+            if (card.rightHeartImpact != 0)
+                ApplyAndRaise(ref heartPercantage, card.rightHeartImpact * IMPACT_SCALE, OnHeartChanged);
+            if (card.rightCareerImpact != 0)
+                ApplyAndRaise(ref careerPercantage, card.rightCareerImpact * IMPACT_SCALE, OnCareerChanged);
+            if (card.rightHappinessImpact != 0)
+                ApplyAndRaise(ref happinessPercantage, card.rightHappinessImpact * IMPACT_SCALE, OnHappinessChanged);
+        }
+    }
 
     private void ApplyAndRaise(ref float statValue, float delta, Action<float> evt)
     {
@@ -65,9 +81,6 @@ public class StatModel
         Debug.Log($"[StatModel] stat before={before:F2}, delta={delta:F2}, after={statValue:F2}");
         evt?.Invoke(statValue);
     }
-    
-    public static void CancelPreview()
-    {
-        OnPreviewCancelled?.Invoke();
-    }
+
+    public static void CancelPreview() => OnPreviewCancelled?.Invoke();
 }

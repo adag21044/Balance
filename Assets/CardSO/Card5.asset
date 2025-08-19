@@ -16,9 +16,12 @@ MonoBehaviour:
   Title: Extreme Sports
   Description: An opportunity for bungee jumping arises. Do you take it?
   Artwork: {fileID: 9170336767706615490, guid: 1878778cee10d84468f75ab739c0f900, type: 3}
-  heartImpact: -6
-  careerImpact: 0
-  happinessImpact: 10
-  leftAnswer: Left5
-  rightAnswer: Right5
-  impactType: 0000000002000000
+  leftAnswer: No
+  rightAnswer: Yes
+  leftHeartImpact: -5
+  leftCareerImpact: 0
+  leftHappinessImpact: 12
+  rightHeartImpact: 2
+  rightCareerImpact: 0
+  rightHappinessImpact: -5
+  impactType: 000000000200000001000000

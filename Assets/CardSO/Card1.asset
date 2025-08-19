@@ -16,9 +16,12 @@ MonoBehaviour:
   Title: Morning Run
   Description: A friend invites you to go for a morning run. Do you accept?
   Artwork: {fileID: 6284052155964432312, guid: 6a7ef0cf5172d144b86478cc4d949610, type: 3}
-  heartImpact: 5
-  careerImpact: 0
-  happinessImpact: 1
-  leftAnswer: Left1
-  rightAnswer: Right1
-  impactType: 0000000002000000
+  leftAnswer: No
+  rightAnswer: Yes
+  leftHeartImpact: 10
+  leftCareerImpact: -2
+  leftHappinessImpact: 5
+  rightHeartImpact: -5
+  rightCareerImpact: 2
+  rightHappinessImpact: -2
+  impactType: 000000000200000001000000

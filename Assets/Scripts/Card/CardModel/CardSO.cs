@@ -9,18 +9,21 @@ public class CardSO : ScriptableObject
     [TextArea] public string Description;
     public Sprite Artwork;
 
-    [Header("Card Impacts")]
-    public int heartImpact;
-    public int careerImpact;
-    public int happinessImpact;
-
-    [Header("Left Answer")]
+    [Header("Answers (UI Text)")]
     public string leftAnswer;
-
-    [Header("Right Answer")]
     public string rightAnswer;
 
-    [Header("Impact Type")]
+    [Header("LEFT Swipe Impacts")]
+    public int leftHeartImpact;
+    public int leftCareerImpact;
+    public int leftHappinessImpact;
+
+    [Header("RIGHT Swipe Impacts")]
+    public int rightHeartImpact;
+    public int rightCareerImpact;
+    public int rightHappinessImpact;
+
+    [Header("Impact Type (optional tags)")]
     public List<ImpactType> impactType;
 }
 
