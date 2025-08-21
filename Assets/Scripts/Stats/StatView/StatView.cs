@@ -20,15 +20,26 @@ public class StatView : MonoBehaviour
     [SerializeField] private float duration = 0.5f;
     [SerializeField] private bool useUnscaledTime = true; // run even if Time.timeScale == 0
 
+    [Header("Flash Colors")]
+    [SerializeField] private Color increaseColor = new Color(0.25f, 1f, 0.25f); // green-ish
+    [SerializeField] private Color decreaseColor = new Color(1f, 0.25f, 0.25f); // red-ish
+
     // Keep last tweens to avoid stacking
     private Tween heartTween, careerTween, happinessTween;
 
+    // Cache base colors & scales to restore quickly
+    private Color heartBaseColor, careerBaseColor, happinessBaseColor;
     private Vector3 heartBaseScale;
     private Vector3 careerBaseScale;
     private Vector3 happinessBaseScale;
 
     private void Awake()
     {
+        // Cache original colors so we can restore after the flash
+        heartBaseColor = heartImage.color;
+        careerBaseColor = careerImage.color;
+        happinessBaseColor = happinessImage.color;
+
         heartBaseScale = heartPointer.rectTransform.localScale;
         careerBaseScale = careerPointer.rectTransform.localScale;
         happinessBaseScale = happinessPointer.rectTransform.localScale;
@@ -53,31 +64,65 @@ public class StatView : MonoBehaviour
     [Method] // optional if you use any inspector tool
     public void UpdateHeartValue(float value)
     {
-        heartTween?.Kill(false); // kill previous tween targeting this image
-        heartTween = heartImage
-            .DOFillAmount(Mathf.Clamp01(value), duration)
-            .SetEase(Ease.InOutSine)
-            .SetUpdate(useUnscaledTime);
+        AnimateBar(
+            image: heartImage,
+            tweenRef: ref heartTween,
+            newValue: value,
+            baseColor: heartBaseColor
+        );
     }
 
     [Method]
     public void UpdateCareerValue(float value)
     {
-        careerTween?.Kill(false);
-        careerTween = careerImage
-            .DOFillAmount(Mathf.Clamp01(value), duration)
-            .SetEase(Ease.InOutSine)
-            .SetUpdate(useUnscaledTime);
+        AnimateBar(
+            image: careerImage,
+            tweenRef: ref careerTween,
+            newValue: value,
+            baseColor: careerBaseColor
+        );
     }
 
     [Method]
     public void UpdateHappinessValue(float value)
     {
-        happinessTween?.Kill(false);
-        happinessTween = happinessImage
-            .DOFillAmount(Mathf.Clamp01(value), duration)
-            .SetEase(Ease.InOutSine)
-            .SetUpdate(useUnscaledTime);
+        AnimateBar(
+            image: happinessImage,
+            tweenRef: ref happinessTween,
+            newValue: value,
+            baseColor: happinessBaseColor
+        );
+    }
+
+    // Core helper: flash color (green/red) during fill tween, then instantly restore base color
+    private void AnimateBar(Image image, ref Tween tweenRef, float newValue, Color baseColor)
+    {
+        // Kill any previous animation on this bar
+        tweenRef?.Kill(false);
+
+        float current = image.fillAmount;
+        float target = Mathf.Clamp01(newValue);
+
+        // If no change, just ensure color is base and return
+        if (Mathf.Approximately(current, target))
+        {
+            image.fillAmount = target;
+            image.color = baseColor;
+            return;
+        }
+
+        // Decide flash color: green on increase, red on decrease
+        Color flashColor = (target > current) ? increaseColor : decreaseColor;
+
+        // Build a sequence: set flash color -> animate fill -> restore base color
+        Sequence seq = DOTween.Sequence().SetUpdate(useUnscaledTime);
+        seq.AppendCallback(() => image.color = flashColor);
+        seq.Join(image
+            .DOFillAmount(target, duration)
+            .SetEase(Ease.InOutSine));
+        seq.AppendCallback(() => image.color = baseColor); // instant restore on complete
+
+        tweenRef = seq;
     }
 
     public void ShowHeartPointer(bool show) => AnimatePointer(heartPointer, show, heartBaseScale);
