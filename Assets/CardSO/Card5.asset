@@ -18,11 +18,11 @@ MonoBehaviour:
   Artwork: {fileID: 9170336767706615490, guid: 1878778cee10d84468f75ab739c0f900, type: 3}
   leftAnswer: No
   rightAnswer: Yes
-  leftHeartImpact: -5
+  leftHeartImpact: 5
   leftCareerImpact: 0
-  leftHappinessImpact: 12
-  rightHeartImpact: 2
+  leftHappinessImpact: -12
+  rightHeartImpact: -2
   rightCareerImpact: 0
-  rightHappinessImpact: -5
+  rightHappinessImpact: 5
   impactType: 000000000200000001000000
   ageImpact: 1

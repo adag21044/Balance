@@ -16,13 +16,13 @@ MonoBehaviour:
   Title: Weekend Trip
   Description: Your friends are going on a spontaneous weekend trip.
   Artwork: {fileID: 8284676879855425092, guid: 0d89bfc4b2babd0449714393081e43a5, type: 3}
-  leftAnswer: Yes
-  rightAnswer: No
-  leftHeartImpact: 2
-  leftCareerImpact: -5
-  leftHappinessImpact: 10
-  rightHeartImpact: 0
-  rightCareerImpact: 5
-  rightHappinessImpact: -5
+  leftAnswer: No
+  rightAnswer: Yes
+  leftHeartImpact: 0
+  leftCareerImpact: 5
+  leftHappinessImpact: -5
+  rightHeartImpact: 2
+  rightCareerImpact: -5
+  rightHappinessImpact: 10
   impactType: 000000000100000002000000
   ageImpact: 1
