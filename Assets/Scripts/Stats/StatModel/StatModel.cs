@@ -14,13 +14,17 @@ public class StatModel
     private float happinessPercantage;
     public float HappinessPercantage => happinessPercantage;
 
+    private float age;
+
     public event Action<float> OnHeartChanged;
     public event Action<float> OnCareerChanged;
     public event Action<float> OnHappinessChanged;
+    public event Action<float> OnAgeChanged;
 
     public static event Action OnHeartAffected;
     public static event Action OnCareerAffected;
     public static event Action OnHappinessAffected;
+    public static event Action OnAgeAffected;
 
     public static event Action OnPreviewCancelled;
 
@@ -31,6 +35,7 @@ public class StatModel
         heartPercantage = 0.5f;
         careerPercantage = 0.5f;
         happinessPercantage = 0.5f;
+        age = 18f; // Initialize age
     }
 
     /// <summary>
@@ -44,6 +49,7 @@ public class StatModel
         if (card.leftHeartImpact != 0 || card.rightHeartImpact != 0) OnHeartAffected?.Invoke();
         if (card.leftCareerImpact != 0 || card.rightCareerImpact != 0) OnCareerAffected?.Invoke();
         if (card.leftHappinessImpact != 0 || card.rightHappinessImpact != 0) OnHappinessAffected?.Invoke();
+        if (card.ageImpact != 0) OnAgeAffected?.Invoke();
     }
 
     /// <summary>
@@ -58,7 +64,7 @@ public class StatModel
         {
             if (card.leftHeartImpact != 0)
                 ApplyAndRaise(ref heartPercantage, card.leftHeartImpact * IMPACT_SCALE, OnHeartChanged);
-            if (card.leftCareerImpact != 0)
+            if (card.leftCareerImpact != 0) 
                 ApplyAndRaise(ref careerPercantage, card.leftCareerImpact * IMPACT_SCALE, OnCareerChanged);
             if (card.leftHappinessImpact != 0)
                 ApplyAndRaise(ref happinessPercantage, card.leftHappinessImpact * IMPACT_SCALE, OnHappinessChanged);
@@ -71,6 +77,15 @@ public class StatModel
                 ApplyAndRaise(ref careerPercantage, card.rightCareerImpact * IMPACT_SCALE, OnCareerChanged);
             if (card.rightHappinessImpact != 0)
                 ApplyAndRaise(ref happinessPercantage, card.rightHappinessImpact * IMPACT_SCALE, OnHappinessChanged);
+        }
+
+        // 🔹 Yaş güncellemesi (ayrı)
+        if (card.ageImpact != 0)
+        {
+            float beforeAge = age;
+            age += card.ageImpact / 2; // burada istediğin mantığa göre clamp ekleyebilirsin
+            Debug.Log($"[StatModel] age before={beforeAge}, impact={card.ageImpact}, after={age}");
+            OnAgeChanged?.Invoke(age);
         }
     }
 

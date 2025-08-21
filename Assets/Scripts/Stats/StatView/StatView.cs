@@ -1,12 +1,15 @@
 using UnityEngine.UI;
 using UnityEngine;
 using DG.Tweening;
+using TMPro;
 
 public class StatView : MonoBehaviour
 {
     [SerializeField] private Image heartImage;
     [SerializeField] private Image careerImage;
     [SerializeField] private Image happinessImage;
+
+    [SerializeField] private TextMeshProUGUI ageText;
 
     [Header("Pointers")]
     [SerializeField] private Image heartPointer;
@@ -42,8 +45,8 @@ public class StatView : MonoBehaviour
     // Call once after you subscribe events (no tween; just snap to model)
     public void SnapToModel(StatModel model)
     {
-        heartImage.fillAmount     = Mathf.Clamp01(model.HeartPercantage);
-        careerImage.fillAmount    = Mathf.Clamp01(model.CareerPercantage);
+        heartImage.fillAmount = Mathf.Clamp01(model.HeartPercantage);
+        careerImage.fillAmount = Mathf.Clamp01(model.CareerPercantage);
         happinessImage.fillAmount = Mathf.Clamp01(model.HappinessPercantage);
     }
 
@@ -77,9 +80,9 @@ public class StatView : MonoBehaviour
             .SetUpdate(useUnscaledTime);
     }
 
-    public void ShowHeartPointer(bool show)    => AnimatePointer(heartPointer, show, heartBaseScale);
-    public void ShowCareerPointer(bool show)   => AnimatePointer(careerPointer, show, careerBaseScale);
-    public void ShowHappinessPointer(bool show)=> AnimatePointer(happinessPointer, show, happinessBaseScale);
+    public void ShowHeartPointer(bool show) => AnimatePointer(heartPointer, show, heartBaseScale);
+    public void ShowCareerPointer(bool show) => AnimatePointer(careerPointer, show, careerBaseScale);
+    public void ShowHappinessPointer(bool show) => AnimatePointer(happinessPointer, show, happinessBaseScale);
 
     private void AnimatePointer(Image pointer, bool show, Vector3 baseScale)
     {
@@ -96,5 +99,11 @@ public class StatView : MonoBehaviour
         pointer.rectTransform.DOScale(targetScale, duration)
                .SetEase(Ease.OutBack)
                .SetUpdate(useUnscaledTime);
+    }
+
+    [Method]
+    public void UpdateAgeText(float age)
+    {
+        ageText.text = $"{Mathf.FloorToInt(age)}"; // Display age as an integer
     }
 }

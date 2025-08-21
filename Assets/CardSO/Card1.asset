@@ -25,3 +25,4 @@ MonoBehaviour:
   rightCareerImpact: 2
   rightHappinessImpact: -2
   impactType: 000000000200000001000000
+  ageImpact: 1
