@@ -144,7 +144,7 @@ public class CardController : MonoBehaviour,
             SetEndGameCard();
         }
     }
-    private void SetEndGameCard()
+    public void SetEndGameCard()
     {
         if (gameEndSOs == null || gameEndSOs.Length == 0) return;
         int idx = Random.Range(0, gameEndSOs.Length);

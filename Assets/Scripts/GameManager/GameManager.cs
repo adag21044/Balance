@@ -45,9 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
-        StatModel.Instance.RaiseHeartFinished(zero);
-        StatModel.Instance.RaiseCareerFinished(zero);
-        StatModel.Instance.RaiseHappinessFinished(zero);
+        cardController.SetEndGameCard();
 
         Debug.Log("Game Over");
     }
