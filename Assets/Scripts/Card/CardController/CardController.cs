@@ -26,6 +26,8 @@ public class CardController : MonoBehaviour,
     // Keep last index to avoid immediate repeats
     private int lastIndex = -1;
 
+    private bool isGameOver;
+
     private void Awake()
     {
         if (!cardView) cardView = GetComponent<CardView>();
@@ -57,14 +59,14 @@ public class CardController : MonoBehaviour,
 
     public void OnBeginDrag(PointerEventData _)
     {
-        if (Model.IsLocked) return;
+        if (Model.IsLocked || isGameOver) return;
         StatModel.PreviewImpacts(cardSO);
         initialLocalPos = cardView.RectT.localPosition;
     }
 
     public void OnDrag(PointerEventData data)
     {
-        if (Model.IsLocked) return;
+        if (Model.IsLocked || isGameOver) return;
         cardView.SetDragVisual(data.delta.x, screenHalf);
 
         float dx = cardView.RectT.localPosition.x - initialLocalPos.x;
@@ -91,7 +93,7 @@ public class CardController : MonoBehaviour,
 
     public void OnEndDrag(PointerEventData _)
     {
-        if (Model.IsLocked) return;
+        if (Model.IsLocked || isGameOver) return;
 
         float moved = Mathf.Abs(cardView.RectT.localPosition.x - initialLocalPos.x);
         float threshold = Screen.width * swipeThreshold;
@@ -145,22 +147,57 @@ public class CardController : MonoBehaviour,
         //    SetEndGameCard();
         //}
     }
-    public void SetEndGameCard()
+    public void SetEndGameCard(StatModel statModel)
     {
-        if (gameEndSOs == null || gameEndSOs.Length == 0) return;
+        Debug.Log("[CardController] SetEndGameCard() called");
+
+        isGameOver = true;
+
+        if (gameEndSOs == null || gameEndSOs.Length == 0)
+        {
+            Debug.LogError("[CardController] gameEndSO array is null or empty! Cannot set end game card.");
+            return;
+        }    
+        
         int idx = Random.Range(0, gameEndSOs.Length);
         cardSO = gameEndSOs[idx];
         Model = new CardModel(cardSO);
+
         cardView.SetContent(cardSO);
-        cardView.CaptureInitial();
-        initialLocalPos = cardView.RectT.localPosition;
+
+        // --- UI reset ekle ---
+        DOTween.Kill(cardView, complete: false);
+        DOTween.Kill(cardView.gameObject, complete: false);
+        ResetAllAlphas(cardView.gameObject);
+
+        var rt = cardView.RectT;
+        rt.localRotation = Quaternion.identity;
+        rt.localPosition = initialLocalPos;
+        rt.localScale    = Vector3.one * 0.9f;
+        cardView.transform.SetAsLastSibling();
+
+        var cg = cardView.GetComponent<CanvasGroup>();
+        if (cg != null) cg.alpha = 0f;
+
+        Sequence show = DOTween.Sequence();
+        if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
+        show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
+
+        // yanıt yazılarını temizle
+        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.RightAnswerText, "");
     }
+
 
     private void OnSwipedByMovement(bool toLeft)
     {
+        if (isGameOver) return;
+
         Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
         StatModel.Instance.ApplyCard(cardSO, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
-        ReloadWithRandomCard(); // yeni random SO bağla
+        
+        if (!isGameOver)
+            ReloadWithRandomCard();
     }
 
     public void Init(CardSO so)

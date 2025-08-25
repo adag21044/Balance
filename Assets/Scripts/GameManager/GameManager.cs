@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private Action<float> onCareerFinished;
     private Action<float> onHappinessFinished;
 
+    public StatModel statModel => StatModel.Instance;
+
     private void Awake()
     {
         if (Instance == null)
@@ -45,8 +47,8 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
-        cardController.SetEndGameCard();
+        cardController.SetEndGameCard(statModel);
 
-        Debug.Log("Game Over");
+        Debug.Log("[GameManager] Game Over");
     }
 }

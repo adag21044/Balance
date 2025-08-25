@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card8
+  m_EditorClassIdentifier: 
+  Id: card_008
+  Title: Final Diagnosis
+  Description: "Your body couldn\u2019t take it anymore. Illness overwhelmed you,
+    and your story ends here."
+  Artwork: {fileID: 3049463802440243677, guid: 8d1622b9e0f5d3942862f01d28ffcff7, type: 3}
+  leftAnswer: 
+  rightAnswer: 
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 0
+  impactType: 
+  ageImpact: 0
