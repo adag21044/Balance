@@ -1964,6 +1964,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 683ec0df72716df40ae3e8a0a1bd0c36, type: 2}
   - {fileID: 11400000, guid: f9d3e6fbe6519e94d8770d9ec240b1df, type: 2}
   cardSO: {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
+  gameEndSOs:
+  - {fileID: 11400000, guid: 08cc0b9c0d452d547b0f7d116f908c62, type: 2}
   cardView: {fileID: 1381719358}
   swipeThreshold: 0.4
   destroyOnSwipe: 0

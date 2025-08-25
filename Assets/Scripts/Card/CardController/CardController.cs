@@ -10,6 +10,7 @@ public class CardController : MonoBehaviour,
     [Header("Wiring")]
     [SerializeField] private CardSO[] cardSOs;   // deck
     [SerializeField] private CardSO cardSO;      // current
+    [SerializeField] private CardSO[] gameEndSOs;   
     [SerializeField] private CardView cardView;
 
     [Header("Swipe Params")]
@@ -133,6 +134,25 @@ public class CardController : MonoBehaviour,
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
         statView.ShowHappinessPointer(false);
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Debug.Log("[CardController] setting end game card");
+            SetEndGameCard();
+        }
+    }
+    private void SetEndGameCard()
+    {
+        if (gameEndSOs == null || gameEndSOs.Length == 0) return;
+        int idx = Random.Range(0, gameEndSOs.Length);
+        cardSO = gameEndSOs[idx];
+        Model = new CardModel(cardSO);
+        cardView.SetContent(cardSO);
+        cardView.CaptureInitial();
+        initialLocalPos = cardView.RectT.localPosition;
     }
 
     private void OnSwipedByMovement(bool toLeft)
