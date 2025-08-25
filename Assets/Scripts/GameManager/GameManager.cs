@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [SerializeField] private CardController cardController;
+    [SerializeField] private StatController statController;
 
     private void Awake()
     {
@@ -14,4 +15,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
+
+    
 }
