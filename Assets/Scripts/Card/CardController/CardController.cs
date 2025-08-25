@@ -114,7 +114,9 @@ public class CardController : MonoBehaviour,
                     Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
 
                     // Apply stat changes of the card
-                     StatModel.Instance.ApplyCard(decidedCard, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
+                    StatModel.Instance.ApplyCard(decidedCard, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
+
+                    if (isGameOver) return;
 
                     // --- KEY PART: reload instead of destroy ---
                     if (destroyOnSwipe)
@@ -158,7 +160,7 @@ public class CardController : MonoBehaviour,
             Debug.LogError("[CardController] gameEndSO array is null or empty! Cannot set end game card.");
             return;
         }    
-        
+
         int idx = Random.Range(0, gameEndSOs.Length);
         cardSO = gameEndSOs[idx];
         Model = new CardModel(cardSO);
