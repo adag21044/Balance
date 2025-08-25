@@ -138,11 +138,12 @@ public class CardController : MonoBehaviour,
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("[CardController] setting end game card");
-            SetEndGameCard();
-        }
+        // For testing purposes
+        //if(Input.GetKeyDown(KeyCode.E))
+        //{
+        //    Debug.Log("[CardController] setting end game card");
+        //    SetEndGameCard();
+        //}
     }
     public void SetEndGameCard()
     {
