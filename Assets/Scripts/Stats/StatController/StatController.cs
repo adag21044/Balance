@@ -20,7 +20,7 @@ public class StatController : MonoBehaviour
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
         statView.ShowHappinessPointer(false);
-        
+
         statView.SnapToModel(statModel);
     }
 }

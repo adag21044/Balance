@@ -2190,6 +2190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardController: {fileID: 1381719360}
+  statController: {fileID: 788613124}
 --- !u!4 &1646404105
 Transform:
   m_ObjectHideFlags: 0
