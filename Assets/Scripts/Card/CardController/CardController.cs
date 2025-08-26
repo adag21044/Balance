@@ -27,6 +27,7 @@ public class CardController : MonoBehaviour,
     private int lastIndex = -1;
 
     private bool isGameOver;
+    [SerializeField] private CardSoundPlayer soundPlayer;
 
     private void Awake()
     {
@@ -107,6 +108,8 @@ public class CardController : MonoBehaviour,
         {
             // Capture the current SO BEFORE any reload
             var decidedCard = cardSO;
+            
+            soundPlayer.PlaySwipeSound();
             
             cardView.AnimateSwipeOut(toLeft, Screen.width)
                 .OnComplete(() =>
