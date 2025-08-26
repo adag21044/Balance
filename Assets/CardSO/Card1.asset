@@ -21,8 +21,10 @@ MonoBehaviour:
   leftHeartImpact: 10
   leftCareerImpact: -2
   leftHappinessImpact: 5
+  leftSociabilityImpact: 5
   rightHeartImpact: -5
   rightCareerImpact: 2
   rightHappinessImpact: -2
-  impactType: 000000000200000001000000
+  rightSociabilityImpact: -5
+  impactType: 00000000020000000100000003000000
   ageImpact: 1

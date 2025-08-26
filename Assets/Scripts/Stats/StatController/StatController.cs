@@ -11,15 +11,19 @@ public class StatController : MonoBehaviour
         statModel.OnHeartChanged += statView.UpdateHeartValue;
         statModel.OnCareerChanged += statView.UpdateCareerValue;
         statModel.OnHappinessChanged += statView.UpdateHappinessValue;
+        statModel.OnSociabilityChanged += statView.UpdateSociabilityValue;
+
         statModel.OnAgeChanged += age => statView.UpdateAgeText(age);   
 
         StatModel.OnHeartAffected += () => statView.ShowHeartPointer(true);
         StatModel.OnCareerAffected += () => statView.ShowCareerPointer(true);
         StatModel.OnHappinessAffected += () => statView.ShowHappinessPointer(true);
+        StatModel.OnSociabilityAffected += () => statView.ShowSociabilityPointer(true);
 
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
         statView.ShowHappinessPointer(false);
+        statView.ShowSociabilityPointer(false);
 
         statView.SnapToModel(statModel);
     }

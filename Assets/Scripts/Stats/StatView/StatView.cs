@@ -8,6 +8,7 @@ public class StatView : MonoBehaviour
     [SerializeField] private Image heartImage;
     [SerializeField] private Image careerImage;
     [SerializeField] private Image happinessImage;
+    [SerializeField] private Image sociabilityImage;
 
     [SerializeField] private TextMeshProUGUI ageText;
 
@@ -15,6 +16,8 @@ public class StatView : MonoBehaviour
     [SerializeField] private Image heartPointer;
     [SerializeField] private Image careerPointer;
     [SerializeField] private Image happinessPointer;
+    [SerializeField] private Image sociabilityPointer;
+
 
     [Header("Tween Settings")]
     [SerializeField] private float duration = 0.5f;
@@ -25,13 +28,14 @@ public class StatView : MonoBehaviour
     [SerializeField] private Color decreaseColor = new Color(1f, 0.25f, 0.25f); // red-ish
 
     // Keep last tweens to avoid stacking
-    private Tween heartTween, careerTween, happinessTween;
+    private Tween heartTween, careerTween, happinessTween, sociabilityTween;
 
     // Cache base colors & scales to restore quickly
-    private Color heartBaseColor, careerBaseColor, happinessBaseColor;
+    private Color heartBaseColor, careerBaseColor, happinessBaseColor, sociabilityBaseColor;
     private Vector3 heartBaseScale;
     private Vector3 careerBaseScale;
     private Vector3 happinessBaseScale;
+    private Vector3 sociabilityBaseScale;
 
     private void Awake()
     {
@@ -39,10 +43,12 @@ public class StatView : MonoBehaviour
         heartBaseColor = heartImage.color;
         careerBaseColor = careerImage.color;
         happinessBaseColor = happinessImage.color;
+        sociabilityBaseColor = sociabilityImage.color;
 
         heartBaseScale = heartPointer.rectTransform.localScale;
         careerBaseScale = careerPointer.rectTransform.localScale;
         happinessBaseScale = happinessPointer.rectTransform.localScale;
+        sociabilityBaseScale = sociabilityPointer.rectTransform.localScale;
     }
 
     private void OnDisable()
@@ -51,6 +57,7 @@ public class StatView : MonoBehaviour
         heartTween?.Kill(false);
         careerTween?.Kill(false);
         happinessTween?.Kill(false);
+        sociabilityTween?.Kill(false);
     }
 
     // Call once after you subscribe events (no tween; just snap to model)
@@ -59,6 +66,7 @@ public class StatView : MonoBehaviour
         heartImage.fillAmount = Mathf.Clamp01(model.HeartPercantage);
         careerImage.fillAmount = Mathf.Clamp01(model.CareerPercantage);
         happinessImage.fillAmount = Mathf.Clamp01(model.HappinessPercantage);
+        sociabilityImage.fillAmount = Mathf.Clamp01(model.SociabilityPercantage);
     }
 
     [Method] // optional if you use any inspector tool
@@ -91,6 +99,17 @@ public class StatView : MonoBehaviour
             tweenRef: ref happinessTween,
             newValue: value,
             baseColor: happinessBaseColor
+        );
+    }
+
+    [Method]
+    public void UpdateSociabilityValue(float value)
+    {
+        AnimateBar(
+            image: sociabilityImage,
+            tweenRef: ref sociabilityTween,
+            newValue: value,
+            baseColor: sociabilityBaseColor
         );
     }
 
@@ -128,6 +147,8 @@ public class StatView : MonoBehaviour
     public void ShowHeartPointer(bool show) => AnimatePointer(heartPointer, show, heartBaseScale);
     public void ShowCareerPointer(bool show) => AnimatePointer(careerPointer, show, careerBaseScale);
     public void ShowHappinessPointer(bool show) => AnimatePointer(happinessPointer, show, happinessBaseScale);
+    public void ShowSociabilityPointer(bool show) => AnimatePointer(sociabilityPointer, show, sociabilityBaseScale);
+    
 
     private void AnimatePointer(Image pointer, bool show, Vector3 baseScale)
     {

@@ -17,11 +17,13 @@ public class CardSO : ScriptableObject
     public int leftHeartImpact;
     public int leftCareerImpact;
     public int leftHappinessImpact;
+    public int leftSociabilityImpact;
 
     [Header("RIGHT Swipe Impacts")]
     public int rightHeartImpact;
     public int rightCareerImpact;
     public int rightHappinessImpact;
+    public int rightSociabilityImpact;
 
     [Header("Impact Type (optional tags)")]
     public List<ImpactType> impactType;
@@ -33,5 +35,6 @@ public enum ImpactType
 {
     Heart,
     Career,
-    Happiness
+    Happiness,
+    Sociability
 }

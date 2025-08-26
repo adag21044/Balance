@@ -14,21 +14,27 @@ public class StatModel
     private float happinessPercantage;
     public float HappinessPercantage => happinessPercantage;
 
+    private float sociabilityPercantage;
+    public float SociabilityPercantage => sociabilityPercantage;
+
     private float age;
 
     public event Action<float> OnHeartChanged;
     public event Action<float> OnCareerChanged;
     public event Action<float> OnHappinessChanged;
     public event Action<float> OnAgeChanged;
+    public event Action<float> OnSociabilityChanged;
 
     public static event Action OnHeartAffected;
     public static event Action OnCareerAffected;
     public static event Action OnHappinessAffected;
     public static event Action OnAgeAffected;
+    public static event Action OnSociabilityAffected;
 
     public event Action<float> OnHeartFinished;
     public event Action<float> OnCareerFinished;
     public event Action<float> OnHappinessFinished;
+    public event Action<float> OnSociabilityFinished;
 
 
     public static event Action OnPreviewCancelled;
@@ -40,6 +46,7 @@ public class StatModel
         heartPercantage = 0.5f;
         careerPercantage = 0.5f;
         happinessPercantage = 0.5f;
+        sociabilityPercantage = 0.5f;
         age = 18f; // Initialize age
     }
 
@@ -54,6 +61,7 @@ public class StatModel
         if (card.leftHeartImpact != 0 || card.rightHeartImpact != 0) OnHeartAffected?.Invoke();
         if (card.leftCareerImpact != 0 || card.rightCareerImpact != 0) OnCareerAffected?.Invoke();
         if (card.leftHappinessImpact != 0 || card.rightHappinessImpact != 0) OnHappinessAffected?.Invoke();
+        if (card.leftSociabilityImpact != 0 || card.rightSociabilityImpact != 0) OnSociabilityAffected?.Invoke();
         if (card.ageImpact != 0) OnAgeAffected?.Invoke();
     }
 
@@ -73,6 +81,8 @@ public class StatModel
                 ApplyAndRaise(ref careerPercantage, card.leftCareerImpact * IMPACT_SCALE, OnCareerChanged, OnCareerFinished);
             if (card.leftHappinessImpact != 0)
                 ApplyAndRaise(ref happinessPercantage, card.leftHappinessImpact * IMPACT_SCALE, OnHappinessChanged, OnHappinessFinished);
+            if (card.leftSociabilityImpact != 0)
+                ApplyAndRaise(ref sociabilityPercantage, card.leftSociabilityImpact * IMPACT_SCALE, OnSociabilityChanged, OnSociabilityFinished);
         }
         else // Right
         {
@@ -82,6 +92,8 @@ public class StatModel
                 ApplyAndRaise(ref careerPercantage, card.rightCareerImpact * IMPACT_SCALE, OnCareerChanged, OnCareerFinished);
             if (card.rightHappinessImpact != 0)
                 ApplyAndRaise(ref happinessPercantage, card.rightHappinessImpact * IMPACT_SCALE, OnHappinessChanged, OnHappinessFinished);
+            if (card.rightSociabilityImpact != 0)
+                ApplyAndRaise(ref sociabilityPercantage, card.rightSociabilityImpact * IMPACT_SCALE, OnSociabilityChanged, OnSociabilityFinished);
         }
 
         // 🔹 Yaş güncellemesi (ayrı)
@@ -111,8 +123,9 @@ public class StatModel
 
 
     public static void CancelPreview() => OnPreviewCancelled?.Invoke();
-    
+
     public void RaiseCareerFinished(float value) => OnCareerFinished?.Invoke(value);
     public void RaiseHeartFinished(float value) => OnHeartFinished?.Invoke(value);
     public void RaiseHappinessFinished(float value) => OnHappinessFinished?.Invoke(value);
+    public void RaiseSociabilityFinished(float value) => OnSociabilityFinished?.Invoke(value);
 }

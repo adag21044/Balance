@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private Action<float> onHeartFinished;
     private Action<float> onCareerFinished;
     private Action<float> onHappinessFinished;
+    private Action<float> onSociabilityFinished;
 
     public StatModel statModel => StatModel.Instance;
 
@@ -32,10 +33,12 @@ public class GameManager : MonoBehaviour
         onHeartFinished = _ => FinishGame();
         onCareerFinished = _ => FinishGame();
         onHappinessFinished = _ => FinishGame();
+        onSociabilityFinished = _ => FinishGame();
 
         StatModel.Instance.OnHeartFinished += onHeartFinished;
         StatModel.Instance.OnCareerFinished += onCareerFinished;
         StatModel.Instance.OnHappinessFinished += onHappinessFinished;
+        StatModel.Instance.OnSociabilityFinished += onSociabilityFinished;
     }
 
     private void OnDisable()
@@ -43,6 +46,7 @@ public class GameManager : MonoBehaviour
         StatModel.Instance.OnHeartFinished -= onHeartFinished;
         StatModel.Instance.OnCareerFinished -= onCareerFinished;
         StatModel.Instance.OnHappinessFinished -= onHappinessFinished;
+        StatModel.Instance.OnSociabilityFinished -= onSociabilityFinished;
     }
 
     public void FinishGame()
