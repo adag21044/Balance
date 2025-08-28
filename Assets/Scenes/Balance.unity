@@ -1401,6 +1401,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495086930}
   m_CullTransparentMesh: 1
+--- !u!1 &515388909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 515388911}
+  - component: {fileID: 515388910}
+  m_Layer: 0
+  m_Name: CardInitialAnimation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &515388910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515388909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 225d9737df3e1c34aa8daa4db4a4d80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 515388911}
+  stackCenter: {fileID: 1381719356}
+  pseudoCardPrefab: {fileID: 1381719355}
+  realCard: {fileID: 1381719356}
+  pseudoCount: 4
+  flyDuration: 0.45
+  stagger: 0.08
+  verticalOffset: -6
+  startScale: 0.92
+  endScale: 1
+  flyEase: 9
+  revealDelay: 0.12
+  revealPunch: 0.15
+  revealPunchTime: 0.22
+--- !u!224 &515388911
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515388909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -202, y: 286}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4659,7 +4721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2.7645874, y: -19.79004}
+  m_AnchoredPosition: {x: 2.7646484, y: -19.79004}
   m_SizeDelta: {x: -152.1034, y: -149.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626924677
@@ -6275,3 +6337,4 @@ SceneRoots:
   - {fileID: 537782992}
   - {fileID: 1214054166}
   - {fileID: 1066593547}
+  - {fileID: 515388911}
