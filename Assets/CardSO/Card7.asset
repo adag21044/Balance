@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card7
+  m_EditorClassIdentifier: 
+  Id: card_007
+  Title: Scholarship Offer
+  Description: "You received a competitive scholarship for a tough computer science
+    program. It\u2019s a great career step, but the workload will be heavy."
+  Artwork: {fileID: 0}
+  leftAnswer: Accept
+  rightAnswer: Decline
+  leftHeartImpact: -6
+  leftCareerImpact: 10
+  leftHappinessImpact: 2
+  leftSociabilityImpact: 5
+  rightHeartImpact: 2
+  rightCareerImpact: -6
+  rightHappinessImpact: -5
+  rightSociabilityImpact: -5
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 1
+  nextOnLeft: {fileID: 11400000, guid: eb540bad1d511fe418b1de972c6f1a25, type: 2}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []

@@ -28,6 +28,7 @@ public class CardController : MonoBehaviour,
 
     private bool isGameOver;
     [SerializeField] private CardSoundPlayer soundPlayer;
+    private SwipeDirection lastSwipeDir = SwipeDirection.Right;
 
     private void Awake()
     {
@@ -106,6 +107,8 @@ public class CardController : MonoBehaviour,
         }
         else
         {
+            lastSwipeDir = toLeft ? SwipeDirection.Left : SwipeDirection.Right;
+
             // Capture the current SO BEFORE any reload
             var decidedCard = cardSO;
             
@@ -114,10 +117,10 @@ public class CardController : MonoBehaviour,
             cardView.AnimateSwipeOut(toLeft, Screen.width)
                 .OnComplete(() =>
                 {
-                    Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
+                    Model.NotifySwiped(lastSwipeDir);
 
                     // Apply stat changes of the card
-                    StatModel.Instance.ApplyCard(decidedCard, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
+                    StatModel.Instance.ApplyCard(decidedCard, lastSwipeDir);
 
                     if (isGameOver) return;
 
@@ -128,7 +131,7 @@ public class CardController : MonoBehaviour,
                     }
                     else
                     {
-                        ReloadWithRandomCard(); // new behavior
+                        ReloadWith(GetChainedCardOrRandom());
                     }
                 });
         }
@@ -202,7 +205,7 @@ public class CardController : MonoBehaviour,
         StatModel.Instance.ApplyCard(cardSO, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
         
         if (!isGameOver)
-            ReloadWithRandomCard();
+            ReloadWith(GetChainedCardOrRandom());
     }
 
     public void Init(CardSO so)
@@ -281,6 +284,84 @@ public class CardController : MonoBehaviour,
 
         Debug.Log("[CardController] ReloadWithRandomCard() DONE");
     }
+
+    // Get chained card, if exists; otherwise, pick random
+    // Returns a chained card based on lastSwipeDir; falls back to random if none.
+    // CardController içine ekle
+    private CardSO GetChainedCardOrRandom()
+    {
+        if (cardSO == null) return PickRandomSO();
+
+        // 1) Tekil bağlantı
+        CardSO next = (lastSwipeDir == SwipeDirection.Left)
+            ? cardSO.nextOnLeft
+            : cardSO.nextOnRight;
+
+        if (next != null && next != cardSO)
+            return next;
+
+        // 2) Havuz bağlantı (isteğe bağlı)
+        CardSO[] pool = (lastSwipeDir == SwipeDirection.Left)
+            ? cardSO.nextPoolLeft
+            : cardSO.nextPoolRight;
+
+        if (pool != null && pool.Length > 0)
+        {
+            int tries = 5;
+            while (tries-- > 0)
+            {
+                var candidate = pool[Random.Range(0, pool.Length)];
+                if (candidate != null && candidate != cardSO) return candidate;
+            }
+            foreach (var c in pool) if (c != null) return c;
+        }
+
+        // 3) Zincir yoksa rastgele
+        return PickRandomSO();
+    }
+
+
+    // Same as ReloadWithRandomCard(), but takes an explicit CardSO
+    private void ReloadWith(CardSO next)
+    {
+        if (next == null)
+        {
+            Debug.LogWarning("[CardController] ReloadWith(null) -> falling back to random");
+            next = PickRandomSO();
+            if (next == null)
+            {
+                Debug.LogError("[CardController] No card available!");
+                return;
+            }
+        }
+
+        cardSO = next;
+        Debug.Log($"[CardController] ReloadWith() -> {cardSO.name}");
+
+        DOTween.Kill(cardView, complete: false);
+        DOTween.Kill(cardView.gameObject, complete: false);
+        ResetAllAlphas(cardView.gameObject);
+
+        Model = new CardModel(cardSO);
+        cardView.SetContent(cardSO);
+
+        var rt = cardView.RectT;
+        rt.localRotation = Quaternion.identity;
+        rt.localPosition = initialLocalPos;
+        rt.localScale    = Vector3.one * 0.9f;
+        cardView.transform.SetAsLastSibling();
+
+        var cg = cardView.GetComponent<CanvasGroup>();
+        if (cg != null) cg.alpha = 0f;
+
+        var show = DOTween.Sequence();
+        if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
+        show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
+
+        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.RightAnswerText, "");
+    }
+
 
     private void ResetAllAlphas(GameObject root)
     {

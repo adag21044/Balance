@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card8
+  m_EditorClassIdentifier: 
+  Id: card_008
+  Title: Local Job Opportunity
+  Description: "A nearby studio offers a junior position with flexible hours. It\u2019s
+    practical but growth might be slower."
+  Artwork: {fileID: 0}
+  leftAnswer: Take the job and start now
+  rightAnswer: Keep searching for a better offer
+  leftHeartImpact: 2
+  leftCareerImpact: 4
+  leftHappinessImpact: 3
+  leftSociabilityImpact: 1
+  rightHeartImpact: -2
+  rightCareerImpact: -4
+  rightHappinessImpact: -3
+  rightSociabilityImpact: -1
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []

@@ -4,6 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Card/CardSO")]
 public class CardSO : ScriptableObject
 {
+    [Header("Visuals & Text")]
     public string Id;
     public string Title;
     [TextArea] public string Description;
@@ -27,8 +28,15 @@ public class CardSO : ScriptableObject
 
     [Header("Impact Type (optional tags)")]
     public List<ImpactType> impactType;
-    
-    public float ageImpact; // Age impact, can be positive or negative
+
+    public float ageImpact; // Age impact
+
+    [Header("Chaining (optional)")]
+    public bool isChainCard; // If true, this card is part of a chain
+    public CardSO nextOnLeft;
+    public CardSO nextOnRight;
+    public CardSO[] nextPoolLeft;
+    public CardSO[] nextPoolRight;
 }
 
 public enum ImpactType

@@ -39,12 +39,49 @@ public class CardView : MonoBehaviour
     public void SetContent(CardSO config)
     {
         EnsureInit();
-        if (artworkImage) artworkImage.sprite = config.Artwork;
+
+        if (config == null)
+        {
+            Debug.LogError("[CardView] SetContent(config=null)");
+            // En azından boşalt
+            if (QuoteText) QuoteText.text = "";
+            if (NameText)  NameText.text  = "";
+            if (LeftAnswerText)  LeftAnswerText.text  = "";
+            if (RightAnswerText) RightAnswerText.text = "";
+            if (artworkImage) { artworkImage.sprite = null; artworkImage.enabled = false; }
+            canvasGroup.alpha = 1f;
+            return;
+        }
+
+        // --- Artwork ---
+        // CardSO'da alan adların farklı olabilir: Artwork / artwork
+        // Aşağıdaki satırı CardSO'na göre seç:
+        var sprite = config.Artwork; // eğer sende "artwork" ise: config.artwork
+        if (artworkImage)
+        {
+            artworkImage.sprite = sprite;
+            artworkImage.enabled = (sprite != null);
+        }
+
+        // --- Texts ---
+        // CardSO'da Title/Description yerine title/description kullanıyorsan BURAYI değiştir.
+        if (QuoteText) QuoteText.text = config.Description; // ya da config.description
+        if (NameText)  NameText.text  = config.Title;       // ya da config.title
+
+        // --- Answers must start empty (drag sırasında dolduruluyor) ---
+        if (LeftAnswerText)  LeftAnswerText.text  = "";
+        if (RightAnswerText) RightAnswerText.text = "";
+
+        // Görünürlük
         canvasGroup.alpha = 1f;
 
-        if (QuoteText) QuoteText.text = config.Description;
-        if (NameText) NameText.text = config.Title;
+        // İsteğe bağlı: önceki tweenlerden kalan artifaktları temizlemek için güvenli başlangıç
+        DOTween.Kill(QuoteText, complete: false);
+        DOTween.Kill(NameText,  complete: false);
+        DOTween.Kill(LeftAnswerText,  complete: false);
+        DOTween.Kill(RightAnswerText, complete: false);
     }
+
 
     public void CaptureInitial()
     {

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card10
+  m_Name: EndCard4
   m_EditorClassIdentifier: 
   Id: card_010
   Title: Broken Dreams
