@@ -16,8 +16,7 @@ public class CardMovement : MonoBehaviour,
     private bool draggedLeft;
     private Image img;
 
-    // 👉 Controller'a haber vermek için:
-    public event Action<bool> Swiped; // bool: true = left, false = right
+    public event Action<bool> Swiped; 
 
     private void Awake() => img = GetComponent<Image>();
 
@@ -62,11 +61,9 @@ public class CardMovement : MonoBehaviour,
            .Join(img.DOFade(0f, swipeDuration))
            .OnComplete(() =>
            {
-               // ❌ Destroy yok
-               // 👉 Controller'a haber ver
                Swiped?.Invoke(draggedLeft);
 
-               // Görseli resetle (Controller içerikten sonra ortalasın istersen bunu silebilirsin)
+               // reset for reuse
                transform.localRotation = Quaternion.identity;
                transform.localPosition = initialPos;
                img.color = new Color(img.color.r, img.color.g, img.color.b, 1f);

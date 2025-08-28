@@ -11,19 +11,19 @@ public class CardInitialAnimation : MonoBehaviour
 
     [Header("Animation Settings")]
     [SerializeField, Range(1, 10)] private int pseudoCount = 4;
-    [SerializeField] private float flyDuration = 0.65f;   // Daha ağır
-    [SerializeField] private float stagger = 0.2f;        // Kartlar arası bekleme
+    [SerializeField] private float flyDuration = 0.65f;   
+    [SerializeField] private float stagger = 0.2f;        // Latence entre chaque carte
     [SerializeField] private float verticalOffset = -6f;
     [SerializeField] private float startScale = 0.92f;
     [SerializeField] private float endScale = 1.0f;
-    [SerializeField] private Ease flyEase = Ease.OutExpo; // Daha dramatik
+    [SerializeField] private Ease flyEase = Ease.OutExpo; // more dramatic
 
     [Header("Real Card Reveal")]
     [SerializeField] private float revealDelay = 0.3f;
     [SerializeField] private float revealPunch = 0.15f;
     [SerializeField] private float revealPunchTime = 0.22f;
 
-    [Header("Audio")]  // 🔊 Ses ekleme
+    [Header("Audio")]  
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip cardFlyClip;
 
@@ -68,7 +68,7 @@ public class CardInitialAnimation : MonoBehaviour
             seq.Insert(i * stagger, rt.DOLocalRotate(new Vector3(0, 0, Random.Range(-4f, 4f)), t * 0.9f)
                                     .SetEase(Ease.OutQuad).SetLink(go));
 
-            // 🔊 Ses çalma - kart uçarken veya indiğinde
+            // 🔊 Sound playing
             int captureIndex = i;
             seq.InsertCallback(i * stagger, () =>
             {

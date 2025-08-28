@@ -236,7 +236,6 @@ public class CardController : MonoBehaviour,
     // Reuse the same GameObject and bind a fresh random CardSO
     private void ReloadWithRandomCard()
     {
-        // --- 0) Debug: gerçekten buraya geliyor muyuz?
         Debug.Log("[CardController] ReloadWithRandomCard() CALLED");
 
         // --- 1) Yeni veri seç
@@ -264,13 +263,13 @@ public class CardController : MonoBehaviour,
         // --- 4) Transform’u tam ortaya sıfırla
         var rt = cardView.RectT;
         rt.localRotation = Quaternion.identity;
-        rt.localPosition = initialLocalPos;      // Start’ta yakaladığın merkez
-        rt.localScale    = Vector3.one * 0.9f;   // küçükten büyüsün
+        rt.localPosition = initialLocalPos;      
+        rt.localScale    = Vector3.one * 0.9f;   // scale down a bit
 
-        // En üstte dursun (UI z-sırası)
+        // set as last sibling to be on top of other cards
         cardView.transform.SetAsLastSibling();
 
-        // --- 5) Minik giriş animasyonu
+        // animate in
         var cg = cardView.GetComponent<CanvasGroup>();
         if (cg != null) cg.alpha = 0f;
 
@@ -278,7 +277,6 @@ public class CardController : MonoBehaviour,
         if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
         show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
 
-        // --- 6) Yanıt yazılarını temizle
         cardView.SetAnswerText(cardView.LeftAnswerText,  "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
 
@@ -292,7 +290,6 @@ public class CardController : MonoBehaviour,
     {
         if (cardSO == null) return PickRandomSO();
 
-        // 1) Tekil bağlantı
         CardSO next = (lastSwipeDir == SwipeDirection.Left)
             ? cardSO.nextOnLeft
             : cardSO.nextOnRight;
@@ -300,7 +297,7 @@ public class CardController : MonoBehaviour,
         if (next != null && next != cardSO)
             return next;
 
-        // 2) Havuz bağlantı (isteğe bağlı)
+        // pool connections
         CardSO[] pool = (lastSwipeDir == SwipeDirection.Left)
             ? cardSO.nextPoolLeft
             : cardSO.nextPoolRight;
@@ -316,7 +313,7 @@ public class CardController : MonoBehaviour,
             foreach (var c in pool) if (c != null) return c;
         }
 
-        // 3) Zincir yoksa rastgele
+        // random if no chain found
         return PickRandomSO();
     }
 
@@ -378,7 +375,7 @@ public class CardController : MonoBehaviour,
             g.color = col;
         }
 
-        // TMP yazılar
+        // TMP texts
         var tmps = root.GetComponentsInChildren<TMP_Text>(includeInactive: true);
         foreach (var t in tmps) t.alpha = 1f;
     }

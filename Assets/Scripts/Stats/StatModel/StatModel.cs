@@ -96,7 +96,7 @@ public class StatModel
                 ApplyAndRaise(ref sociabilityPercantage, card.rightSociabilityImpact * IMPACT_SCALE, OnSociabilityChanged, OnSociabilityFinished);
         }
 
-        // 🔹 Yaş güncellemesi (ayrı)
+        // Age update
         if (card.ageImpact != 0)
         {
             float beforeAge = age;
@@ -113,7 +113,7 @@ public class StatModel
         Debug.Log($"[StatModel] stat before={before:F2}, delta={delta:F2}, after={statValue:F2}");
         evt?.Invoke(statValue);
 
-        // Eğer değer 0'a düştüyse bitiş event'ini çağır
+        // Call finished event if stat reached 0 or below
         if (statValue <= 0.001f)
         {
             Debug.Log("[StatModel] Stat finished!");

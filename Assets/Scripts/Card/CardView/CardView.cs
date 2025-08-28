@@ -43,7 +43,7 @@ public class CardView : MonoBehaviour
         if (config == null)
         {
             Debug.LogError("[CardView] SetContent(config=null)");
-            // En azından boşalt
+            
             if (QuoteText) QuoteText.text = "";
             if (NameText)  NameText.text  = "";
             if (LeftAnswerText)  LeftAnswerText.text  = "";
@@ -54,9 +54,7 @@ public class CardView : MonoBehaviour
         }
 
         // --- Artwork ---
-        // CardSO'da alan adların farklı olabilir: Artwork / artwork
-        // Aşağıdaki satırı CardSO'na göre seç:
-        var sprite = config.Artwork; // eğer sende "artwork" ise: config.artwork
+        var sprite = config.Artwork; 
         if (artworkImage)
         {
             artworkImage.sprite = sprite;
@@ -64,18 +62,17 @@ public class CardView : MonoBehaviour
         }
 
         // --- Texts ---
-        // CardSO'da Title/Description yerine title/description kullanıyorsan BURAYI değiştir.
-        if (QuoteText) QuoteText.text = config.Description; // ya da config.description
-        if (NameText)  NameText.text  = config.Title;       // ya da config.title
+        if (QuoteText) QuoteText.text = config.Description; 
+        if (NameText)  NameText.text  = config.Title;       
 
-        // --- Answers must start empty (drag sırasında dolduruluyor) ---
+        // --- Answers must start empty and fade in when set ---
         if (LeftAnswerText)  LeftAnswerText.text  = "";
         if (RightAnswerText) RightAnswerText.text = "";
 
-        // Görünürlük
+        // Visuality
         canvasGroup.alpha = 1f;
 
-        // İsteğe bağlı: önceki tweenlerden kalan artifaktları temizlemek için güvenli başlangıç
+        // Clean any ongoing tweens
         DOTween.Kill(QuoteText, complete: false);
         DOTween.Kill(NameText,  complete: false);
         DOTween.Kill(LeftAnswerText,  complete: false);
@@ -140,11 +137,11 @@ public class CardView : MonoBehaviour
     
     public void SetAnswerText(TMP_Text textComponent, string newText)
     {
-        // Eğer zaten aynı yazıysa direkt return
+        // if no change, do nothing
         if (textComponent.text == newText) return;
 
-        // Önce varsa eski yazıyı fade-out yap
-        DOTween.Kill(textComponent); // önceki tweenleri öldür
+        // if empty, just set
+        DOTween.Kill(textComponent); // kill ongoing tweens
         textComponent.DOFade(0f, 0.15f).OnComplete(() =>
         {
             textComponent.text = newText;
