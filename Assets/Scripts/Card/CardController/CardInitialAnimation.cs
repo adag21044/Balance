@@ -88,8 +88,8 @@ public class CardInitialAnimation : MonoBehaviour
         {
             // Scale from 0 to 1 quickly, then do a small punch
             seq.Append(realCard.DOScale(1f, 0.16f).SetEase(Ease.OutBack, 2f).SetLink(realCard.gameObject));
-            seq.Append(realCard.DOPunchScale(Vector3.one * revealPunch, revealPunchTime, 8, 0.9f)
-                               .SetLink(realCard.gameObject));
+            //seq.Append(realCard.DOPunchScale(Vector3.one * revealPunch, revealPunchTime, 8, 0.9f)
+            //                   .SetLink(realCard.gameObject));
         }
 
         // Clean up pseudo cards so only the real card remains

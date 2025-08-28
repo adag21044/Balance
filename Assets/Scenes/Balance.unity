@@ -1432,7 +1432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 515388911}
   stackCenter: {fileID: 1381719356}
-  pseudoCardPrefab: {fileID: 1381719355}
+  pseudoCardPrefab: {fileID: 277316338}
   realCard: {fileID: 1381719356}
   pseudoCount: 4
   flyDuration: 0.45
