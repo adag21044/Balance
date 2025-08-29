@@ -13,7 +13,7 @@ public class StatController : MonoBehaviour
         statModel.OnHappinessChanged += statView.UpdateHappinessValue;
         statModel.OnSociabilityChanged += statView.UpdateSociabilityValue;
 
-        statModel.OnAgeChanged += age => statView.UpdateAgeText(age);   
+        statModel.OnAgeChanged += age => statView.UpdateAgeText(age);
 
         StatModel.OnHeartAffected += () => statView.ShowHeartPointer(true);
         StatModel.OnCareerAffected += () => statView.ShowCareerPointer(true);
@@ -26,5 +26,39 @@ public class StatController : MonoBehaviour
         statView.ShowSociabilityPointer(false);
 
         statView.SnapToModel(statModel);
+
+        // Hide all pointers when preview is cancelled
+        StatModel.OnPreviewCancelled += () =>
+        {
+            statView.ShowHeartPointer(false);
+            statView.ShowCareerPointer(false);
+            statView.ShowHappinessPointer(false);
+            statView.ShowSociabilityPointer(false);
+        };
+    }
+    
+    private void OnDestroy()
+    {
+        if (statModel != null)
+        {
+            statModel.OnHeartChanged -= statView.UpdateHeartValue;
+            statModel.OnCareerChanged -= statView.UpdateCareerValue;
+            statModel.OnHappinessChanged -= statView.UpdateHappinessValue;
+            statModel.OnSociabilityChanged -= statView.UpdateSociabilityValue;
+            statModel.OnAgeChanged -= statView.UpdateAgeText;
+        }
+
+        StatModel.OnHeartAffected -= () => statView.ShowHeartPointer(true);
+        StatModel.OnCareerAffected -= () => statView.ShowCareerPointer(true);
+        StatModel.OnHappinessAffected -= () => statView.ShowHappinessPointer(true);
+        StatModel.OnSociabilityAffected -= () => statView.ShowSociabilityPointer(true);
+
+        StatModel.OnPreviewCancelled -= () =>
+        {
+            statView.ShowHeartPointer(false);
+            statView.ShowCareerPointer(false);
+            statView.ShowHappinessPointer(false);
+            statView.ShowSociabilityPointer(false);
+        };
     }
 }

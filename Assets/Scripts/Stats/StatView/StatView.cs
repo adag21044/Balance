@@ -36,6 +36,12 @@ public class StatView : MonoBehaviour
     private Vector3 careerBaseScale;
     private Vector3 happinessBaseScale;
     private Vector3 sociabilityBaseScale;
+   
+    private Tween heartPtrTween, careerPtrTween, happinessPtrTween, sociabilityPtrTween;
+    [SerializeField] private float pointerAutoHideDelay = 0.9f; // seconds
+
+    private Tween heartPtrTimer, careerPtrTimer, happinessPtrTimer, sociabilityPtrTimer;
+
 
     private void Awake()
     {
@@ -53,12 +59,27 @@ public class StatView : MonoBehaviour
 
     private void OnDisable()
     {
-        // kill tweens to avoid ghosts
-        heartTween?.Kill(false);
-        careerTween?.Kill(false);
-        happinessTween?.Kill(false);
-        sociabilityTween?.Kill(false);
+        heartTween?.Kill(true);
+        careerTween?.Kill(true);
+        happinessTween?.Kill(true);
+        sociabilityTween?.Kill(true);
+
+        heartPtrTween?.Kill(true);
+        careerPtrTween?.Kill(true);
+        happinessPtrTween?.Kill(true);
+        sociabilityPtrTween?.Kill(true);
+
+        heartPtrTimer?.Kill(false);
+        careerPtrTimer?.Kill(false);
+        happinessPtrTimer?.Kill(false);
+        sociabilityPtrTimer?.Kill(false);
+
+        heartPointer.gameObject.SetActive(false);
+        careerPointer.gameObject.SetActive(false);
+        happinessPointer.gameObject.SetActive(false);
+        sociabilityPointer.gameObject.SetActive(false);
     }
+
 
     // Call once after you subscribe events (no tween; just snap to model)
     public void SnapToModel(StatModel model)
@@ -144,28 +165,91 @@ public class StatView : MonoBehaviour
         tweenRef = seq;
     }
 
-    public void ShowHeartPointer(bool show) => AnimatePointer(heartPointer, show, heartBaseScale);
-    public void ShowCareerPointer(bool show) => AnimatePointer(careerPointer, show, careerBaseScale);
-    public void ShowHappinessPointer(bool show) => AnimatePointer(happinessPointer, show, happinessBaseScale);
-    public void ShowSociabilityPointer(bool show) => AnimatePointer(sociabilityPointer, show, sociabilityBaseScale);
+    public void ShowHeartPointer(bool show)
+    {
+        AnimatePointer(heartPointer, show, heartBaseScale, ref heartPtrTween);
+        heartPtrTimer?.Kill(false);
+
+        if (show)
+        {
+            heartPtrTimer = DOVirtual.DelayedCall(
+                duration + pointerAutoHideDelay,
+                () => AnimatePointer(heartPointer, false, heartBaseScale, ref heartPtrTween)
+            ).SetUpdate(useUnscaledTime);
+        }
+    }
+ 
+    public void ShowCareerPointer(bool show)
+    {
+        AnimatePointer(careerPointer, show, careerBaseScale, ref careerPtrTween);
+
+        careerPtrTimer?.Kill(false);
+
+        if (show)
+        {
+            careerPtrTimer = DOVirtual.DelayedCall(
+                duration + pointerAutoHideDelay,
+                () => AnimatePointer(careerPointer, false, careerBaseScale, ref careerPtrTween)
+            ).SetUpdate(useUnscaledTime);
+        }
+    }
     
 
-    private void AnimatePointer(Image pointer, bool show, Vector3 baseScale)
+    public void ShowHappinessPointer(bool show)
     {
+        AnimatePointer(happinessPointer, show, happinessBaseScale, ref happinessPtrTween);
+
+        happinessPtrTimer?.Kill(false);
+
+        if (show)
+        {
+            happinessPtrTimer = DOVirtual.DelayedCall(
+                duration + pointerAutoHideDelay,
+                () => AnimatePointer(happinessPointer, false, happinessBaseScale, ref happinessPtrTween)
+            ).SetUpdate(useUnscaledTime);
+        }
+    }
+
+    public void ShowSociabilityPointer(bool show)
+    {
+        // animate now
+        AnimatePointer(sociabilityPointer, show, sociabilityBaseScale, ref sociabilityPtrTween);
+
+        // cancel previous timer
+        sociabilityPtrTimer?.Kill(false);
+
+        // if showing, arm an auto-hide in case CancelPreview doesn't come
+        if (show)
+        {
+            sociabilityPtrTimer = DOVirtual.DelayedCall(
+                duration + pointerAutoHideDelay,
+                () => AnimatePointer(sociabilityPointer, false, sociabilityBaseScale, ref sociabilityPtrTween)
+            ).SetUpdate(useUnscaledTime);
+        }
+    }
+
+    
+
+    private void AnimatePointer(Image pointer, bool show, Vector3 baseScale, ref Tween tweenRef)
+    {
+        // Complete previous tween so its OnComplete runs (hides object if needed)
+        if (tweenRef != null && tweenRef.IsActive())
+            tweenRef.Kill(true); // <-- CHANGED: true (complete), not false
+
         pointer.gameObject.SetActive(true);
 
         float targetAlpha = show ? 1f : 0f;
         Vector3 targetScale = show ? baseScale : baseScale * 0.8f;
 
-        pointer.DOFade(targetAlpha, duration)
-               .SetEase(Ease.InOutSine)
-               .OnComplete(() => { if (!show) pointer.gameObject.SetActive(false); })
-               .SetUpdate(useUnscaledTime);
+        var seq = DOTween.Sequence().SetUpdate(useUnscaledTime);
+        seq.Join(pointer.DOFade(targetAlpha, duration).SetEase(Ease.InOutSine));
+        seq.Join(pointer.rectTransform.DOScale(targetScale, duration).SetEase(show ? Ease.OutBack : Ease.InOutSine));
+        seq.OnComplete(() => { if (!show) pointer.gameObject.SetActive(false); });
 
-        pointer.rectTransform.DOScale(targetScale, duration)
-               .SetEase(Ease.OutBack)
-               .SetUpdate(useUnscaledTime);
+        tweenRef = seq;
     }
+
+
 
     [Method]
     public void UpdateAgeText(float age)
