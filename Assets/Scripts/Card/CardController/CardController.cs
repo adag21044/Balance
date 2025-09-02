@@ -423,17 +423,10 @@ public class CardController : MonoBehaviour,
     }
 
 
-    public void SetEndGameCardByIndices(int[] indices)
+    public void SetEndGameCardByIndices(int minInclusive, int maxExclusive)
     {
-        if (indices == null || indices.Length == 0)
-        {
-            Debug.LogWarning("[CardController] SetEndGameCardByIndices called with empty set, falling back to random.");
-            SetEndGameCard(StatModel.Instance);
-            return;
-        }
-
         // Pick a random valid index from the provided list
-        int chosen = indices[UnityEngine.Random.Range(0, indices.Length)];
+        int chosen = UnityEngine.Random.Range(minInclusive, maxExclusive);
         SetEndGameCardByIndex(chosen);
     }
 
