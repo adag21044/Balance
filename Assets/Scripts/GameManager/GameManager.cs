@@ -32,16 +32,18 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("[GameManager] OnEnable");
 
-        onHeartFinished = _ => FinishGame();
-        onCareerFinished = _ => FinishGame();
-        onHappinessFinished = _ => FinishGame();
-        onSociabilityFinished = _ => FinishGame();
+        onHeartFinished       = _ => FinishGame(GameOverCause.Heart);
+        onCareerFinished      = _ => FinishGame(GameOverCause.Career);
+        onHappinessFinished   = _ => FinishGame(GameOverCause.Happiness); 
+        onSociabilityFinished = _ => FinishGame(GameOverCause.Sociability);
 
-        StatModel.Instance.OnHeartFinished += onHeartFinished;
-        StatModel.Instance.OnCareerFinished += onCareerFinished;
-        StatModel.Instance.OnHappinessFinished += onHappinessFinished;
-        StatModel.Instance.OnSociabilityFinished += onSociabilityFinished;
+        var sm = StatModel.Instance;
+        sm.OnHeartFinished       += onHeartFinished;
+        sm.OnCareerFinished      += onCareerFinished;
+        sm.OnHappinessFinished   += onHappinessFinished;
+        sm.OnSociabilityFinished += onSociabilityFinished;
     }
+
 
     private void OnDisable()
     {

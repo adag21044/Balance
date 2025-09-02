@@ -178,27 +178,7 @@ public class CardController : MonoBehaviour,
 
         cardView.SetContent(cardSO);
 
-        // --- UI reset ekle ---
-        DOTween.Kill(cardView, complete: false);
-        DOTween.Kill(cardView.gameObject, complete: false);
-        ResetAllAlphas(cardView.gameObject);
-
-        var rt = cardView.RectT;
-        rt.localRotation = Quaternion.identity;
-        rt.localPosition = initialLocalPos;
-        rt.localScale = Vector3.one * 0.9f;
-        cardView.transform.SetAsLastSibling();
-
-        var cg = cardView.GetComponent<CanvasGroup>();
-        if (cg != null) cg.alpha = 0f;
-
-        Sequence show = DOTween.Sequence();
-        if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
-        show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
-
-        // yanıt yazılarını temizle
-        cardView.SetAnswerText(cardView.LeftAnswerText, "");
-        cardView.SetAnswerText(cardView.RightAnswerText, "");
+        ApplyEndCardVisuals();
     }
 
 
@@ -236,56 +216,6 @@ public class CardController : MonoBehaviour,
 
         lastIndex = idx;
         return cardSOs[idx];
-    }
-
-    // Reuse the same GameObject and bind a fresh random CardSO
-    private void ReloadWithRandomCard()
-    {
-        Debug.Log("[CardController] ReloadWithRandomCard() CALLED");
-
-        // --- 1) Yeni veri seç
-        var next = PickRandomSO();
-        if (next == null)
-        {
-            Debug.LogError("[CardController] cardSOs bos ya da null! Inspector’dan doldur.");
-            return;
-        }
-
-        cardSO = next;
-        Debug.Log($"[CardController] New cardSO = {cardSO.name}");
-
-        // --- 2) Tweenleri durdur + tüm görselleri görünür yap
-        DOTween.Kill(cardView, complete: false);
-        DOTween.Kill(cardView.gameObject, complete: false);
-
-        // CanvasGroup’ları ve tüm Graphics/TMP alpha’larını 1’e çek
-        ResetAllAlphas(cardView.gameObject);
-
-        // --- 3) Model ve Content güncelle
-        Model = new CardModel(cardSO);
-        cardView.SetContent(cardSO);  // <- CardView.SetContent sprite/text atamalı!
-
-        // --- 4) Transform’u tam ortaya sıfırla
-        var rt = cardView.RectT;
-        rt.localRotation = Quaternion.identity;
-        rt.localPosition = initialLocalPos;
-        rt.localScale = Vector3.one * 0.9f;   // scale down a bit
-
-        // set as last sibling to be on top of other cards
-        cardView.transform.SetAsLastSibling();
-
-        // animate in
-        var cg = cardView.GetComponent<CanvasGroup>();
-        if (cg != null) cg.alpha = 0f;
-
-        Sequence show = DOTween.Sequence();
-        if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
-        show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
-
-        cardView.SetAnswerText(cardView.LeftAnswerText, "");
-        cardView.SetAnswerText(cardView.RightAnswerText, "");
-
-        Debug.Log("[CardController] ReloadWithRandomCard() DONE");
     }
 
     // Get chained card, if exists; otherwise, pick random
@@ -423,10 +353,11 @@ public class CardController : MonoBehaviour,
     }
 
 
-    public void SetEndGameCardByIndices(int minInclusive, int maxExclusive)
+    public void SetEndGameCardByIndices(int index1, int index2)
     {
-        // Pick a random valid index from the provided list
-        int chosen = UnityEngine.Random.Range(minInclusive, maxExclusive);
+        int[] possibleIndexes = { index1, index2 }; 
+        int chosen = possibleIndexes[Random.Range(0, possibleIndexes.Length)];
+        
         SetEndGameCardByIndex(chosen);
     }
 
@@ -439,7 +370,7 @@ public class CardController : MonoBehaviour,
         // İçerik güncelle
         cardView.SetContent(cardSO);
 
-        ResetCardPosition();
+        //ResetCardPosition();
 
         var rt = cardView.RectT;
 
@@ -451,7 +382,6 @@ public class CardController : MonoBehaviour,
         rt.localRotation = Quaternion.identity;
         rt.localScale = Vector3.one * 0.9f;
 
-        // KRİTİK: son kart hedef konumu
         rt.anchoredPosition = endCardAnchoredPos;
 
         cardView.transform.SetAsLastSibling();
