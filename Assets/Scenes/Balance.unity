@@ -4844,6 +4844,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 08cc0b9c0d452d547b0f7d116f908c62, type: 2}
   - {fileID: 11400000, guid: 496506e294e1fe8489c69f27ba36f82d, type: 2}
   - {fileID: 11400000, guid: a2292a2db5b7e3741bc2a1c63ff9cbf6, type: 2}
+  - {fileID: 11400000, guid: 88fece0d69c20df4ca7276b639617894, type: 2}
+  - {fileID: 11400000, guid: effda8746ddc12748a669d1df8de1a04, type: 2}
+  - {fileID: 11400000, guid: e274a1a67b0d9384db13b8579778ecfa, type: 2}
   cardView: {fileID: 1381719358}
   swipeThreshold: 0.4
   destroyOnSwipe: 0

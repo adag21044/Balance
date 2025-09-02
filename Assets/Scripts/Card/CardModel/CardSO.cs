@@ -54,5 +54,6 @@ public enum LifeStage
     Teenager,    // 13 – 19
     YoungAdult,  // 20 – 29
     Adult,       // 30 – 59
-    Senior       // 60+
+    Senior,       // 60+
+    Any
 }

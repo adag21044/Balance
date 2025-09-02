@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: EndCard1
+  m_Name: EndCard6
   m_EditorClassIdentifier: 
-  Id: card_009
-  Title: Accident due to low energy
-  Description: You had an accident due to low energy
-  Artwork: {fileID: -522686965825236288, guid: 465e0d787af05db48b58c015b5f32fb6, type: 3}
+  Id: card_014
+  Title: Alone in the Crowd
+  Description: No friends, no family, no one left to hear your voice. Loneliness
+    becomes your only companion.
+  Artwork: {fileID: -2069873933444638728, guid: 96ae1dd84fb89b542931834a70bdc3ba, type: 3}
   leftAnswer: 
   rightAnswer: 
   leftHeartImpact: 0
@@ -33,4 +34,4 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 0
+  lifeStage: 5
