@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
 
     public StatModel statModel => StatModel.Instance;
 
+    private bool gameFinished = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -49,10 +51,51 @@ public class GameManager : MonoBehaviour
         StatModel.Instance.OnSociabilityFinished -= onSociabilityFinished;
     }
 
+    public void FinishGame(GameOverCause cause)
+    {
+        if (gameFinished) return; // guard
+        gameFinished = true;
+
+        // 1-based -> 0-based index conversion is handled below
+        switch (cause)
+        {
+            case GameOverCause.Heart:
+                // 2nd or 5th -> indices 1 or 4
+                cardController.SetEndGameCardByIndices(new[] { 1, 4 });
+                break;
+
+            case GameOverCause.Career:
+                // 3rd or 4th -> indices 2 or 3
+                cardController.SetEndGameCardByIndices(new[] { 2, 3 });
+                break;
+
+            case GameOverCause.Happiness:
+                // 1st -> index 0
+                cardController.SetEndGameCardByIndex(0);
+                break;
+
+            case GameOverCause.Sociability:
+                // 6th -> index 5
+                cardController.SetEndGameCardByIndex(5);
+                break;
+        }
+
+        Debug.Log($"[GameManager] Game Over by {cause}");
+    }
+
     public void FinishGame()
     {
+        if (gameFinished) return;
+        gameFinished = true;
         cardController.SetEndGameCard(statModel);
-
-        Debug.Log("[GameManager] Game Over");
+        Debug.Log("[GameManager] Game Over (generic)");
     }
+}
+
+public enum GameOverCause
+{
+    Heart,
+    Career,
+    Happiness,
+    Sociability
 }

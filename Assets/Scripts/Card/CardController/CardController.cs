@@ -10,7 +10,7 @@ public class CardController : MonoBehaviour,
     [Header("Wiring")]
     [SerializeField] private CardSO[] cardSOs;   // deck
     [SerializeField] private CardSO cardSO;      // current
-    [SerializeField] private CardSO[] gameEndSOs;   
+    [SerializeField] private CardSO[] gameEndSOs;
     [SerializeField] private CardView cardView;
 
     [Header("Swipe Params")]
@@ -29,6 +29,11 @@ public class CardController : MonoBehaviour,
     private bool isGameOver;
     [SerializeField] private CardSoundPlayer soundPlayer;
     private SwipeDirection lastSwipeDir = SwipeDirection.Right;
+
+    
+    [Header("End Card Placement")]
+    [SerializeField] private Vector2 endCardAnchoredPos = new Vector2(0f, -165.8f);
+
 
     private void Awake()
     {
@@ -76,19 +81,19 @@ public class CardController : MonoBehaviour,
 
         if (Mathf.Abs(dx) <= DEAD_ZONE_PX)
         {
-            cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+            cardView.SetAnswerText(cardView.LeftAnswerText, "");
             cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
         else if (dx > 0f)
         {
             // Swiping right -> show LEFT answer
-            cardView.SetAnswerText(cardView.LeftAnswerText,  cardSO.leftAnswer);
+            cardView.SetAnswerText(cardView.LeftAnswerText, cardSO.leftAnswer);
             cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
         else
         {
             // Swiping left -> show RIGHT answer
-            cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+            cardView.SetAnswerText(cardView.LeftAnswerText, "");
             cardView.SetAnswerText(cardView.RightAnswerText, cardSO.rightAnswer);
         }
     }
@@ -111,9 +116,9 @@ public class CardController : MonoBehaviour,
 
             // Capture the current SO BEFORE any reload
             var decidedCard = cardSO;
-            
+
             soundPlayer.PlaySwipeSound();
-            
+
             cardView.AnimateSwipeOut(toLeft, Screen.width)
                 .OnComplete(() =>
                 {
@@ -165,7 +170,7 @@ public class CardController : MonoBehaviour,
         {
             Debug.LogError("[CardController] gameEndSO array is null or empty! Cannot set end game card.");
             return;
-        }    
+        }
 
         int idx = Random.Range(0, gameEndSOs.Length);
         cardSO = gameEndSOs[idx];
@@ -181,7 +186,7 @@ public class CardController : MonoBehaviour,
         var rt = cardView.RectT;
         rt.localRotation = Quaternion.identity;
         rt.localPosition = initialLocalPos;
-        rt.localScale    = Vector3.one * 0.9f;
+        rt.localScale = Vector3.one * 0.9f;
         cardView.transform.SetAsLastSibling();
 
         var cg = cardView.GetComponent<CanvasGroup>();
@@ -192,7 +197,7 @@ public class CardController : MonoBehaviour,
         show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
 
         // yanıt yazılarını temizle
-        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
     }
 
@@ -203,7 +208,7 @@ public class CardController : MonoBehaviour,
 
         Model.NotifySwiped(toLeft ? SwipeDirection.Left : SwipeDirection.Right);
         StatModel.Instance.ApplyCard(cardSO, toLeft ? SwipeDirection.Left : SwipeDirection.Right);
-        
+
         if (!isGameOver)
             ReloadWith(GetChainedCardOrRandom());
     }
@@ -263,8 +268,8 @@ public class CardController : MonoBehaviour,
         // --- 4) Transform’u tam ortaya sıfırla
         var rt = cardView.RectT;
         rt.localRotation = Quaternion.identity;
-        rt.localPosition = initialLocalPos;      
-        rt.localScale    = Vector3.one * 0.9f;   // scale down a bit
+        rt.localPosition = initialLocalPos;
+        rt.localScale = Vector3.one * 0.9f;   // scale down a bit
 
         // set as last sibling to be on top of other cards
         cardView.transform.SetAsLastSibling();
@@ -277,7 +282,7 @@ public class CardController : MonoBehaviour,
         if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
         show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
 
-        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
 
         Debug.Log("[CardController] ReloadWithRandomCard() DONE");
@@ -345,7 +350,7 @@ public class CardController : MonoBehaviour,
         var rt = cardView.RectT;
         rt.localRotation = Quaternion.identity;
         rt.localPosition = initialLocalPos;
-        rt.localScale    = Vector3.one * 0.9f;
+        rt.localScale = Vector3.one * 0.9f;
         cardView.transform.SetAsLastSibling();
 
         var cg = cardView.GetComponent<CanvasGroup>();
@@ -355,7 +360,7 @@ public class CardController : MonoBehaviour,
         if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
         show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
 
-        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
     }
 
@@ -391,5 +396,96 @@ public class CardController : MonoBehaviour,
             if (!string.IsNullOrEmpty(newText))
                 textComponent.DOFade(1f, 0.25f).SetEase(Ease.InOutSine);
         });
+    }
+
+    public void SetEndGameCardByIndex(int index)
+    {
+        if (gameEndSOs == null || gameEndSOs.Length == 0)
+        {
+            Debug.LogError("[CardController] gameEndSOs is null or empty!");
+            return;
+        }
+
+        if (index < 0 || index >= gameEndSOs.Length)
+        {
+            Debug.LogError($"[CardController] End card index {index} is out of range!");
+            index = Mathf.Clamp(index, 0, gameEndSOs.Length - 1);
+        }
+
+        isGameOver = true;
+
+        // 1) ÖNCE kartı seç
+        cardSO = gameEndSOs[index];
+        Model = new CardModel(cardSO);
+
+        // 2) SONRA görseli uygula
+        ApplyEndCardVisuals();
+    }
+
+
+    public void SetEndGameCardByIndices(int[] indices)
+    {
+        if (indices == null || indices.Length == 0)
+        {
+            Debug.LogWarning("[CardController] SetEndGameCardByIndices called with empty set, falling back to random.");
+            SetEndGameCard(StatModel.Instance);
+            return;
+        }
+
+        // Pick a random valid index from the provided list
+        int chosen = indices[UnityEngine.Random.Range(0, indices.Length)];
+        SetEndGameCardByIndex(chosen);
+    }
+
+    private void ApplyEndCardVisuals()
+    {
+        DOTween.Kill(cardView, complete: false);
+        DOTween.Kill(cardView.gameObject, complete: false);
+        ResetAllAlphas(cardView.gameObject);
+
+        // İçerik güncelle
+        cardView.SetContent(cardSO);
+
+        ResetCardPosition();
+
+        var rt = cardView.RectT;
+
+        // UI için güvenli anchor/pivot
+        rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
+        rt.pivot = new Vector2(0.5f, 0.5f);
+
+        // Dönüş/ölçek reset
+        rt.localRotation = Quaternion.identity;
+        rt.localScale = Vector3.one * 0.9f;
+
+        // KRİTİK: son kart hedef konumu
+        rt.anchoredPosition = endCardAnchoredPos;
+
+        cardView.transform.SetAsLastSibling();
+
+        var cg = cardView.GetComponent<CanvasGroup>();
+        if (cg != null) cg.alpha = 0f;
+
+        var show = DOTween.Sequence();
+        if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
+        show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
+
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
+        cardView.SetAnswerText(cardView.RightAnswerText, "");
+    }
+
+    private void ResetCardPosition()
+    {
+        var rt = cardView.RectT;
+
+        // UI için güvenli anchor/pivot
+        rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
+        rt.pivot = new Vector2(0.5f, 0.5f);
+
+        // Son kartta istenen sabit hedef
+        rt.anchoredPosition = endCardAnchoredPos;
+
+        rt.localRotation = Quaternion.identity;
+        rt.localScale = Vector3.one;
     }
 }
