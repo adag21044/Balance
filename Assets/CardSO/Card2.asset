@@ -21,8 +21,16 @@ MonoBehaviour:
   leftHeartImpact: -5
   leftCareerImpact: 10
   leftHappinessImpact: -5
+  leftSociabilityImpact: 0
   rightHeartImpact: 2
   rightCareerImpact: -10
   rightHappinessImpact: 5
+  rightSociabilityImpact: 0
   impactType: 000000000100000002000000
   ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 3

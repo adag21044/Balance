@@ -28,3 +28,9 @@ MonoBehaviour:
   rightSociabilityImpact: -5
   impactType: 00000000020000000100000003000000
   ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 2
