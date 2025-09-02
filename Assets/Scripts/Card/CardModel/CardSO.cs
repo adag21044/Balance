@@ -37,6 +37,7 @@ public class CardSO : ScriptableObject
     public CardSO nextOnRight;
     public CardSO[] nextPoolLeft;
     public CardSO[] nextPoolRight;
+    public LifeStage lifeStage;
 }
 
 public enum ImpactType
@@ -45,4 +46,13 @@ public enum ImpactType
     Career,
     Happiness,
     Sociability
+}
+
+public enum LifeStage
+{
+    Childhood,   // 0 – 12
+    Teenager,    // 13 – 19
+    YoungAdult,  // 20 – 29
+    Adult,       // 30 – 59
+    Senior       // 60+
 }
