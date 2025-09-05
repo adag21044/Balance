@@ -12,6 +12,7 @@ public class CardController : MonoBehaviour,
     [SerializeField] private CardSO cardSO;      // current
     [SerializeField] private CardSO[] gameEndSOs;
     [SerializeField] private CardView cardView;
+    [SerializeField] private CardInitialAnimation cardInitialAnimation;
 
     [Header("Swipe Params")]
     [SerializeField, Range(0.1f, 0.9f)] private float swipeThreshold = 0.4f;
@@ -50,9 +51,15 @@ public class CardController : MonoBehaviour,
 
     private void Start()
     {
-        cardView.SetContent(cardSO);
-        cardView.CaptureInitial();
-        initialLocalPos = cardView.RectT.localPosition;
+        if (cardInitialAnimation != null)
+        {
+            cardInitialAnimation.OnAnimationCompleted += OnInitialAnimationDone;
+        }
+        else
+        {
+            // Animasyon yoksa direkt çalıştır
+            InitCard();
+        }
     }
 
     private void OnEnable()
@@ -160,6 +167,19 @@ public class CardController : MonoBehaviour,
         //    SetEndGameCard();
         //}
     }
+
+    private void InitCard()
+    {
+        cardView.SetContent(cardSO);
+        cardView.CaptureInitial();
+        initialLocalPos = cardView.RectT.localPosition;
+    }
+
+    private void OnInitialAnimationDone()
+    {
+        InitCard();
+    }
+
     public void SetEndGameCard(StatModel statModel)
     {
         Debug.Log("[CardController] SetEndGameCard() called");

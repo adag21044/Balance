@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -28,6 +29,8 @@ public class CardInitialAnimation : MonoBehaviour
     [SerializeField] private AudioClip cardFlyClip;
 
     private readonly System.Collections.Generic.List<RectTransform> spawnedPseudo = new();
+    public bool IsAnimationFinished { get; private set; } = false;
+    public event Action OnAnimationCompleted; 
 
     public void StartAnimation()
     {
@@ -65,7 +68,7 @@ public class CardInitialAnimation : MonoBehaviour
 
             seq.Insert(i * stagger, rt.DOAnchorPos(targetPos, t).SetEase(flyEase).SetLink(go));
             seq.Insert(i * stagger, rt.DOScale(endScale, t).SetEase(Ease.OutQuad).SetLink(go));
-            seq.Insert(i * stagger, rt.DOLocalRotate(new Vector3(0, 0, Random.Range(-4f, 4f)), t * 0.9f)
+            seq.Insert(i * stagger, rt.DOLocalRotate(new Vector3(0, 0, UnityEngine.Random.Range(-4f, 4f)), t * 0.9f)
                                     .SetEase(Ease.OutQuad).SetLink(go));
 
             // 🔊 Sound playing
@@ -93,8 +96,12 @@ public class CardInitialAnimation : MonoBehaviour
                 if (rt != null) Destroy(rt.gameObject);
             }
             spawnedPseudo.Clear();
+            IsAnimationFinished = true;
+            OnAnimationCompleted?.Invoke();
         });
 
         seq.Play();
+
+        IsAnimationFinished = true;
     }
 }
