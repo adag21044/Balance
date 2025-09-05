@@ -5180,6 +5180,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88fece0d69c20df4ca7276b639617894, type: 2}
   - {fileID: 11400000, guid: effda8746ddc12748a669d1df8de1a04, type: 2}
   - {fileID: 11400000, guid: e274a1a67b0d9384db13b8579778ecfa, type: 2}
+  - {fileID: 11400000, guid: 5da55687090621e42b1f3afb14d208b7, type: 2}
   cardView: {fileID: 1381719358}
   cardInitialAnimation: {fileID: 515388910}
   swipeThreshold: 0.4

@@ -81,25 +81,25 @@ public class GameManager : MonoBehaviour
         switch (cause)
         {
             case GameOverCause.Heart:
-                // 2nd or 5th -> indices 1 or 4
-                cardController.SetEndGameCardByIndices(1, 4);
+                // 0, 1, 2, 3
+                cardController.SetEndGameCardByIndices(0, 4);
                 Debug.Log("Heart cause");
                 break;
 
             case GameOverCause.Career:
-                // 3rd or 4th -> indices 2 or 3
-                cardController.SetEndGameCardByIndices(2, 3);
+                // 2
+                cardController.SetEndGameCardByIndices(3, 5);
                 Debug.Log("Career cause");
                 break;
 
             case GameOverCause.Happiness:
-                // 1st -> index 0
-                cardController.SetEndGameCardByIndex(0);
+                // 1
+                cardController.SetEndGameCardByIndex(6);
                 Debug.Log("Happiness cause");
                 break;
 
             case GameOverCause.Sociability:
-                // 6th -> index 5
+                // 5
                 cardController.SetEndGameCardByIndex(5);
                 Debug.Log("Sociability cause");
                 break;
