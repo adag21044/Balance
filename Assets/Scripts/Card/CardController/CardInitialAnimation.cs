@@ -29,7 +29,7 @@ public class CardInitialAnimation : MonoBehaviour
 
     private readonly System.Collections.Generic.List<RectTransform> spawnedPseudo = new();
 
-    private void Awake()
+    public void StartAnimation()
     {
         if (realCard != null)
         {

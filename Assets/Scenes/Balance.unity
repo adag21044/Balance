@@ -2459,6 +2459,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1646404104}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnStartButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &629608688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6146,6 +6158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardController: {fileID: 1381719360}
   statController: {fileID: 788613124}
+  cardInitialAnimation: {fileID: 515388910}
+  startScreenAnimator: {fileID: 1814942097}
 --- !u!4 &1646404105
 Transform:
   m_ObjectHideFlags: 0

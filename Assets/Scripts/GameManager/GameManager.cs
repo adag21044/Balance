@@ -15,9 +15,13 @@ public class GameManager : MonoBehaviour
     private Action<float> onHappinessFinished;
     private Action<float> onSociabilityFinished;
 
+    private Action onStartButtonPressed;
+
     public StatModel statModel => StatModel.Instance;
 
     private bool gameFinished = false;
+    [SerializeField] private CardInitialAnimation cardInitialAnimation;
+    [SerializeField] private StartScreenAnimator startScreenAnimator;
 
     private void Awake()
     {
@@ -50,6 +54,20 @@ public class GameManager : MonoBehaviour
         StatModel.Instance.OnHappinessFinished -= onHappinessFinished;
         StatModel.Instance.OnSociabilityFinished -= onSociabilityFinished;
     }
+
+    public void OnStartButtonPressed()
+    {
+        Debug.Log("[GameManager] Start button pressed");
+        
+        
+        if (startScreenAnimator != null)
+            startScreenAnimator.gameObject.SetActive(false);
+
+        
+        if (cardInitialAnimation != null)
+            cardInitialAnimation.StartAnimation();
+    }
+
 
     public void FinishGame(GameOverCause cause)
     {
