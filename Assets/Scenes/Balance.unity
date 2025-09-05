@@ -5186,7 +5186,7 @@ MonoBehaviour:
   destroyOnSwipe: 0
   statView: {fileID: 1559346418}
   soundPlayer: {fileID: 1381719361}
-  endCardAnchoredPos: {x: 0, y: -165.8}
+  endCardAnchoredPos: {x: 0, y: 0}
 --- !u!114 &1381719361
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -34,6 +34,7 @@ public class CardController : MonoBehaviour,
     
     [Header("End Card Placement")]
     [SerializeField] private Vector2 endCardAnchoredPos = new Vector2(0f, -165.8f);
+    private bool endPosCaptured = false;
 
 
     private void Awake()
@@ -52,24 +53,19 @@ public class CardController : MonoBehaviour,
     private void Start()
     {
         if (cardInitialAnimation != null)
-        {
             cardInitialAnimation.OnAnimationCompleted += OnInitialAnimationDone;
-        }
         else
-        {
-            // Animasyon yoksa direkt çalıştır
             InitCard();
+
+        // ↓↓↓ burada, artık RectTransform garanti
+        if (!endPosCaptured)
+        {
+            var rt = cardView.GetComponent<RectTransform>();
+            endCardAnchoredPos = rt.anchoredPosition; // (0, -165.8) ise aynen alır
+            endPosCaptured = true;
         }
     }
 
-    private void OnEnable()
-    {
-        if (cardView)
-        {
-            cardView.CaptureInitial();
-            initialLocalPos = cardView.RectT.localPosition;
-        }
-    }
 
     public void OnBeginDrag(PointerEventData _)
     {

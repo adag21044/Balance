@@ -26,7 +26,7 @@ MonoBehaviour:
   rightHeartImpact: -2
   rightCareerImpact: -4
   rightHappinessImpact: -3
-  rightSociabilityImpact: -1
+  rightSociabilityImpact: -10
   impactType: 00000000010000000200000003000000
   ageImpact: 1
   isChainCard: 0
