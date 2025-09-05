@@ -17,7 +17,7 @@ public class StatModel
     private float sociabilityPercantage;
     public float SociabilityPercantage => sociabilityPercantage;
 
-    private float age;
+    public float age;
 
     public event Action<float> OnHeartChanged;
     public event Action<float> OnCareerChanged;

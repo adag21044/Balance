@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     private Action<float> onHappinessFinished;
     private Action<float> onSociabilityFinished;
 
-    private Action onStartButtonPressed;
+    public static event Action StartButtonPressed;
 
     public StatModel statModel => StatModel.Instance;
 
@@ -58,14 +58,16 @@ public class GameManager : MonoBehaviour
     public void OnStartButtonPressed()
     {
         Debug.Log("[GameManager] Start button pressed");
-        
-        
+        StartButtonPressed?.Invoke();
+
         if (startScreenAnimator != null)
             startScreenAnimator.gameObject.SetActive(false);
 
-        
+
         if (cardInitialAnimation != null)
             cardInitialAnimation.StartAnimation();
+        
+        statController.statView.AnimateAgeText(StatModel.Instance.age);
     }
 
 

@@ -36,11 +36,14 @@ public class StatView : MonoBehaviour
     private Vector3 careerBaseScale;
     private Vector3 happinessBaseScale;
     private Vector3 sociabilityBaseScale;
-   
+
     private Tween heartPtrTween, careerPtrTween, happinessPtrTween, sociabilityPtrTween;
     [SerializeField] private float pointerAutoHideDelay = 0.9f; // seconds
 
     private Tween heartPtrTimer, careerPtrTimer, happinessPtrTimer, sociabilityPtrTimer;
+
+    [SerializeField] private float ageAnimationDuration = 2f; // total duration
+    [SerializeField] private AnimationCurve ageEaseCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
 
 
     private void Awake()
@@ -178,7 +181,7 @@ public class StatView : MonoBehaviour
             ).SetUpdate(useUnscaledTime);
         }
     }
- 
+
     public void ShowCareerPointer(bool show)
     {
         AnimatePointer(careerPointer, show, careerBaseScale, ref careerPtrTween);
@@ -193,7 +196,7 @@ public class StatView : MonoBehaviour
             ).SetUpdate(useUnscaledTime);
         }
     }
-    
+
 
     public void ShowHappinessPointer(bool show)
     {
@@ -228,7 +231,7 @@ public class StatView : MonoBehaviour
         }
     }
 
-    
+
 
     private void AnimatePointer(Image pointer, bool show, Vector3 baseScale, ref Tween tweenRef)
     {
@@ -255,5 +258,19 @@ public class StatView : MonoBehaviour
     public void UpdateAgeText(float age)
     {
         ageText.text = $"{Mathf.FloorToInt(age)}"; // Display age as an integer
+    }
+    
+    public void AnimateAgeText(float targetAge)
+    {
+        Debug.Log($"Animating age text to {targetAge}");
+        float startValue = 0f;
+
+        DOTween.To(() => startValue, x =>
+        {
+            startValue = x;
+            ageText.text = Mathf.FloorToInt(startValue).ToString();
+        },
+        targetAge, ageAnimationDuration)
+        .SetEase(ageEaseCurve); // <-- Inspector’da curve olarak ayarlayabilirsin
     }
 }
