@@ -81,8 +81,8 @@ public class GameManager : MonoBehaviour
         switch (cause)
         {
             case GameOverCause.Heart:
-                // 0, 1, 2, 3
-                cardController.SetEndGameCardByIndices(0, 4);
+                // 0, 1, 2
+                cardController.SetEndGameCardByIndices(0, 3);
                 Debug.Log("Heart cause");
                 break;
 
