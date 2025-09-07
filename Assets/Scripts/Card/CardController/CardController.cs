@@ -31,10 +31,11 @@ public class CardController : MonoBehaviour,
     [SerializeField] private CardSoundPlayer soundPlayer;
     private SwipeDirection lastSwipeDir = SwipeDirection.Right;
 
-    
+
     [Header("End Card Placement")]
     [SerializeField] private Vector2 endCardAnchoredPos = new Vector2(0f, -165.8f);
-    private bool endPosCaptured = false;
+    // Fixed end position is driven from Inspector (center-anchored)
+    private bool endPosCaptured = false; // kept for compatibility; block disabled
 
 
     private void Awake()
@@ -58,7 +59,7 @@ public class CardController : MonoBehaviour,
             InitCard();
 
         // ↓↓↓ burada, artık RectTransform garanti
-        if (!endPosCaptured)
+        if (false && !endPosCaptured)
         {
             var rt = cardView.GetComponent<RectTransform>();
             endCardAnchoredPos = rt.anchoredPosition; // (0, -165.8) ise aynen alır
@@ -178,7 +179,7 @@ public class CardController : MonoBehaviour,
 
     public void SetEndGameCard(StatModel statModel)
     {
-        Debug.Log("[CardController] SetEndGameCard() called");
+        /*Debug.Log("[CardController] SetEndGameCard() called");
 
         isGameOver = true;
 
@@ -214,7 +215,7 @@ public class CardController : MonoBehaviour,
 
         // yanıt yazılarını temizle
         cardView.SetAnswerText(cardView.LeftAnswerText, "");
-        cardView.SetAnswerText(cardView.RightAnswerText, "");
+        cardView.SetAnswerText(cardView.RightAnswerText, "");*/
     }
 
 
@@ -441,7 +442,16 @@ public class CardController : MonoBehaviour,
 
     public void SetEndGameCardByIndices(int minInclusive, int maxExclusive)
     {
-        // Pick a random valid index from the provided list
+        if (gameEndSOs == null || gameEndSOs.Length == 0)
+        {
+            Debug.LogError("[CardController] gameEndSOs is null or empty!");
+            return;
+        }
+
+        // Clamp to a valid, non-empty range
+        minInclusive = Mathf.Clamp(minInclusive, 0, gameEndSOs.Length - 1);
+        maxExclusive = Mathf.Clamp(maxExclusive, minInclusive + 1, gameEndSOs.Length);
+
         int chosen = UnityEngine.Random.Range(minInclusive, maxExclusive);
         SetEndGameCardByIndex(chosen);
     }
@@ -450,6 +460,10 @@ public class CardController : MonoBehaviour,
     {
         DOTween.Kill(cardView, complete: false);
         DOTween.Kill(cardView.gameObject, complete: false);
+        // Ensure RT / CanvasGroup tweens are also cleared
+        DOTween.Kill(cardView.RectT, complete: false);
+        var cgKill = cardView.GetComponent<CanvasGroup>();
+        if (cgKill != null) DOTween.Kill(cgKill, complete: false);
         ResetAllAlphas(cardView.gameObject);
 
         // İçerik güncelle
@@ -496,5 +510,20 @@ public class CardController : MonoBehaviour,
 
         rt.localRotation = Quaternion.identity;
         rt.localScale = Vector3.one;
+    }
+    
+    public void ForceEndCardRotation(float zDeg = 0f)
+    {
+        var rt = cardView.RectT;
+
+        // Kill tweens on the actual RectTransform (rotation/scale/pos)
+        rt.DOKill(false);
+        DOTween.Kill(rt, complete: false); // ekstra güvenlik
+
+        // Set rotation explicitly on the card's RectTransform
+        rt.localRotation = Quaternion.Euler(0f, 0f, zDeg);
+
+        // (İstersen) doğrulama logu
+        Debug.Log($"[CardController] Forced end-card rotation to Z={zDeg}, current={rt.localEulerAngles}");
     }
 }

@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CardController cardController;
     [SerializeField] private StatController statController;
 
-    private float zero = 0f;
-
     private Action<float> onHeartFinished;
     private Action<float> onCareerFinished;
     private Action<float> onHappinessFinished;
@@ -25,35 +23,43 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        // Robust singleton guard
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            Destroy(gameObject);
+            return;
         }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
     {
         Debug.Log("[GameManager] OnEnable");
 
-        StatModel.Instance.OnHeartFinished       += _ => FinishGame(GameOverCause.Heart);
-        StatModel.Instance.OnCareerFinished      += _ => FinishGame(GameOverCause.Career);
-        StatModel.Instance.OnHappinessFinished   += _ => FinishGame(GameOverCause.Happiness);
-        StatModel.Instance.OnSociabilityFinished += _ => FinishGame(GameOverCause.Sociability);
+        // Build delegates ONCE per enable
+        onHeartFinished       = _ => FinishGame(GameOverCause.Heart);
+        onCareerFinished      = _ => FinishGame(GameOverCause.Career);
+        onHappinessFinished   = _ => FinishGame(GameOverCause.Happiness);
+        onSociabilityFinished = _ => FinishGame(GameOverCause.Sociability);
 
-
-        StatModel.Instance.OnHeartFinished += onHeartFinished;
-        StatModel.Instance.OnCareerFinished += onCareerFinished;
-        StatModel.Instance.OnHappinessFinished += onHappinessFinished;
-        StatModel.Instance.OnSociabilityFinished += onSociabilityFinished;
+        var sm = StatModel.Instance;
+        sm.OnHeartFinished       += onHeartFinished;
+        sm.OnCareerFinished      += onCareerFinished;
+        sm.OnHappinessFinished   += onHappinessFinished;
+        sm.OnSociabilityFinished += onSociabilityFinished;
     }
 
     private void OnDisable()
     {
-        StatModel.Instance.OnHeartFinished -= onHeartFinished;
-        StatModel.Instance.OnCareerFinished -= onCareerFinished;
-        StatModel.Instance.OnHappinessFinished -= onHappinessFinished;
-        StatModel.Instance.OnSociabilityFinished -= onSociabilityFinished;
+        var sm = StatModel.Instance;
+        if (sm == null) return;
+
+        // Unsubscribe exactly what we subscribed
+        if (onHeartFinished       != null) sm.OnHeartFinished       -= onHeartFinished;
+        if (onCareerFinished      != null) sm.OnCareerFinished      -= onCareerFinished;
+        if (onHappinessFinished   != null) sm.OnHappinessFinished   -= onHappinessFinished;
+        if (onSociabilityFinished != null) sm.OnSociabilityFinished -= onSociabilityFinished;
     }
 
     public void OnStartButtonPressed()
@@ -81,26 +87,30 @@ public class GameManager : MonoBehaviour
         switch (cause)
         {
             case GameOverCause.Heart:
-                // 0, 1, 2
                 cardController.SetEndGameCardByIndices(0, 3);
+                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
                 Debug.Log("Heart cause");
                 break;
 
             case GameOverCause.Career:
-                // 2
                 cardController.SetEndGameCardByIndices(3, 5);
+                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
                 Debug.Log("Career cause");
                 break;
 
             case GameOverCause.Happiness:
-                // 1
                 cardController.SetEndGameCardByIndex(6);
+                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
                 Debug.Log("Happiness cause");
                 break;
 
             case GameOverCause.Sociability:
-                // 5
                 cardController.SetEndGameCardByIndex(5);
+                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
+                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
                 Debug.Log("Sociability cause");
                 break;
         }
@@ -110,9 +120,6 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
-        if (gameFinished) return;
-        gameFinished = true;
-        cardController.SetEndGameCard(statModel);
         Debug.Log("[GameManager] Game Over (generic)");
     }
 }
