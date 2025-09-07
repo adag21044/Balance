@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card18
+  m_Name: Card20
   m_EditorClassIdentifier: 
-  Id: card_018
-  Title: Social Destruction
-  Description: You got into an irreversible argument with your closest group of friends
-  Artwork: {fileID: 713574229117447886, guid: 3dc2a2769c48bca4d91c5734d4a4bbd8, type: 3}
-  leftAnswer: Sorry
-  rightAnswer: Don't Care
+  Id: card_020
+  Title: Developer Greetings
+  Description: Hello, I am the creator of the game.
+  Artwork: {fileID: 391119372839055237, guid: 71088cc9f53a03b44bd5642a6feb2901, type: 3}
+  leftAnswer: 
+  rightAnswer: 
   leftHeartImpact: 0
   leftCareerImpact: 0
   leftHappinessImpact: 0
-  leftSociabilityImpact: -100
+  leftSociabilityImpact: 0
   rightHeartImpact: 0
   rightCareerImpact: 0
-  rightHappinessImpact: -5
-  rightSociabilityImpact: 1
+  rightHappinessImpact: 0
+  rightSociabilityImpact: 0
   impactType: 
-  ageImpact: 1
+  ageImpact: 0
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 5
+  lifeStage: 0
