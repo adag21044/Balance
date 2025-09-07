@@ -20,6 +20,8 @@ public class StatController : MonoBehaviour
         StatModel.OnHappinessAffected += () => statView.ShowHappinessPointer(true);
         StatModel.OnSociabilityAffected += () => statView.ShowSociabilityPointer(true);
 
+        StatModel.OnFail += () => Debug.Log("Fail state");
+
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
         statView.ShowHappinessPointer(false);

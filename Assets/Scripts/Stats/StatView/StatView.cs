@@ -44,6 +44,11 @@ public class StatView : MonoBehaviour
 
     [SerializeField] private float ageAnimationDuration = 2f; // total duration
     [SerializeField] private AnimationCurve ageEaseCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
+    [SerializeField] private Image CardImage;
+    [SerializeField] private Image CardBackImage;
+    [SerializeField] private Image TopImage;
+    [SerializeField] private Image BottomImage;
+    [SerializeField] private Camera mainCamera;
 
 
     private void Awake()
@@ -259,7 +264,7 @@ public class StatView : MonoBehaviour
     {
         ageText.text = $"{Mathf.FloorToInt(age)}"; // Display age as an integer
     }
-    
+
     public void AnimateAgeText(float targetAge)
     {
         Debug.Log($"Animating age text to {targetAge}");
@@ -272,5 +277,31 @@ public class StatView : MonoBehaviour
         },
         targetAge, ageAnimationDuration)
         .SetEase(ageEaseCurve); // <-- Inspector’da curve olarak ayarlayabilirsin
+    }
+
+    [Method]
+    public void AnimateFailAnimation()
+    {
+        Debug.Log("Animating age text fail animation");
+
+        if (ageText == null) return;
+
+
+        Color startColor = ageText.color;
+
+        Color endColor = Color.red;
+
+        // Tween başlat
+        ageText.DOColor(endColor, 0.5f)   // 0.5 sn’de beyaza geç
+               .SetEase(Ease.OutQuad)     // yumuşak geçiş
+               .OnComplete(() =>
+               {
+                   Debug.Log("Age text reached black");
+               });
+        CardImage.DOColor(endColor, 0.5f).SetEase(Ease.OutQuad);
+        CardBackImage.DOColor(endColor, 0.5f).SetEase(Ease.OutQuad);
+        TopImage.DOColor(endColor, 0.5f).SetEase(Ease.OutQuad);
+        BottomImage.DOColor(endColor, 0.5f).SetEase(Ease.OutQuad);
+        mainCamera.DOColor(Color.white, 0.5f).SetEase(Ease.OutQuad);
     }
 }

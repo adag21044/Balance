@@ -38,6 +38,7 @@ public class StatModel
 
 
     public static event Action OnPreviewCancelled;
+    public static event Action OnFail;
 
     public const float IMPACT_SCALE = 0.01f;
 
