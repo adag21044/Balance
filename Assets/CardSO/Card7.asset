@@ -16,7 +16,7 @@ MonoBehaviour:
   Title: Scholarship Offer
   Description: "You received a competitive scholarship for a tough computer science
     program. It\u2019s a great career step, but the workload will be heavy."
-  Artwork: {fileID: 0}
+  Artwork: {fileID: -7670079776809800987, guid: 8f8092bc06f8aa2449bad33c2466db74, type: 3}
   leftAnswer: Accept
   rightAnswer: Decline
   leftHeartImpact: -6

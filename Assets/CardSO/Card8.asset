@@ -16,7 +16,7 @@ MonoBehaviour:
   Title: Local Job Opportunity
   Description: "A nearby studio offers a junior position with flexible hours. It\u2019s
     practical but growth might be slower."
-  Artwork: {fileID: 0}
+  Artwork: {fileID: 197125101886736615, guid: 4a6753ffddba589488d6d7b7574946ef, type: 3}
   leftAnswer: Take the job and start now
   rightAnswer: Keep searching for a better offer
   leftHeartImpact: 2
