@@ -16,18 +16,18 @@ MonoBehaviour:
   Title: Heart Attack
   Description: Suddenly your chest feels tight and you can't breathe
   Artwork: {fileID: -1494555456095830644, guid: 2c944e41e363f494baaea92ea57561ea, type: 3}
-  leftAnswer: 
-  rightAnswer: 
+  leftAnswer: Call an ambulance immediately
+  rightAnswer: Ignore
   leftHeartImpact: -100
   leftCareerImpact: 0
   leftHappinessImpact: 0
   leftSociabilityImpact: 0
   rightHeartImpact: 0
   rightCareerImpact: 0
-  rightHappinessImpact: 5
+  rightHappinessImpact: -5
   rightSociabilityImpact: 0
   impactType: 
-  ageImpact: 0
+  ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
