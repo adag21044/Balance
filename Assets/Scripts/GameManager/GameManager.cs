@@ -90,6 +90,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndices(0, 3);
                 cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
                 cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                statController.statView.AnimateFailAnimation();
                 Debug.Log("Heart cause");
                 break;
 
@@ -97,6 +98,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndices(3, 5);
                 cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
                 cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                statController.statView.AnimateFailAnimation();
                 Debug.Log("Career cause");
                 break;
 
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndex(6);
                 cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
                 cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                statController.statView.AnimateFailAnimation();
                 Debug.Log("Happiness cause");
                 break;
 
@@ -111,6 +114,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndex(5);
                 cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
                 cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                statController.statView.AnimateFailAnimation();
                 Debug.Log("Sociability cause");
                 break;
         }
