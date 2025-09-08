@@ -36,6 +36,7 @@ public class CardController : MonoBehaviour,
     [SerializeField] private Vector2 endCardAnchoredPos = new Vector2(0f, -165.8f);
     // Fixed end position is driven from Inspector (center-anchored)
     private bool endPosCaptured = false; // kept for compatibility; block disabled
+    private bool _snapEndCardNextLate = false;
 
 
     private void Awake()
@@ -163,6 +164,35 @@ public class CardController : MonoBehaviour,
         //    Debug.Log("[CardController] setting end game card");
         //    SetEndGameCard();
         //}
+    }
+
+    private void LateUpdate()
+    {
+        if (_snapEndCardNextLate)
+        {
+            SnapEndCardNow();          // second pass after layout rebuild
+            _snapEndCardNextLate = false;
+        }
+    }
+
+    private void SnapEndCardNow()
+    {
+        var rt = cardView.RectT;
+
+        // Make sure layout is settled before snapping
+        Canvas.ForceUpdateCanvases();
+
+        // Safe center anchors/pivot
+        rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
+        rt.pivot = new Vector2(0.5f, 0.5f);
+
+        // Reset TRS
+        rt.localRotation = Quaternion.identity;
+        rt.localScale = Vector3.one * 0.9f;
+
+        // Final target (centered)
+        rt.anchoredPosition = endCardAnchoredPos;
+        rt.anchoredPosition3D = new Vector3(endCardAnchoredPos.x, endCardAnchoredPos.y, 0f);
     }
 
     private void InitCard()
@@ -458,41 +488,36 @@ public class CardController : MonoBehaviour,
 
     private void ApplyEndCardVisuals()
     {
-        DOTween.Kill(cardView, complete: false);
-        DOTween.Kill(cardView.gameObject, complete: false);
-        // Ensure RT / CanvasGroup tweens are also cleared
-        DOTween.Kill(cardView.RectT, complete: false);
-        var cgKill = cardView.GetComponent<CanvasGroup>();
-        if (cgKill != null) DOTween.Kill(cgKill, complete: false);
+        // Kill ALL tweens on this UI (COMPLETE to final values)
+        var rt = cardView.RectT;
+        DOTween.Kill(cardView, true);
+        DOTween.Kill(cardView.gameObject, true);
+        rt.DOKill(true);
+        DOTween.Kill(rt, true);
+        var cg = cardView.GetComponent<CanvasGroup>();
+        if (cg) cg.DOKill(true);
+
         ResetAllAlphas(cardView.gameObject);
 
-        // İçerik güncelle
+        // Update content first
         cardView.SetContent(cardSO);
 
-        ResetCardPosition();
+        // Single, authoritative snap now...
+        SnapEndCardNow();
+        // ...and once more next LateUpdate (beats any Layout rebuild)
+        _snapEndCardNextLate = true;
 
-        var rt = cardView.RectT;
-
-        // UI için güvenli anchor/pivot
-        rt.anchorMin = rt.anchorMax = new Vector2(0.5f, 0.5f);
-        rt.pivot = new Vector2(0.5f, 0.5f);
-
-        // Dönüş/ölçek reset
-        rt.localRotation = Quaternion.identity;
-        rt.localScale = Vector3.one * 0.9f;
-
-        // KRİTİK: son kart hedef konumu
-        rt.anchoredPosition = endCardAnchoredPos;
-
+        // Bring on top + simple fade
         cardView.transform.SetAsLastSibling();
+        if (!cg) cg = cardView.gameObject.AddComponent<CanvasGroup>();
+        cg.alpha = 0f;
+        cg.DOFade(1f, 0.2f);
 
-        var cg = cardView.GetComponent<CanvasGroup>();
-        if (cg != null) cg.alpha = 0f;
+        // Optional: block any movement after game over
+        var mover = GetComponent<CardMovement>();
+        if (mover) mover.enabled = false;
 
-        var show = DOTween.Sequence();
-        if (cg != null) show.Join(cg.DOFade(1f, 0.2f));
-        show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
-
+        // Clear answers
         cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
     }

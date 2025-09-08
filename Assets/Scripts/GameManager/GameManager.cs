@@ -88,32 +88,28 @@ public class GameManager : MonoBehaviour
         {
             case GameOverCause.Heart:
                 cardController.SetEndGameCardByIndices(0, 3);
-                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                
                 statController.statView.AnimateFailAnimation();
                 Debug.Log("Heart cause");
                 break;
 
             case GameOverCause.Career:
                 cardController.SetEndGameCardByIndices(3, 5);
-                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                
                 statController.statView.AnimateFailAnimation();
                 Debug.Log("Career cause");
                 break;
 
             case GameOverCause.Happiness:
                 cardController.SetEndGameCardByIndex(6);
-                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                
                 statController.statView.AnimateFailAnimation();
                 Debug.Log("Happiness cause");
                 break;
 
             case GameOverCause.Sociability:
                 cardController.SetEndGameCardByIndex(5);
-                cardController.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
-                cardController.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, -165.8f);
+                
                 statController.statView.AnimateFailAnimation();
                 Debug.Log("Sociability cause");
                 break;
@@ -124,6 +120,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame()
     {
+        cardController.ForceEndCardRotation(0f); 
         Debug.Log("[GameManager] Game Over (generic)");
     }
 }
