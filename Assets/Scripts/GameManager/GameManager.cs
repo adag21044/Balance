@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private bool gameFinished = false;
     [SerializeField] private CardInitialAnimation cardInitialAnimation;
     [SerializeField] private StartScreenAnimator startScreenAnimator;
+    [SerializeField] private SoundManager soundManager;
 
     private void Awake()
     {
@@ -80,49 +81,62 @@ public class GameManager : MonoBehaviour
 
     public void FinishGame(GameOverCause cause)
     {
-        if (gameFinished) return; // guard
-        gameFinished = true;
+        Debug.Log($"[GameManager] FinishGame CALLED with cause={cause}");
+
+
 
         // 1-based -> 0-based index conversion is handled below
         switch (cause)
         {
             case GameOverCause.Heart:
                 cardController.SetEndGameCardByIndices(0, 3);
-                
+
                 statController.statView.AnimateFailAnimation();
+                soundManager.PlayHeartFailSound();
                 Debug.Log("Heart cause");
                 break;
 
             case GameOverCause.Career:
                 cardController.SetEndGameCardByIndices(3, 5);
-                
+
                 statController.statView.AnimateFailAnimation();
+                soundManager.PlayCareerFailSound();
                 Debug.Log("Career cause");
                 break;
 
             case GameOverCause.Happiness:
                 cardController.SetEndGameCardByIndex(6);
-                
+
                 statController.statView.AnimateFailAnimation();
+                soundManager.PlayHappinessFailSound();
                 Debug.Log("Happiness cause");
                 break;
 
             case GameOverCause.Sociability:
                 cardController.SetEndGameCardByIndex(5);
-                
+
                 statController.statView.AnimateFailAnimation();
+                soundManager.PlaySociabilityFailSound();
                 Debug.Log("Sociability cause");
+                break;
+
+            default:
+                Debug.LogError($"[GameManager] FinishGame called with unknown cause: {cause}");
                 break;
         }
 
         Debug.Log($"[GameManager] Game Over by {cause}");
+
+
+        gameFinished = true;
+        if (gameFinished) return; // guard
     }
 
-    public void FinishGame()
+    /*public void FinishGame()
     {
         cardController.ForceEndCardRotation(0f); 
         Debug.Log("[GameManager] Game Over (generic)");
-    }
+    }*/
 }
 
 public enum GameOverCause
