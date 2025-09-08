@@ -19,12 +19,12 @@ MonoBehaviour:
   leftAnswer: Reject
   rightAnswer: Accept
   leftHeartImpact: 0
-  leftCareerImpact: -10
-  leftHappinessImpact: 5
+  leftCareerImpact: -100
+  leftHappinessImpact: 0
   leftSociabilityImpact: 0
   rightHeartImpact: 0
-  rightCareerImpact: -100
-  rightHappinessImpact: 0
+  rightCareerImpact: -10
+  rightHappinessImpact: 5
   rightSociabilityImpact: 0
   impactType: 
   ageImpact: 1
