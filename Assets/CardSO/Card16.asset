@@ -19,12 +19,12 @@ MonoBehaviour:
   leftAnswer: Go to a psychologist
   rightAnswer: Do nothing
   leftHeartImpact: 0
-  leftCareerImpact: -5
-  leftHappinessImpact: 5
+  leftCareerImpact: 0
+  leftHappinessImpact: -100
   leftSociabilityImpact: 0
   rightHeartImpact: 0
-  rightCareerImpact: 0
-  rightHappinessImpact: -100
+  rightCareerImpact: -5
+  rightHappinessImpact: 5
   rightSociabilityImpact: 0
   impactType: 
   ageImpact: 1

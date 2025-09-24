@@ -131,12 +131,6 @@ public class GameManager : MonoBehaviour
         gameFinished = true;
         if (gameFinished) return; // guard
     }
-
-    /*public void FinishGame()
-    {
-        cardController.ForceEndCardRotation(0f); 
-        Debug.Log("[GameManager] Game Over (generic)");
-    }*/
 }
 
 public enum GameOverCause
