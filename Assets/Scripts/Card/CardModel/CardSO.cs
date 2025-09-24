@@ -37,7 +37,9 @@ public class CardSO : ScriptableObject
     public CardSO nextOnRight;
     public CardSO[] nextPoolLeft;
     public CardSO[] nextPoolRight;
+
     public LifeStage lifeStage;
+    public bool isOnlyOnce; // If true, this card can be used only once per game
 }
 
 public enum ImpactType
