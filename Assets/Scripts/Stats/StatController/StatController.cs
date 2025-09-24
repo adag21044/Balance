@@ -13,14 +13,33 @@ public class StatController : MonoBehaviour
         statModel.OnHappinessChanged += statView.UpdateHappinessValue;
         statModel.OnSociabilityChanged += statView.UpdateSociabilityValue;
 
+        statModel.OnAgeChanged += age =>
+        {
+            statView.UpdateAgeText(age);
+            SaveSystem.Instance.SaveStats(statModel); // yaş değiştikçe kaydet
+        };
+
         statModel.OnAgeChanged += age => statView.UpdateAgeText(age);
+
+        SaveSystem.Instance.LoadStats(statModel);
+        statView.SnapToModel(statModel);
+        statView.UpdateAgeText(statModel.age);
 
         StatModel.OnHeartAffected += () => statView.ShowHeartPointer(true);
         StatModel.OnCareerAffected += () => statView.ShowCareerPointer(true);
         StatModel.OnHappinessAffected += () => statView.ShowHappinessPointer(true);
         StatModel.OnSociabilityAffected += () => statView.ShowSociabilityPointer(true);
 
-        StatModel.OnFail += () => Debug.Log("Fail state");
+
+
+
+        StatModel.OnFail += () =>
+        {
+            Debug.Log("Fail state → Resetting stats");
+            SaveSystem.Instance.ResetStats(statModel);
+            statView.SnapToModel(statModel);
+            statView.UpdateAgeText(statModel.age);
+        };
 
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
@@ -37,6 +56,11 @@ public class StatController : MonoBehaviour
             statView.ShowHappinessPointer(false);
             statView.ShowSociabilityPointer(false);
         };
+        
+        statModel.OnHeartChanged += _ => SaveSystem.Instance.SaveStats(statModel);
+        statModel.OnCareerChanged += _ => SaveSystem.Instance.SaveStats(statModel);
+        statModel.OnHappinessChanged += _ => SaveSystem.Instance.SaveStats(statModel);
+        statModel.OnSociabilityChanged += _ => SaveSystem.Instance.SaveStats(statModel);
     }
     
     private void OnDestroy()

@@ -105,6 +105,11 @@ public class StatModel
             Debug.Log($"[StatModel] age before={beforeAge}, impact={card.ageImpact}, after={age}");
             OnAgeChanged?.Invoke(age);
         }
+
+        if (SaveSystem.Instance != null)
+        {
+            SaveSystem.Instance.SaveStats(this);
+        }
     }
 
     private void ApplyAndRaise(ref float statValue, float delta, Action<float> evt, Action<float> finishedEvt)
