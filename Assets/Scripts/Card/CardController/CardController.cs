@@ -488,39 +488,46 @@ public class CardController : MonoBehaviour,
 
     private void ApplyEndCardVisuals()
     {
-        // Kill ALL tweens on this UI (COMPLETE to final values)
         var rt = cardView.RectT;
-        DOTween.Kill(cardView, true);
-        DOTween.Kill(cardView.gameObject, true);
-        rt.DOKill(true);
-        DOTween.Kill(rt, true);
+
+        // Kill tweens (ama son değerleri uygulatma)
+        DOTween.Kill(cardView, complete: false);
+        DOTween.Kill(cardView.gameObject, complete: false);
+        rt.DOKill(false);
+        DOTween.Kill(rt, complete: false);
+
         var cg = cardView.GetComponent<CanvasGroup>();
-        if (cg) cg.DOKill(true);
+        if (!cg) cg = cardView.gameObject.AddComponent<CanvasGroup>();
+        cg.DOKill(false);
 
         ResetAllAlphas(cardView.gameObject);
 
-        // Update content first
+        // Update content
         cardView.SetContent(cardSO);
 
-        // Single, authoritative snap now...
-        SnapEndCardNow();
-        // ...and once more next LateUpdate (beats any Layout rebuild)
-        _snapEndCardNextLate = true;
-
-        // Bring on top + simple fade
+        // Kartı başlangıç pozisyonuna al
+        rt.localRotation = Quaternion.identity;
+        rt.localPosition = initialLocalPos;   // ReloadWith ile aynı
+        rt.localScale = Vector3.one * 0.9f;
         cardView.transform.SetAsLastSibling();
-        if (!cg) cg = cardView.gameObject.AddComponent<CanvasGroup>();
-        cg.alpha = 0f;
-        cg.DOFade(1f, 0.2f);
 
-        // Optional: block any movement after game over
+        // Görünmez başla
+        cg.alpha = 0f;
+
+        // Normal giriş animasyonu
+        var show = DOTween.Sequence();
+        show.Join(cg.DOFade(1f, 0.2f));
+        show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
+
+        // Hareketi blokla (oyun bitince)
         var mover = GetComponent<CardMovement>();
         if (mover) mover.enabled = false;
 
-        // Clear answers
+        // Cevapları temizle
         cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
     }
+
 
     private void ResetCardPosition()
     {
