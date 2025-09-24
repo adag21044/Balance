@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using System.Collections.Generic;
 
 public class CardController : MonoBehaviour,
                               IBeginDragHandler, IDragHandler, IEndDragHandler
@@ -35,8 +36,11 @@ public class CardController : MonoBehaviour,
     private CardMovement movement;
     private CanvasGroup canvasGroup;
 
-    #region Unity Lifecycle
+    [SerializeField] private List<CardSO> debugNextCards = new();
+    [SerializeField] private Queue<CardSO> nextCards = new Queue<CardSO>();
+    [SerializeField] private int PRELOAD_COUNT = 5;
 
+    #region Unity Lifecycle
     private void Awake()
     {
         // Ensure references
@@ -51,6 +55,9 @@ public class CardController : MonoBehaviour,
 
         // Build model for current SO
         Model = new CardModel(cardSO);
+
+        // Preload next cards
+        PreloadNextCards();
     }
 
     private void OnEnable()
@@ -102,19 +109,19 @@ public class CardController : MonoBehaviour,
 
         if (Mathf.Abs(dx) <= DEAD_ZONE_PX)
         {
-            cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+            cardView.SetAnswerText(cardView.LeftAnswerText, "");
             cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
         else if (dx > 0f)
         {
             // Swiping right -> show LEFT answer
-            cardView.SetAnswerText(cardView.LeftAnswerText,  cardSO.leftAnswer);
+            cardView.SetAnswerText(cardView.LeftAnswerText, cardSO.leftAnswer);
             cardView.SetAnswerText(cardView.RightAnswerText, "");
         }
         else
         {
             // Swiping left -> show RIGHT answer
-            cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+            cardView.SetAnswerText(cardView.LeftAnswerText, "");
             cardView.SetAnswerText(cardView.RightAnswerText, cardSO.rightAnswer);
         }
     }
@@ -123,9 +130,9 @@ public class CardController : MonoBehaviour,
     {
         if (Model.IsLocked || isGameOver) return;
 
-        float moved     = Mathf.Abs(cardView.RectT.localPosition.x - initialLocalPos.x);
+        float moved = Mathf.Abs(cardView.RectT.localPosition.x - initialLocalPos.x);
         float threshold = Screen.width * swipeThreshold;
-        bool toLeft     = cardView.RectT.localPosition.x < initialLocalPos.x;
+        bool toLeft = cardView.RectT.localPosition.x < initialLocalPos.x;
 
         if (moved < threshold)
         {
@@ -157,13 +164,13 @@ public class CardController : MonoBehaviour,
                         }
                         else
                         {
-                            ReloadWith(GetChainedCardOrRandom());
+                            ReloadWithNextCard();
                         }
                     });
         }
 
         // Clear UI hints
-        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
 
         // Hide pointers if view exists
@@ -207,7 +214,7 @@ public class CardController : MonoBehaviour,
 
         // Bind new data first
         cardSO = next;
-        Model  = new CardModel(cardSO);
+        Model = new CardModel(cardSO);
         cardView.SetContent(cardSO);
 
         // Ensure visible; CardInitialAnimation reveals using scale, not alpha
@@ -308,7 +315,7 @@ public class CardController : MonoBehaviour,
 
         // Update data
         cardSO = next;
-        Model  = new CardModel(cardSO);
+        Model = new CardModel(cardSO);
 
         // Kill tweens safely for this card only
         DOTween.Kill(cardView, complete: false);
@@ -334,7 +341,7 @@ public class CardController : MonoBehaviour,
         // Reset transform
         rt.localRotation = Quaternion.identity;
         rt.localPosition = initialLocalPos;
-        rt.localScale    = Vector3.one * 0.9f;
+        rt.localScale = Vector3.one * 0.9f;
         cardView.transform.SetAsLastSibling();
 
         // CanvasGroup fade-in
@@ -346,7 +353,7 @@ public class CardController : MonoBehaviour,
         show.Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
 
         // Clear answers
-        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
     }
 
@@ -372,7 +379,7 @@ public class CardController : MonoBehaviour,
 
         // 1) Choose end-card
         cardSO = gameEndSOs[index];
-        Model  = new CardModel(cardSO);
+        Model = new CardModel(cardSO);
 
         // 2) Apply visuals with movement disabled
         ApplyEndCardVisuals();
@@ -398,7 +405,7 @@ public class CardController : MonoBehaviour,
         var rt = cardView.RectT;
 
         // Kill tweens on this card safely (do not force-complete)
-        DOTween.Kill(cardView,          complete: false);
+        DOTween.Kill(cardView, complete: false);
         DOTween.Kill(cardView.gameObject, complete: false);
         rt.DOKill(false);
         DOTween.Kill(rt, complete: false);
@@ -415,7 +422,7 @@ public class CardController : MonoBehaviour,
         // Position to initial and show
         rt.localRotation = Quaternion.identity;
         rt.localPosition = initialLocalPos;
-        rt.localScale    = Vector3.one * 0.9f;
+        rt.localScale = Vector3.one * 0.9f;
         cardView.transform.SetAsLastSibling();
 
         canvasGroup.alpha = 0f;
@@ -429,7 +436,7 @@ public class CardController : MonoBehaviour,
         if (movement) movement.enabled = false;
 
         // Clear answers
-        cardView.SetAnswerText(cardView.LeftAnswerText,  "");
+        cardView.SetAnswerText(cardView.LeftAnswerText, "");
         cardView.SetAnswerText(cardView.RightAnswerText, "");
     }
 
@@ -469,4 +476,33 @@ public class CardController : MonoBehaviour,
     }
 
     #endregion
+    private void PreloadNextCards()
+    {
+        nextCards.Clear();
+        for (int i = 0; i < PRELOAD_COUNT; i++)
+        {
+            var nextCard = PickRandomSO();
+            nextCards.Enqueue(nextCard);
+        }
+
+        debugNextCards = new List<CardSO>(nextCards);
+    }
+
+    private CardSO GetNextFromQueue()
+    {
+        if (nextCards.Count == 0)
+        {
+            PreloadNextCards();
+        }
+
+        var next = nextCards.Dequeue();
+        PreloadNextCards(); // yeniden 5’e tamamla
+        return next;
+    }
+
+    private void ReloadWithNextCard()
+    {
+        CardSO next = GetNextFromQueue();
+        ReloadWith(next);
+    }
 }
