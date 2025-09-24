@@ -93,6 +93,7 @@ public class GameManager : MonoBehaviour
 
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayHeartFailSound();
+                SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Heart cause");
                 break;
 
@@ -101,6 +102,7 @@ public class GameManager : MonoBehaviour
 
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayCareerFailSound();
+                SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Career cause");
                 break;
 
@@ -109,6 +111,7 @@ public class GameManager : MonoBehaviour
 
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayHappinessFailSound();
+                SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Happiness cause");
                 break;
 
@@ -117,6 +120,7 @@ public class GameManager : MonoBehaviour
 
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlaySociabilityFailSound();
+                SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Sociability cause");
                 break;
 
