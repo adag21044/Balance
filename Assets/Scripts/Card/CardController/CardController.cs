@@ -433,7 +433,7 @@ public class CardController : MonoBehaviour,
                .Join(rt.DOScale(1f, 0.2f).SetEase(Ease.OutSine));
 
         // Disable movement on game over
-        if (movement) movement.enabled = false;
+        //if (movement) movement.enabled = false;
 
         // Clear answers
         cardView.SetAnswerText(cardView.LeftAnswerText, "");
