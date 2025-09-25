@@ -16,10 +16,8 @@ public class StatController : MonoBehaviour
         statModel.OnAgeChanged += age =>
         {
             statView.UpdateAgeText(age);
-            SaveSystem.Instance.SaveStats(statModel); // yaş değiştikçe kaydet
+            SaveSystem.Instance.SaveStats(statModel); // save age on change
         };
-
-        statModel.OnAgeChanged += age => statView.UpdateAgeText(age);
 
         SaveSystem.Instance.LoadStats(statModel);
         statView.SnapToModel(statModel);
@@ -29,9 +27,6 @@ public class StatController : MonoBehaviour
         StatModel.OnCareerAffected += () => statView.ShowCareerPointer(true);
         StatModel.OnHappinessAffected += () => statView.ShowHappinessPointer(true);
         StatModel.OnSociabilityAffected += () => statView.ShowSociabilityPointer(true);
-
-
-
 
         StatModel.OnFail += () =>
         {
