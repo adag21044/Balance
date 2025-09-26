@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card19
+  m_Name: Card22
   m_EditorClassIdentifier: 
-  Id: card_019
-  Title: Heart Attack
-  Description: Suddenly your chest feels tight and you can't breathe
-  Artwork: {fileID: -1494555456095830644, guid: 2c944e41e363f494baaea92ea57561ea, type: 3}
-  leftAnswer: Call an ambulance immediately
-  rightAnswer: Ignore
-  leftHeartImpact: -100
-  leftCareerImpact: 0
-  leftHappinessImpact: 0
+  Id: card_022
+  Title: Energy Drinks
+  Description: Energy drinks keep you awake, but at a cost.
+  Artwork: {fileID: -3930386368777712277, guid: e237583cfb951f241b7e8018ec794706, type: 3}
+  leftAnswer: Stop drinking
+  rightAnswer: Keep drinking
+  leftHeartImpact: 2
+  leftCareerImpact: -1
+  leftHappinessImpact: -1
   leftSociabilityImpact: 0
-  rightHeartImpact: 0
-  rightCareerImpact: 0
-  rightHappinessImpact: -5
+  rightHeartImpact: -3
+  rightCareerImpact: 1
+  rightHappinessImpact: 0
   rightSociabilityImpact: 0
-  impactType: 
-  ageImpact: 1
+  impactType: 0000000001000000
+  ageImpact: 0.2
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 5
+  lifeStage: 2
   isOnlyOnce: 0

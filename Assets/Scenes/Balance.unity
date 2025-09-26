@@ -5294,6 +5294,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f93f9ead7ea45f140974f68496b34420, type: 2}
   - {fileID: 11400000, guid: d218a3feaf25a9144aea4e7d4a655d3d, type: 2}
   - {fileID: 11400000, guid: 7c942ff370a35c34ebde63862540b916, type: 2}
+  - {fileID: 11400000, guid: 46c9e1dd221c4bd4abfc063955e57550, type: 2}
+  - {fileID: 11400000, guid: 57f0bb5387412b04487e3b5dd0ce6dfa, type: 2}
+  - {fileID: 11400000, guid: f378f1f3700fcc6478f88b8c411aa4c8, type: 2}
+  - {fileID: 11400000, guid: 9dfea792ec304004d96f648ac655ba68, type: 2}
+  - {fileID: 11400000, guid: 22fc6888d8e64134e83efd010aa35f71, type: 2}
+  - {fileID: 11400000, guid: 10148d3a46dc9744cbf251858b3bda5a, type: 2}
+  - {fileID: 11400000, guid: f50d58d1be4f7a444982ed8295ebee29, type: 2}
+  - {fileID: 11400000, guid: d3f6942032f8b5b40ba1d483ea1e2068, type: 2}
+  - {fileID: 11400000, guid: 0823c22e1c06a174c83af7735a20cca6, type: 2}
   cardSO: {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
   gameEndSOs:
   - {fileID: 11400000, guid: 08cc0b9c0d452d547b0f7d116f908c62, type: 2}

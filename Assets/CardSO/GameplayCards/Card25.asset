@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card19
+  m_Name: Card25
   m_EditorClassIdentifier: 
-  Id: card_019
-  Title: Heart Attack
-  Description: Suddenly your chest feels tight and you can't breathe
-  Artwork: {fileID: -1494555456095830644, guid: 2c944e41e363f494baaea92ea57561ea, type: 3}
-  leftAnswer: Call an ambulance immediately
-  rightAnswer: Ignore
-  leftHeartImpact: -100
+  Id: card_025
+  Title: Free Screening
+  Description: A free health screening is offered nearby. Do you attend?
+  Artwork: {fileID: 3360648672066222119, guid: 9861892eaa6bad84ea31de451c753ddb, type: 3}
+  leftAnswer: Skip it
+  rightAnswer: Attend
+  leftHeartImpact: -2
   leftCareerImpact: 0
   leftHappinessImpact: 0
   leftSociabilityImpact: 0
-  rightHeartImpact: 0
-  rightCareerImpact: 0
-  rightHappinessImpact: -5
+  rightHeartImpact: 3
+  rightCareerImpact: -1
+  rightHappinessImpact: 0
   rightSociabilityImpact: 0
-  impactType: 
-  ageImpact: 1
+  impactType: 00000000
+  ageImpact: 0.5
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 5
+  lifeStage: 3
   isOnlyOnce: 0

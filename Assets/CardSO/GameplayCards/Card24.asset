@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card19
+  m_Name: Card24
   m_EditorClassIdentifier: 
-  Id: card_019
-  Title: Heart Attack
-  Description: Suddenly your chest feels tight and you can't breathe
-  Artwork: {fileID: -1494555456095830644, guid: 2c944e41e363f494baaea92ea57561ea, type: 3}
-  leftAnswer: Call an ambulance immediately
-  rightAnswer: Ignore
-  leftHeartImpact: -100
-  leftCareerImpact: 0
-  leftHappinessImpact: 0
+  Id: card_024
+  Title: Sleep Schedule
+  Description: Your sleep schedule is slipping. Will you fix it?
+  Artwork: {fileID: -8788140507538960600, guid: a95b51d687c966a45855dca1028e8bc5, type: 3}
+  leftAnswer: Ignore it
+  rightAnswer: Fix schedule
+  leftHeartImpact: -2
+  leftCareerImpact: -1
+  leftHappinessImpact: -1
   leftSociabilityImpact: 0
-  rightHeartImpact: 0
+  rightHeartImpact: 3
   rightCareerImpact: 0
-  rightHappinessImpact: -5
+  rightHappinessImpact: 1
   rightSociabilityImpact: 0
-  impactType: 
-  ageImpact: 1
+  impactType: 0000000001000000
+  ageImpact: 0.2
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
