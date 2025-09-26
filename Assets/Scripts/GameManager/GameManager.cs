@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,7 +33,6 @@ public class GameManager : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void OnEnable()
@@ -39,15 +40,15 @@ public class GameManager : MonoBehaviour
         Debug.Log("[GameManager] OnEnable");
 
         // Build delegates ONCE per enable
-        onHeartFinished       = _ => FinishGame(GameOverCause.Heart);
-        onCareerFinished      = _ => FinishGame(GameOverCause.Career);
-        onHappinessFinished   = _ => FinishGame(GameOverCause.Happiness);
+        onHeartFinished = _ => FinishGame(GameOverCause.Heart);
+        onCareerFinished = _ => FinishGame(GameOverCause.Career);
+        onHappinessFinished = _ => FinishGame(GameOverCause.Happiness);
         onSociabilityFinished = _ => FinishGame(GameOverCause.Sociability);
 
         var sm = StatModel.Instance;
-        sm.OnHeartFinished       += onHeartFinished;
-        sm.OnCareerFinished      += onCareerFinished;
-        sm.OnHappinessFinished   += onHappinessFinished;
+        sm.OnHeartFinished += onHeartFinished;
+        sm.OnCareerFinished += onCareerFinished;
+        sm.OnHappinessFinished += onHappinessFinished;
         sm.OnSociabilityFinished += onSociabilityFinished;
     }
 
@@ -57,9 +58,9 @@ public class GameManager : MonoBehaviour
         if (sm == null) return;
 
         // Unsubscribe exactly what we subscribed
-        if (onHeartFinished       != null) sm.OnHeartFinished       -= onHeartFinished;
-        if (onCareerFinished      != null) sm.OnCareerFinished      -= onCareerFinished;
-        if (onHappinessFinished   != null) sm.OnHappinessFinished   -= onHappinessFinished;
+        if (onHeartFinished != null) sm.OnHeartFinished -= onHeartFinished;
+        if (onCareerFinished != null) sm.OnCareerFinished -= onCareerFinished;
+        if (onHappinessFinished != null) sm.OnHappinessFinished -= onHappinessFinished;
         if (onSociabilityFinished != null) sm.OnSociabilityFinished -= onSociabilityFinished;
     }
 
@@ -74,7 +75,7 @@ public class GameManager : MonoBehaviour
 
         if (cardInitialAnimation != null)
             cardInitialAnimation.StartAnimation();
-        
+
         statController.statView.AnimateAgeText(StatModel.Instance.age);
     }
 
@@ -95,6 +96,7 @@ public class GameManager : MonoBehaviour
                 soundManager.PlayHeartFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Heart cause");
+                StartCoroutine(ReloadSceneAfterDelay(5f));
                 break;
 
             case GameOverCause.Career:
@@ -104,6 +106,7 @@ public class GameManager : MonoBehaviour
                 soundManager.PlayCareerFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Career cause");
+                StartCoroutine(ReloadSceneAfterDelay(5f));
                 break;
 
             case GameOverCause.Happiness:
@@ -113,6 +116,7 @@ public class GameManager : MonoBehaviour
                 soundManager.PlayHappinessFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Happiness cause");
+                StartCoroutine(ReloadSceneAfterDelay(5f));
                 break;
 
             case GameOverCause.Sociability:
@@ -122,18 +126,25 @@ public class GameManager : MonoBehaviour
                 soundManager.PlaySociabilityFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Sociability cause");
+                StartCoroutine(ReloadSceneAfterDelay(5f));
                 break;
 
             default:
                 Debug.LogError($"[GameManager] FinishGame called with unknown cause: {cause}");
+                StartCoroutine(ReloadSceneAfterDelay(5f));
                 break;
         }
-
         Debug.Log($"[GameManager] Game Over by {cause}");
 
 
         gameFinished = true;
         if (gameFinished) return; // guard
+    }
+    
+    private IEnumerator ReloadSceneAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
