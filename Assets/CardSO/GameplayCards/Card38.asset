@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card38
+  m_EditorClassIdentifier: 
+  Id: card_038
+  Title: Karen Strikes
+  Description: "A screaming Karen demands to \u201Cspeak to the manager\u201D while
+    you\u2019re just shopping for cereal"
+  Artwork: {fileID: 8575933842199897409, guid: ef49b0776f9afa74294d30662d0a366f, type: 3}
+  leftAnswer: Pretend to be the manager
+  rightAnswer: Run away
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 3
+  leftSociabilityImpact: -1
+  rightHeartImpact: 1
+  rightCareerImpact: 0
+  rightHappinessImpact: 1
+  rightSociabilityImpact: 0
+  impactType: 000000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0
