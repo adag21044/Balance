@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Doctor Checkup_0: -6711902685553691125
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
