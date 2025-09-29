@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card42
+  m_EditorClassIdentifier: 
+  Id: card_042
+  Title: Haunted Motel
+  Description: "A cheap roadside motel has \u201Cone room left.\u201D Locals whisper
+    it\u2019s haunted."
+  Artwork: {fileID: 1093374407891515784, guid: 15585f3fa3b9e1d498fc9db8f1a50a92, type: 3}
+  leftAnswer: Stay anyway.
+  rightAnswer: Sleep in your car.
+  leftHeartImpact: -2
+  leftCareerImpact: 0
+  leftHappinessImpact: -1
+  leftSociabilityImpact: 0
+  rightHeartImpact: -1
+  rightCareerImpact: 0
+  rightHappinessImpact: 2
+  rightSociabilityImpact: 0
+  impactType: 0000000002000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 2
+  isOnlyOnce: 1
