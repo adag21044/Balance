@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Join the Basketball Team_0: 7268523110572875217
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
