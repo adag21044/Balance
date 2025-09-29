@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card41
+  m_EditorClassIdentifier: 
+  Id: card_041
+  Title: UFO Sighting
+  Description: "Locals swear they saw a UFO hovering over a cornfield. You\u2019re
+    nearby."
+  Artwork: {fileID: 1799310594429854242, guid: 185c5de5c9151ed40abf2b0af7e99aa2, type: 3}
+  leftAnswer: Investigate
+  rightAnswer: Ignore
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 2
+  leftSociabilityImpact: -1
+  rightHeartImpact: 0
+  rightCareerImpact: -1
+  rightHappinessImpact: 0
+  rightSociabilityImpact: 1
+  impactType: 010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 1
