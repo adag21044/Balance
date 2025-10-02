@@ -10,23 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card48
+  m_Name: Card49
   m_EditorClassIdentifier: 
-  Id: card_048
-  Title: Desert Road Trip
-  Description: Your friends propose a spontaneous road trip through the Nevada desert
-    -no maps, no plan.
-  Artwork: {fileID: 5319783187178840801, guid: 45c4631a781eb044daaebf6b40d5cbd9, type: 3}
-  leftAnswer: Join them
-  rightAnswer: Stay home
+  Id: card_049
+  Title: "Surf\u2019s Up"
+  Description: "A surfer buddy calls: \u201CThe waves are perfect!\u201D"
+  Artwork: {fileID: 2481005517453139310, guid: bb053e46dcbc59e428497ae595a8ed4a, type: 3}
+  leftAnswer: Go to work instead
+  rightAnswer: Surf with friends
   leftHeartImpact: 0
-  leftCareerImpact: -2
-  leftHappinessImpact: 3
-  leftSociabilityImpact: 2
+  leftCareerImpact: 2
+  leftHappinessImpact: -1
+  leftSociabilityImpact: -1
   rightHeartImpact: 1
-  rightCareerImpact: 2
-  rightHappinessImpact: 0
-  rightSociabilityImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 2
+  rightSociabilityImpact: 1
   impactType: 00000000010000000200000003000000
   ageImpact: 1
   isChainCard: 0
