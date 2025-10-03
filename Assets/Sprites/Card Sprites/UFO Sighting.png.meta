@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UFO Sighting_0: 1799310594429854242
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
