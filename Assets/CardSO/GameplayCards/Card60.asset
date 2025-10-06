@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card60
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_060
+  Title: The HOA Showdown
+  Description: "Your neighbor\u2019s mailbox is painted the wrong shade of beige.
+    The HOA demands action."
+  Artwork: {fileID: -3166800521979517472, guid: 99c08f7fd2a991a469782ca5122bac76, type: 3}
+  leftAnswer: "I\u2019ll repaint it myself."
+  rightAnswer: This is tyranny!
+  leftHeartImpact: 2
+  leftCareerImpact: 0
+  leftHappinessImpact: -1
+  leftSociabilityImpact: 1
+  rightHeartImpact: -1
+  rightCareerImpact: 0
+  rightHappinessImpact: 2
+  rightSociabilityImpact: -2
+  impactType: 000000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 2
+  isOnlyOnce: 0
