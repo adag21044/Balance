@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card65
+  m_Name: Card68
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_065
-  Title: Blank Card
-  Description: This card was supposed to be something, but no one remembers what.
+  Id: card_068
+  Title: Streaming Subscription Overload
+  Description: You have seven subscriptions and nothing to watch.
   Artwork: {fileID: 0}
-  leftAnswer: 
-  rightAnswer: 
-  leftHeartImpact: 0
+  leftAnswer: Cancel all of them
+  rightAnswer: One more, maybe different
+  leftHeartImpact: 1
   leftCareerImpact: 0
-  leftHappinessImpact: 0
+  leftHappinessImpact: -1
   leftSociabilityImpact: 0
-  rightHeartImpact: 0
+  rightHeartImpact: -1
   rightCareerImpact: 0
-  rightHappinessImpact: 0
-  rightSociabilityImpact: 0
-  impactType: 
-  ageImpact: 0
+  rightHappinessImpact: 2
+  rightSociabilityImpact: 1
+  impactType: 000000000200000003000000
+  ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 0
-  isOnlyOnce: 0
+  lifeStage: 1
+  isOnlyOnce: 1

@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card65
+  m_Name: Card67
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_065
-  Title: Blank Card
-  Description: This card was supposed to be something, but no one remembers what.
-  Artwork: {fileID: 0}
-  leftAnswer: 
-  rightAnswer: 
+  Id: card_067
+  Title: AI Writes Your Essay
+  Description: "A new app promises it can \u201Cwrite anything for you.\u201D"
+  Artwork: {fileID: 5518704958344836477, guid: ca78919a5c378f6418516c0fbb0fffb4, type: 3}
+  leftAnswer: Use it for your college paper.
+  rightAnswer: Try to write it yourself.
   leftHeartImpact: 0
-  leftCareerImpact: 0
+  leftCareerImpact: 2
   leftHappinessImpact: 0
   leftSociabilityImpact: 0
   rightHeartImpact: 0
-  rightCareerImpact: 0
-  rightHappinessImpact: 0
+  rightCareerImpact: -5
+  rightHappinessImpact: 1
   rightSociabilityImpact: 0
-  impactType: 
+  impactType: 0200000001000000
   ageImpact: 0
   isChainCard: 0
   nextOnLeft: {fileID: 0}
