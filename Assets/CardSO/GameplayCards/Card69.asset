@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card69
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_069
+  Title: Email Server Crash
+  Description: A government office loses thousands of emails overnight.
+  Artwork: {fileID: 6605474295554432592, guid: 2a338d571b8e26c47991c2efdc94449a, type: 3}
+  leftAnswer: Blame technology.
+  rightAnswer: Blame the intern.
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: -1
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: -1
+  rightHappinessImpact: 1
+  rightSociabilityImpact: 0
+  impactType: 0100000002000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 2
+  isOnlyOnce: 0
