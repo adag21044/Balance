@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card71
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_071
+  Title: Government Shutdown (Again)
+  Description: "The government shuts down. National parks close, but your bills don\u2019t."
+  Artwork: {fileID: -6332933329176021413, guid: 11cb267c39c6a7041bc8ab551dc81696, type: 3}
+  leftAnswer: Take a patriotic unpaid vacation.
+  rightAnswer: Start your own tiny government at home.
+  leftHeartImpact: 2
+  leftCareerImpact: -1
+  leftHappinessImpact: 3
+  leftSociabilityImpact: 1
+  rightHeartImpact: 3
+  rightCareerImpact: 0
+  rightHappinessImpact: 2
+  rightSociabilityImpact: 2
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0
