@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card72
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_072
+  Title: Printer Jam Again
+  Description: You hit 'print' 12 times. Now the printer is spewing paper like a
+    volcano.
+  Artwork: {fileID: -7079475002159929539, guid: d017a4dc62a80194d9adb6b680d80043, type: 3}
+  leftAnswer: Unplug and pray
+  rightAnswer: "Call IT support\u2026 again"
+  leftHeartImpact: 0
+  leftCareerImpact: -2
+  leftHappinessImpact: 1
+  leftSociabilityImpact: -1
+  rightHeartImpact: 1
+  rightCareerImpact: 0
+  rightHappinessImpact: -1
+  rightSociabilityImpact: 2
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 2
+  isOnlyOnce: 0
