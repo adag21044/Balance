@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card75
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_075
+  Title: Unexpected Market Crash
+  Description: Your portfolio looks like a ski slope
+  Artwork: {fileID: 2432197165649480968, guid: 4e34d1c98d2299a4ba33bc7a7d86a930, type: 3}
+  leftAnswer: Panic sell everything
+  rightAnswer: Stay calm and diversify
+  leftHeartImpact: -2
+  leftCareerImpact: -2
+  leftHappinessImpact: -1
+  leftSociabilityImpact: 0
+  rightHeartImpact: 1
+  rightCareerImpact: 3
+  rightHappinessImpact: 1
+  rightSociabilityImpact: 0
+  impactType: 000000000100000002000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 2
+  isOnlyOnce: 0
