@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_047
   Title: 4th of July Chaos
   Description: A guy tries to light fireworks with a cigarette. Everyone is cheering.
-  Artwork: {fileID: 0}
+  Artwork: {fileID: 2586037791596580220, guid: 809e19ca8ec556c4d9d6f674d96c737c, type: 3}
   leftAnswer: Join in
   rightAnswer: Call 911
   leftHeartImpact: -3
