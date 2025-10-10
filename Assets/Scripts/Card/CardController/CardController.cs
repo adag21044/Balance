@@ -164,7 +164,8 @@ public class CardController : MonoBehaviour,
                         }
                         else
                         {
-                            ReloadWithNextCard();
+                            var next = ChooseNextCard(decidedCard, lastSwipeDir);
+                            ReloadWith(next);
                         }
                     });
         }
@@ -246,7 +247,11 @@ public class CardController : MonoBehaviour,
         StatModel.Instance.ApplyCard(cardSO, dir);
 
         if (!isGameOver)
-            ReloadWith(GetChainedCardOrRandom());
+        {
+            // CHANGED: was ReloadWith(GetChainedCardOrRandom());
+            var next = ChooseNextCard(cardSO, dir);
+            ReloadWith(next);
+        }
     }
 
     #endregion
@@ -504,5 +509,30 @@ public class CardController : MonoBehaviour,
     {
         CardSO next = GetNextFromQueue();
         ReloadWith(next);
+    }
+
+    private CardSO ChooseNextCard(CardSO current, SwipeDirection dir)
+    {
+        // 1) direct chain
+        if (current != null)
+        {
+            CardSO next = (dir == SwipeDirection.Left) ? current.nextOnLeft : current.nextOnRight;
+            if (next != null && next != current) return next;
+
+            // 2) pool chain
+            CardSO[] pool = (dir == SwipeDirection.Left) ? current.nextPoolLeft : current.nextPoolRight;
+            if (pool != null && pool.Length > 0)
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    var c = pool[Random.Range(0, pool.Length)];
+                    if (c != null && c != current) return c;
+                }
+                foreach (var c in pool) if (c != null) return c;
+            }
+        }
+
+        // 3) fallback: queued/random
+        return GetNextFromQueue();
     }
 }
