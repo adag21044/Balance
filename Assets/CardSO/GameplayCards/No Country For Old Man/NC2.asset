@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: NC2
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_079
+  Title: Gas Station Stop
+  Description: You stop for gas. The cashier watches you a little too long.
+  Artwork: {fileID: -5868278492234119940, guid: 757105fe31fc19043997dcad5779e871, type: 3}
+  leftAnswer: Ask if anyone lost a wallet.
+  rightAnswer: Buy gas and say nothing.
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: -1
+  leftSociabilityImpact: 1
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 1
+  rightSociabilityImpact: 0
+  impactType: 010000000200000003000000
+  ageImpact: 1
+  isChainCard: 1
+  nextOnLeft: {fileID: 11400000, guid: b9d3a224702d5df4eada73488cbd6c9d, type: 2}
+  nextOnRight: {fileID: 11400000, guid: 218c636b39b3e414aa90b063f83d4673, type: 2}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: NC3
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_080
+  Title: Strange Man
+  Description: A man approaches, calm but intense. He asks if you found something
+    on the road.
+  Artwork: {fileID: 2653473740607868233, guid: 8a7a4829ac41b8042afbc62951ff29a9, type: 3}
+  leftAnswer: Talk to him about the wallet.
+  rightAnswer: Walk away.
+  leftHeartImpact: -1
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
+  leftSociabilityImpact: -1
+  rightHeartImpact: 1
+  rightCareerImpact: 0
+  rightHappinessImpact: 2
+  rightSociabilityImpact: 1
+  impactType: 000000000200000003000000
+  ageImpact: 1
+  isChainCard: 1
+  nextOnLeft: {fileID: 11400000, guid: 6d4e93a5c862f3b4d806f14be6fdabbd, type: 2}
+  nextOnRight: {fileID: 11400000, guid: 1992be790c092f9479dad168f5d44fb6, type: 2}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0
