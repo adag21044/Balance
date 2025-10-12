@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card91
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_091
+  Title: Late Again
+  Description: Traffic again. Boss is waiting. Coffee... or consequences?
+  Artwork: {fileID: -3281675224317083146, guid: 71c144f415c07354ebc729b561b2436f, type: 3}
+  leftAnswer: Speed up!
+  rightAnswer: Coffee first
+  leftHeartImpact: -2
+  leftCareerImpact: 3
+  leftHappinessImpact: -3
+  leftSociabilityImpact: 0
+  rightHeartImpact: 2
+  rightCareerImpact: -3
+  rightHappinessImpact: 4
+  rightSociabilityImpact: 1
+  impactType: 00000000010000000200000003000000
+  ageImpact: 0
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0
