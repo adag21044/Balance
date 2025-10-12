@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card88
+  m_Name: Card89
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_088
-  Title: Grandpa's Winchester
-  Description: An old family rifle is found in the attic with a faded note.
-  Artwork: {fileID: 9037811787781836639, guid: 8cb4d415f7f2de1469224a9a55a93b70, type: 3}
-  leftAnswer: Keep it in the family
-  rightAnswer: Donate to the museum
+  Id: card_089
+  Title: Second Amendment Right
+  Description: A debate starts at the diner about constitutional rights.
+  Artwork: {fileID: -5923310657074039522, guid: d799a92dfd35cc745b44aeb1e3c758c3, type: 3}
+  leftAnswer: Defend the Constitution
+  rightAnswer: Rights are not negotiable
   leftHeartImpact: 2
   leftCareerImpact: 0
   leftHappinessImpact: 1
-  leftSociabilityImpact: 1
-  rightHeartImpact: 0
+  leftSociabilityImpact: 0
+  rightHeartImpact: 2
   rightCareerImpact: 0
-  rightHappinessImpact: -1
+  rightHappinessImpact: 1
   rightSociabilityImpact: -1
   impactType: 000000000200000003000000
-  ageImpact: 0
+  ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
-  isOnlyOnce: 1
+  lifeStage: 4
+  isOnlyOnce: 0
