@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card90
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_090
+  Title: Freedom Blenders Commercial
+  Description: 'A screaming salesman yells from your TV: ''The Freedom Blender! Crush
+    ice and communism!'''
+  Artwork: {fileID: 5431788121083625266, guid: 652451093ed460a4596b05065ac46ff5, type: 3}
+  leftAnswer: Crush a few reds for breakfast
+  rightAnswer: Crush a few reds for breakfast
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 0
+  rightSociabilityImpact: 0
+  impactType: 
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0
