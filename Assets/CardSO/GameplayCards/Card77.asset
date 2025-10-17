@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card97
+  m_Name: Card77
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_097
-  Title: Patriot Alert
-  Description: "After a drone delivery lands in your yard, two ICE agents show up
-    asking if you\u2019ve seen 'foreign technology'"
-  Artwork: {fileID: 1440753464854198115, guid: 0af4be23e47f88247a7e3f9221dabe93, type: 3}
-  leftAnswer: 
-  rightAnswer: 
+  Id: card_086
+  Title: Wokeflix Originals
+  Description: A superhero show where the real villain is... traditional values.
+  Artwork: {fileID: -1364837042163800332, guid: 7e74c98fc28223e4a9525ceeb83aa681, type: 3}
+  leftAnswer: I just wanna watch something fun
+  rightAnswer: I miss when heroes fought crime
   leftHeartImpact: 0
   leftCareerImpact: 0
   leftHappinessImpact: 0
@@ -28,7 +27,7 @@ MonoBehaviour:
   rightHappinessImpact: 0
   rightSociabilityImpact: 0
   impactType: 
-  ageImpact: 0
+  ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}

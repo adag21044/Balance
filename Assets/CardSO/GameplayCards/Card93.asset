@@ -12,27 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card93
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_093
-  Title: Red or Blue?
-  Description: Your family dinner turns into a political battlefield after someone
-    mentions gas prices.
-  Artwork: {fileID: -3411803336251579154, guid: 8f8ce0d42381c884bb7bd282fab298b7, type: 3}
-  leftAnswer: Stay silent and eat turkey
-  rightAnswer: Join the argument
-  leftHeartImpact: 1
+  Id: card_102
+  Title: Office Romance
+  Description: Two coworkers start dating. Productivity drops.
+  Artwork: {fileID: -1844190141187979863, guid: 5f2407ecbb24e0c49a2c430a627b27f5, type: 3}
+  leftAnswer: Mind your business
+  rightAnswer: "Tell HR \u2014 anonymously"
+  leftHeartImpact: 0
   leftCareerImpact: 0
   leftHappinessImpact: 1
   leftSociabilityImpact: 2
-  rightHeartImpact: -2
-  rightCareerImpact: 0
-  rightHappinessImpact: -1
+  rightHeartImpact: 0
+  rightCareerImpact: 1
+  rightHappinessImpact: 0
   rightSociabilityImpact: -2
-  impactType: 000000000200000003000000
+  impactType: 010000000200000003000000
   ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 1
   isOnlyOnce: 0

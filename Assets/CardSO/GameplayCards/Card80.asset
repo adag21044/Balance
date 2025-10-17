@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card98
+  m_Name: Card80
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_098
-  Title: Meme War Heats Up
-  Description: "President posts a meme mocking Governor \u2014 the internet erupts."
-  Artwork: {fileID: -386636483808341803, guid: af5c4adfbe02a554187989996028cb1e, type: 3}
-  leftAnswer: 
-  rightAnswer: 
-  leftHeartImpact: 0
+  Id: card_089
+  Title: Second Amendment Right
+  Description: A debate starts at the diner about constitutional rights.
+  Artwork: {fileID: -5923310657074039522, guid: d799a92dfd35cc745b44aeb1e3c758c3, type: 3}
+  leftAnswer: Defend the Constitution
+  rightAnswer: Rights are not negotiable
+  leftHeartImpact: 2
   leftCareerImpact: 0
-  leftHappinessImpact: 0
+  leftHappinessImpact: 1
   leftSociabilityImpact: 0
-  rightHeartImpact: 0
+  rightHeartImpact: 2
   rightCareerImpact: 0
-  rightHappinessImpact: 0
-  rightSociabilityImpact: 0
-  impactType: 
-  ageImpact: 0
+  rightHappinessImpact: 1
+  rightSociabilityImpact: -1
+  impactType: 000000000200000003000000
+  ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 0
+  lifeStage: 4
   isOnlyOnce: 0

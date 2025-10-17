@@ -12,26 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card92
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_092
-  Title: Freedom Above All
-  Description: "A protester waves a flag shouting: 'Don\u2019t tread on me!'"
-  Artwork: {fileID: -7266521487842861772, guid: 561f851b30e444b459ba84d1ec0227af, type: 3}
-  leftAnswer: 
-  rightAnswer: 
+  Id: card_101
+  Title: Mandatory Fun Day
+  Description: "The boss declares a team-building day\u2026 at a paintball park."
+  Artwork: {fileID: 6707794364360091111, guid: 7cf45a7d10ef1f84595ddd3afeaf68cb, type: 3}
+  leftAnswer: Go all-in and lead the team
+  rightAnswer: Fake an injury to skip
   leftHeartImpact: 0
-  leftCareerImpact: 0
-  leftHappinessImpact: 1
-  leftSociabilityImpact: 1
-  rightHeartImpact: 0
-  rightCareerImpact: 0
+  leftCareerImpact: 1
+  leftHappinessImpact: 2
+  leftSociabilityImpact: 2
+  rightHeartImpact: 1
+  rightCareerImpact: -2
   rightHappinessImpact: 0
   rightSociabilityImpact: -1
-  impactType: 0200000003000000
+  impactType: 00000000010000000200000003000000
   ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 1
   isOnlyOnce: 0

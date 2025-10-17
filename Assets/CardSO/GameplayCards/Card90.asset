@@ -12,27 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card90
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_090
-  Title: Freedom Blenders Commercial
-  Description: 'A screaming salesman yells from your TV: ''The Freedom Blender! Crush
-    ice and communism!'''
-  Artwork: {fileID: 5431788121083625266, guid: 652451093ed460a4596b05065ac46ff5, type: 3}
-  leftAnswer: Crush a few reds for breakfast
-  rightAnswer: Crush a few reds for breakfast
-  leftHeartImpact: 0
+  Id: card_099
+  Title: Family Therapy Coupon
+  Description: "Your spouse found a \u201CBuy 1 Get 1 Free\u201D therapy coupon online."
+  Artwork: {fileID: -7809360494916884322, guid: ece46853039020d40a71ce72ae7b4f5a, type: 3}
+  leftAnswer: "Let\u2019s try it"
+  rightAnswer: "Therapy\u2019s for quitters"
+  leftHeartImpact: 3
   leftCareerImpact: 0
-  leftHappinessImpact: 0
-  leftSociabilityImpact: 0
-  rightHeartImpact: 0
-  rightCareerImpact: 0
-  rightHappinessImpact: 0
+  leftHappinessImpact: 2
+  leftSociabilityImpact: -1
+  rightHeartImpact: -3
+  rightCareerImpact: 1
+  rightHappinessImpact: -1
   rightSociabilityImpact: 0
-  impactType: 
+  impactType: 00000000010000000200000003000000
   ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 0
   isOnlyOnce: 0

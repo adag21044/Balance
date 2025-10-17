@@ -10,28 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card100
+  m_Name: Card85
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_100
-  Title: Coffee Thief
-  Description: Someone keeps stealing your labeled coffee mug
-  Artwork: {fileID: 8438189668832008794, guid: 2893ffdf887cd0649b85b4d82816b569, type: 3}
-  leftAnswer: Set up a hidden camera
-  rightAnswer: "Steal someone else\u2019s mug"
+  Id: card_094
+  Title: News War
+  Description: "Two TVs at the gym: one blasting Falcon News, the other ANN (American
+    News Network). Everyone\u2019s pretending not to watch."
+  Artwork: {fileID: -3330905388091737147, guid: 55207782ecb2c7547a586b2df81811e0, type: 3}
+  leftAnswer: 
+  rightAnswer: 
   leftHeartImpact: 0
-  leftCareerImpact: -1
-  leftHappinessImpact: -1
-  leftSociabilityImpact: -2
-  rightHeartImpact: -1
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
   rightCareerImpact: 0
-  rightHappinessImpact: 1
-  rightSociabilityImpact: -1
-  impactType: 00000000010000000200000003000000
+  rightHappinessImpact: 0
+  rightSociabilityImpact: 0
+  impactType: 
   ageImpact: 0
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
-  isOnlyOnce: 1
+  lifeStage: 4
+  isOnlyOnce: 0

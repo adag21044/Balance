@@ -12,26 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card87
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_087
-  Title: Pronoun Policy at Work
-  Description: HR requires everyone to list pronouns on their badges.
-  Artwork: {fileID: 9030128014429698439, guid: e8c13716e22d154469f233601b98452d, type: 3}
-  leftAnswer: "My job isn\u2019t about pronouns"
-  rightAnswer: Keep ideology off badges
-  leftHeartImpact: 1
+  Id: card_096
+  Title: Error 420
+  Description: "Too many crypto bros trying to apply for a job at MoBurger\u2019s.
+    The site is temporarily unavailable."
+  Artwork: {fileID: 0}
+  leftAnswer: 
+  rightAnswer: 
+  leftHeartImpact: 0
   leftCareerImpact: 0
-  leftHappinessImpact: 1
+  leftHappinessImpact: 0
   leftSociabilityImpact: 0
-  rightHeartImpact: 1
+  rightHeartImpact: 0
   rightCareerImpact: 0
-  rightHappinessImpact: 1
+  rightHappinessImpact: 0
   rightSociabilityImpact: 0
-  impactType: 00000000010000000200000003000000
-  ageImpact: 1
+  impactType: 
+  ageImpact: 0
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
-  isOnlyOnce: 1
+  lifeStage: 4
+  isOnlyOnce: 0

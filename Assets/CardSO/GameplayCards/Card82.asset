@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card101
+  m_Name: Card82
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_101
-  Title: Mandatory Fun Day
-  Description: "The boss declares a team-building day\u2026 at a paintball park."
-  Artwork: {fileID: 6707794364360091111, guid: 7cf45a7d10ef1f84595ddd3afeaf68cb, type: 3}
-  leftAnswer: Go all-in and lead the team
-  rightAnswer: Fake an injury to skip
-  leftHeartImpact: 0
-  leftCareerImpact: 1
-  leftHappinessImpact: 2
-  leftSociabilityImpact: 2
-  rightHeartImpact: 1
-  rightCareerImpact: -2
-  rightHappinessImpact: 0
-  rightSociabilityImpact: -1
+  Id: card_091
+  Title: Late Again
+  Description: Traffic again. Boss is waiting. Coffee... or consequences?
+  Artwork: {fileID: -3281675224317083146, guid: 71c144f415c07354ebc729b561b2436f, type: 3}
+  leftAnswer: Speed up!
+  rightAnswer: Coffee first
+  leftHeartImpact: -2
+  leftCareerImpact: 3
+  leftHappinessImpact: -3
+  leftSociabilityImpact: 0
+  rightHeartImpact: 2
+  rightCareerImpact: -3
+  rightHappinessImpact: 4
+  rightSociabilityImpact: 1
   impactType: 00000000010000000200000003000000
-  ageImpact: 1
+  ageImpact: 0
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
+  lifeStage: 4
   isOnlyOnce: 0

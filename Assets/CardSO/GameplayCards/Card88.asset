@@ -12,26 +12,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card88
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_088
-  Title: Grandpa's Winchester
-  Description: An old family rifle is found in the attic with a faded note.
-  Artwork: {fileID: 9037811787781836639, guid: 8cb4d415f7f2de1469224a9a55a93b70, type: 3}
-  leftAnswer: Keep it in the family
-  rightAnswer: Donate to the museum
-  leftHeartImpact: 2
+  Id: card_097
+  Title: Patriot Alert
+  Description: "After a drone delivery lands in your yard, two ICE agents show up
+    asking if you\u2019ve seen 'foreign technology'"
+  Artwork: {fileID: 1440753464854198115, guid: 0af4be23e47f88247a7e3f9221dabe93, type: 3}
+  leftAnswer: 
+  rightAnswer: 
+  leftHeartImpact: 0
   leftCareerImpact: 0
-  leftHappinessImpact: 1
-  leftSociabilityImpact: 1
+  leftHappinessImpact: 0
+  leftSociabilityImpact: 0
   rightHeartImpact: 0
   rightCareerImpact: 0
-  rightHappinessImpact: -1
-  rightSociabilityImpact: -1
-  impactType: 000000000200000003000000
+  rightHappinessImpact: 0
+  rightSociabilityImpact: 0
+  impactType: 
   ageImpact: 0
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
-  isOnlyOnce: 1
+  lifeStage: 4
+  isOnlyOnce: 0

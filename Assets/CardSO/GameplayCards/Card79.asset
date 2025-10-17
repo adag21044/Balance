@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card95
+  m_Name: Card79
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_095
-  Title: Meme Diplomacy
-  Description: The Vice President posts a meme mocking himself.
-  Artwork: {fileID: -145061343222229436, guid: 3669b32dad1c8c6458c69ed1d64fe29e, type: 3}
-  leftAnswer: 
-  rightAnswer: 
-  leftHeartImpact: 0
+  Id: card_088
+  Title: Grandpa's Winchester
+  Description: An old family rifle is found in the attic with a faded note.
+  Artwork: {fileID: 9037811787781836639, guid: 8cb4d415f7f2de1469224a9a55a93b70, type: 3}
+  leftAnswer: Keep it in the family
+  rightAnswer: Donate to the museum
+  leftHeartImpact: 2
   leftCareerImpact: 0
-  leftHappinessImpact: 0
-  leftSociabilityImpact: 0
+  leftHappinessImpact: 1
+  leftSociabilityImpact: 1
   rightHeartImpact: 0
   rightCareerImpact: 0
-  rightHappinessImpact: 0
-  rightSociabilityImpact: 0
-  impactType: 
+  rightHappinessImpact: -1
+  rightSociabilityImpact: -1
+  impactType: 000000000200000003000000
   ageImpact: 0
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 1
   isOnlyOnce: 1
