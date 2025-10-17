@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card101
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_101
+  Title: Mandatory Fun Day
+  Description: "The boss declares a team-building day\u2026 at a paintball park."
+  Artwork: {fileID: 6707794364360091111, guid: 7cf45a7d10ef1f84595ddd3afeaf68cb, type: 3}
+  leftAnswer: Go all-in and lead the team
+  rightAnswer: Fake an injury to skip
+  leftHeartImpact: 0
+  leftCareerImpact: 1
+  leftHappinessImpact: 2
+  leftSociabilityImpact: 2
+  rightHeartImpact: 1
+  rightCareerImpact: -2
+  rightHappinessImpact: 0
+  rightSociabilityImpact: -1
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 1
+  isOnlyOnce: 0

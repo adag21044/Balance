@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: BN1
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_103
+  Title: President Cancels Meeting for Golf
+  Description: "Breaking News: The President skips a crisis meeting for \u201Cimportant
+    golf diplomacy.\u201D"
+  Artwork: {fileID: 9041924767219642196, guid: 3e92995f1a12b3b4e9c573815c4cc6a8, type: 3}
+  leftAnswer: 
+  rightAnswer: 
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 0
+  rightSociabilityImpact: 0
+  impactType: 
+  ageImpact: 0
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0
