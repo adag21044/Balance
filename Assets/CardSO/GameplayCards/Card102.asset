@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card102
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_113
+  Title: IRS Letter
+  Description: "We need clarification\u2026"
+  Artwork: {fileID: -7965236216118828137, guid: a69a86f5ef7a34f4b96cbffb2183e80a, type: 3}
+  leftAnswer: Call a lawyer
+  rightAnswer: Panic quietly
+  leftHeartImpact: 0
+  leftCareerImpact: -3
+  leftHappinessImpact: 0
+  leftSociabilityImpact: 0
+  rightHeartImpact: -2
+  rightCareerImpact: 0
+  rightHappinessImpact: -1
+  rightSociabilityImpact: 0
+  impactType: 000000000100000002000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 2
+  isOnlyOnce: 1
