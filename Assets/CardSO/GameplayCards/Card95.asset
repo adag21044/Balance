@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card94
+  m_Name: Card95
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_105
-  Title: Tipping Debate
-  Description: Barista glares at you.
-  Artwork: {fileID: 7489870469163936571, guid: 3da7b05758b15a249a8c5a013039710b, type: 3}
-  leftAnswer: Tip 25%
-  rightAnswer: Skip tip
-  leftHeartImpact: -1
+  Id: card_106
+  Title: Halloween Costume
+  Description: You dress up as a politician
+  Artwork: {fileID: 6176134895254939438, guid: 9af02616254164e4aaa269cff7707938, type: 3}
+  leftAnswer: Funny choice
+  rightAnswer: Too edgy
+  leftHeartImpact: 0
   leftCareerImpact: 0
-  leftHappinessImpact: 2
+  leftHappinessImpact: 3
   leftSociabilityImpact: 1
-  rightHeartImpact: 1
+  rightHeartImpact: 0
   rightCareerImpact: 0
-  rightHappinessImpact: -2
+  rightHappinessImpact: -1
   rightSociabilityImpact: -1
-  impactType: 000000000200000003000000
+  impactType: 0200000003000000
   ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 0
   isOnlyOnce: 0

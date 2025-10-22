@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card94
+  m_Name: Card98
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_105
-  Title: Tipping Debate
-  Description: Barista glares at you.
-  Artwork: {fileID: 7489870469163936571, guid: 3da7b05758b15a249a8c5a013039710b, type: 3}
-  leftAnswer: Tip 25%
-  rightAnswer: Skip tip
+  Id: card_109
+  Title: Electric Car Charger
+  Description: The charger costs more than gas this month.
+  Artwork: {fileID: 8550432637362848463, guid: 909c46d8479b9714386d656ef1fcc227, type: 3}
+  leftAnswer: Still worth it
+  rightAnswer: Back to gas
   leftHeartImpact: -1
   leftCareerImpact: 0
   leftHappinessImpact: 2
   leftSociabilityImpact: 1
   rightHeartImpact: 1
   rightCareerImpact: 0
-  rightHappinessImpact: -2
-  rightSociabilityImpact: -1
+  rightHappinessImpact: -1
+  rightSociabilityImpact: 0
   impactType: 000000000200000003000000
   ageImpact: 1
   isChainCard: 0
@@ -33,5 +33,5 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 1
   isOnlyOnce: 0
