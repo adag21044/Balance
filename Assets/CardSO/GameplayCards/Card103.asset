@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card103
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_113
+  Title: The Phone Update
+  Description: Your phone updates overnight. It looks exactly the same, but slower.
+  Artwork: {fileID: 9075274322033749681, guid: 5c10a7c8e5c6aef4da84a807555aa2fa, type: 3}
+  leftAnswer: Accept your fate
+  rightAnswer: Buy the new model
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 1
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: -1
+  rightHappinessImpact: 2
+  rightSociabilityImpact: 0
+  impactType: 0200000001000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0
