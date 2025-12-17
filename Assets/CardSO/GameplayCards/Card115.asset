@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: Card114
+  m_Name: Card115
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_124
-  Title: The Infinite Loop
-  Description: A politician on TV claims that taxing you more and doubling the minimum
-    wage will somehow make your $7 eggs cheaper. Do you buy into this "New Math"?
-  Artwork: {fileID: -6808242163697952768, guid: 2b0f38e8034297b4faa0edf3abcd06c7, type: 3}
+  Id: card_125
+  Title: Math Error
+  Description: 
+  Artwork: {fileID: 0}
   leftAnswer: 
   rightAnswer: 
   leftHeartImpact: 0
@@ -28,11 +27,11 @@ MonoBehaviour:
   rightHappinessImpact: 0
   rightSociabilityImpact: 0
   impactType: 
-  ageImpact: 1
-  isChainCard: 1
-  nextOnLeft: {fileID: 11400000, guid: 94f3f666bcc326f438c4d4468654f2a8, type: 2}
-  nextOnRight: {fileID: 11400000, guid: 94f3f666bcc326f438c4d4468654f2a8, type: 2}
+  ageImpact: 0
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 0
   isOnlyOnce: 0
