@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card106
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_115
+  Title: Civic Duty Calls
+  Description: You got a summons for Jury Duty. It pays $15 a day. You have a huge
+    project due at work. Do you try to act 'crazy' to get dismissed?
+  Artwork: {fileID: -6369327364638868000, guid: ce8cefdd4b314a14eb037248f0389a72, type: 3}
+  leftAnswer: Pretend Insanity
+  rightAnswer: Do My Duty
+  leftHeartImpact: 0
+  leftCareerImpact: 3
+  leftHappinessImpact: 2
+  leftSociabilityImpact: -3
+  rightHeartImpact: 0
+  rightCareerImpact: -4
+  rightHappinessImpact: -3
+  rightSociabilityImpact: 2
+  impactType: 010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card105
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_115
+  Id: 
   Title: A Persistent Cough
   Description: You've had a dry cough for weeks. Your insurance has a $500 deductible
     for specialist visits. Do you ignore it and hope it goes away, or pay up to see
