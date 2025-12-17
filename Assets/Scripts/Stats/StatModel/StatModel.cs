@@ -134,4 +134,15 @@ public class StatModel
     public void RaiseHeartFinished(float value) => OnHeartFinished?.Invoke(value);
     public void RaiseHappinessFinished(float value) => OnHappinessFinished?.Invoke(value);
     public void RaiseSociabilityFinished(float value) => OnSociabilityFinished?.Invoke(value);
+
+    public static void ResetStaticEvents()
+    {
+        OnHeartAffected = null;
+        OnCareerAffected = null;
+        OnHappinessAffected = null;
+        OnSociabilityAffected = null;
+        OnPreviewCancelled = null;
+        OnFail = null;
+    }
+
 }

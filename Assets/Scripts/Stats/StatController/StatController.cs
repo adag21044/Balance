@@ -3,83 +3,79 @@ using UnityEngine;
 public class StatController : MonoBehaviour
 {
     public StatView statView;
-    public StatModel statModel;
+    private StatModel statModel;
 
     private void Awake()
     {
         statModel = StatModel.Instance;
+
+        SaveSystem.Instance.LoadStats(statModel);
+
+        statView.SnapToModel(statModel);
+        statView.UpdateAgeText(statModel.age);
+    }
+
+    private void OnEnable()
+    {
+        // VALUE EVENTS
         statModel.OnHeartChanged += statView.UpdateHeartValue;
         statModel.OnCareerChanged += statView.UpdateCareerValue;
         statModel.OnHappinessChanged += statView.UpdateHappinessValue;
         statModel.OnSociabilityChanged += statView.UpdateSociabilityValue;
+        statModel.OnAgeChanged += statView.UpdateAgeText;
 
-        statModel.OnAgeChanged += age =>
-        {
-            statView.UpdateAgeText(age);
-            SaveSystem.Instance.SaveStats(statModel); // save age on change
-        };
+        // POINTER PREVIEW EVENTS
+        StatModel.OnHeartAffected += OnHeartAffected;
+        StatModel.OnCareerAffected += OnCareerAffected;
+        StatModel.OnHappinessAffected += OnHappinessAffected;
+        StatModel.OnSociabilityAffected += OnSociabilityAffected;
 
-        SaveSystem.Instance.LoadStats(statModel);
-        statView.SnapToModel(statModel);
-        statView.UpdateAgeText(statModel.age);
+        // PREVIEW CANCEL
+        StatModel.OnPreviewCancelled += HideAllPointers;
 
-        StatModel.OnHeartAffected += () => statView.ShowHeartPointer(true);
-        StatModel.OnCareerAffected += () => statView.ShowCareerPointer(true);
-        StatModel.OnHappinessAffected += () => statView.ShowHappinessPointer(true);
-        StatModel.OnSociabilityAffected += () => statView.ShowSociabilityPointer(true);
+        // FAIL
+        StatModel.OnFail += OnFail;
+    }
 
-        StatModel.OnFail += () =>
-        {
-            Debug.Log("Fail state → Resetting stats");
-            SaveSystem.Instance.ResetStats(statModel);
-            statView.SnapToModel(statModel);
-            statView.UpdateAgeText(statModel.age);
-        };
+    private void OnDisable()
+    {
+        if (statModel == null) return;
 
+        statModel.OnHeartChanged -= statView.UpdateHeartValue;
+        statModel.OnCareerChanged -= statView.UpdateCareerValue;
+        statModel.OnHappinessChanged -= statView.UpdateHappinessValue;
+        statModel.OnSociabilityChanged -= statView.UpdateSociabilityValue;
+        statModel.OnAgeChanged -= statView.UpdateAgeText;
+
+        StatModel.OnHeartAffected -= OnHeartAffected;
+        StatModel.OnCareerAffected -= OnCareerAffected;
+        StatModel.OnHappinessAffected -= OnHappinessAffected;
+        StatModel.OnSociabilityAffected -= OnSociabilityAffected;
+
+        StatModel.OnPreviewCancelled -= HideAllPointers;
+        StatModel.OnFail -= OnFail;
+    }
+
+    // ================= POINTER CALLBACKS =================
+
+    private void OnHeartAffected() => statView.ShowHeartPointer(true);
+    private void OnCareerAffected() => statView.ShowCareerPointer(true);
+    private void OnHappinessAffected() => statView.ShowHappinessPointer(true);
+    private void OnSociabilityAffected() => statView.ShowSociabilityPointer(true);
+
+    private void HideAllPointers()
+    {
         statView.ShowHeartPointer(false);
         statView.ShowCareerPointer(false);
         statView.ShowHappinessPointer(false);
         statView.ShowSociabilityPointer(false);
-
-        statView.SnapToModel(statModel);
-
-        // Hide all pointers when preview is cancelled
-        StatModel.OnPreviewCancelled += () =>
-        {
-            statView.ShowHeartPointer(false);
-            statView.ShowCareerPointer(false);
-            statView.ShowHappinessPointer(false);
-            statView.ShowSociabilityPointer(false);
-        };
-        
-        statModel.OnHeartChanged += _ => SaveSystem.Instance.SaveStats(statModel);
-        statModel.OnCareerChanged += _ => SaveSystem.Instance.SaveStats(statModel);
-        statModel.OnHappinessChanged += _ => SaveSystem.Instance.SaveStats(statModel);
-        statModel.OnSociabilityChanged += _ => SaveSystem.Instance.SaveStats(statModel);
     }
-    
-    private void OnDestroy()
+
+    private void OnFail()
     {
-        if (statModel != null)
-        {
-            statModel.OnHeartChanged -= statView.UpdateHeartValue;
-            statModel.OnCareerChanged -= statView.UpdateCareerValue;
-            statModel.OnHappinessChanged -= statView.UpdateHappinessValue;
-            statModel.OnSociabilityChanged -= statView.UpdateSociabilityValue;
-            statModel.OnAgeChanged -= statView.UpdateAgeText;
-        }
-
-        StatModel.OnHeartAffected -= () => statView.ShowHeartPointer(true);
-        StatModel.OnCareerAffected -= () => statView.ShowCareerPointer(true);
-        StatModel.OnHappinessAffected -= () => statView.ShowHappinessPointer(true);
-        StatModel.OnSociabilityAffected -= () => statView.ShowSociabilityPointer(true);
-
-        StatModel.OnPreviewCancelled -= () =>
-        {
-            statView.ShowHeartPointer(false);
-            statView.ShowCareerPointer(false);
-            statView.ShowHappinessPointer(false);
-            statView.ShowSociabilityPointer(false);
-        };
+        SaveSystem.Instance.ResetStats(statModel);
+        statView.SnapToModel(statModel);
+        statView.UpdateAgeText(statModel.age);
+        HideAllPointers();
     }
 }

@@ -144,6 +144,10 @@ public class GameManager : MonoBehaviour
     private IEnumerator ReloadSceneAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
+        // 🔴 KRİTİK SATIR
+        StatModel.ResetStaticEvents();
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
