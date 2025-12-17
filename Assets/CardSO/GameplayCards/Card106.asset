@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card106
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_115
+  Id: card_116
   Title: Civic Duty Calls
   Description: You got a summons for Jury Duty. It pays $15 a day. You have a huge
     project due at work. Do you try to act 'crazy' to get dismissed?

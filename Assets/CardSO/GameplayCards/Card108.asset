@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card108
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_118
+  Title: Mandatory Sensitivity Seminar
+  Description: HR has scheduled a 4-hour mandatory seminar on 'Micro-Aggressions
+    in the Workplace.' You find the material absurd and a waste of productive time.
+    Do you sit quietly and nod, or speak your mind about it?
+  Artwork: {fileID: -7734709351373881285, guid: 62d98683512be754ca4f767505088e60, type: 3}
+  leftAnswer: Nod and Smile
+  rightAnswer: Call it Out
+  leftHeartImpact: 0
+  leftCareerImpact: 2
+  leftHappinessImpact: -4
+  leftSociabilityImpact: 1
+  rightHeartImpact: 5
+  rightCareerImpact: -5
+  rightHappinessImpact: 2
+  rightSociabilityImpact: -3
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 1
+  isOnlyOnce: 0
