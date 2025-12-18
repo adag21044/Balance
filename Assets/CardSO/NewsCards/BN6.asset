@@ -40,4 +40,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 4
-  isOnlyOnce: 0
+  isOnlyOnce: 1
