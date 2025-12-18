@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card116
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_126
+  Title: Garage Startup
+  Description: 'You have a startup idea.
+
+    It starts in a messy garage with cheap
+    laptops, empty coffee cups, and big dreams.
+
+    Do you clean the garage and
+    get to work?'
+  Artwork: {fileID: 2073545617816800122, guid: ba3929f2b9aafd34a86e13a313514920, type: 3}
+  leftAnswer: Clean the garage
+  rightAnswer: Ignore it
+  leftHeartImpact: -1
+  leftCareerImpact: 5
+  leftHappinessImpact: 1
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: -5
+  rightHappinessImpact: -1
+  rightSociabilityImpact: 0
+  impactType: 000000000100000002000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 1

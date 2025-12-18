@@ -5511,6 +5511,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b7738aeecd6f19f45bfdab7eeaacbef4, type: 2}
   - {fileID: 11400000, guid: 7ea0e19de057f4f40aa994087333ac2b, type: 2}
   - {fileID: 11400000, guid: f41a0bcc600e3c24bb4a29a8922e33ed, type: 2}
+  - {fileID: 11400000, guid: 94f3f666bcc326f438c4d4468654f2a8, type: 2}
+  - {fileID: 11400000, guid: c63b4cf381240ec4d99930b153e8702e, type: 2}
   cardSO: {fileID: 11400000, guid: 13f1deb2de77d324489e4e2695a0fab0, type: 2}
   gameEndSOs:
   - {fileID: 11400000, guid: 08cc0b9c0d452d547b0f7d116f908c62, type: 2}
