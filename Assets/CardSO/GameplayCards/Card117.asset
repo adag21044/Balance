@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card117
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_128
+  Title: Monster Truck Rally
+  Description: 'Grave Digger vs. Megalodon! Mud flying, engines roaring, beer flowing. '
+  Artwork: {fileID: 6968549215765488610, guid: 3d61288cbb6999540a91fad51ac8e169, type: 3}
+  leftAnswer: Skip It
+  rightAnswer: Hell Yeah
+  leftHeartImpact: 2
+  leftCareerImpact: 1
+  leftHappinessImpact: -2
+  leftSociabilityImpact: -3
+  rightHeartImpact: -1
+  rightCareerImpact: -2
+  rightHappinessImpact: 6
+  rightSociabilityImpact: 5
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 4
+  isOnlyOnce: 0
