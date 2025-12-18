@@ -52,9 +52,9 @@ public enum ImpactType
 
 public enum LifeStage
 {
+    Any,
     Teenager,    // 18 – 19
     YoungAdult,  // 20 – 29
     Adult,       // 30 – 59
-    Senior,       // 60+
-    Any
+    Senior       // 60+
 }
