@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   Id: card_104
   Title: New Study Finds Sleep Replaces Coffee
-  Description: Experts shocked to discover eight hours of sleep works better than
-    caffeine.
+  Description: 'Breaking News: Experts shocked to discover eight hours of sleep works
+    better than caffeine.'
   Artwork: {fileID: 103044606966947501, guid: b919186e5a42879428931f074a0d7c77, type: 3}
   leftAnswer: 
   rightAnswer: 

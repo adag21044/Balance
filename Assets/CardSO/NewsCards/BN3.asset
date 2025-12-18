@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   Id: card_105
   Title: The Frozen Texan
-  Description: A man in Texas burns furniture to stay warm. The senator flies to
-    Cancun.
+  Description: 'Breaking News: A man in Texas burns furniture to stay warm. The senator
+    flies to Cancun.'
   Artwork: {fileID: 8807805026301071445, guid: 4a9de42300942124f95c2557bd8f8e16, type: 3}
   leftAnswer: 
   rightAnswer: 

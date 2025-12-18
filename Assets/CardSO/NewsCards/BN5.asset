@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   Id: card_130
   Title: Motorcycle as Bicycle Wins Race
-  Description: "Brave rider identifies motorcycle as bicycle\u2014crushes world record"
+  Description: "Breaking News: Brave rider identifies motorcycle as bicycle\u2014crushes
+    world record"
   Artwork: {fileID: 7453482362771002909, guid: 05a3e1027a3fba44c93f95e74eec2fc6, type: 3}
   leftAnswer: 
   rightAnswer: 

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   Id: card_127
   Title: Survey Reveals Confidence
-  Description: According to a recent survey, 8% of Americans believe they could defeat
-    a lion in a fist fight.
+  Description: 'Breaking News: According to a recent survey, 8% of Americans believe
+    they could defeat a lion in a fist fight.'
   Artwork: {fileID: 6138481802768717598, guid: 11949940ef5ed3541858240914e59027, type: 3}
   leftAnswer: 
   rightAnswer: 
