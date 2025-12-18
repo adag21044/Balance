@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card119
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_132
+  Title: Jury Duty Summons
+  Description: "You\u2019ve been called for jury duty. It\u2019s your civic duty,
+    but it will take all week. Do you try to fake an excuse or show up?"
+  Artwork: {fileID: -754220315287186580, guid: d804372ec359f744cbe8475cdaa1baf8, type: 3}
+  leftAnswer: Make Excuse
+  rightAnswer: Attend
+  leftHeartImpact: -1
+  leftCareerImpact: 2
+  leftHappinessImpact: 1
+  leftSociabilityImpact: -2
+  rightHeartImpact: 1
+  rightCareerImpact: -3
+  rightHappinessImpact: -4
+  rightSociabilityImpact: 3
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0
