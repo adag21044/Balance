@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card121
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_134
+  Title: Reality TV Audition
+  Description: "You\u2019re offered a spot on a wild reality show. Fame awaits, but
+    at what cost?"
+  Artwork: {fileID: -4486786983377283080, guid: 70e1fc2f26731be4fa0a347cfc83d8dd, type: 3}
+  leftAnswer: Do It!
+  rightAnswer: No Way
+  leftHeartImpact: 1
+  leftCareerImpact: 2
+  leftHappinessImpact: 2
+  leftSociabilityImpact: 2
+  rightHeartImpact: 0
+  rightCareerImpact: -1
+  rightHappinessImpact: 0
+  rightSociabilityImpact: -1
+  impactType: 00000000010000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 1
