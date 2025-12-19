@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card131
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_144
+  Title: Doorbuster Madness
+  Description: "The store opens at 5 AM.\nThere are only three TVs.\nYou\u2019re
+    not sure you even need one.\nBut it\u2019s 60% off."
+  Artwork: {fileID: 3470709540560376348, guid: ce5d8d289422d0b45b86a56b6dfeacdf, type: 3}
+  leftAnswer: Run inside
+  rightAnswer: Walk away
+  leftHeartImpact: -1
+  leftCareerImpact: 0
+  leftHappinessImpact: 2
+  leftSociabilityImpact: -1
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: -1
+  rightSociabilityImpact: 1
+  impactType: 000000000200000003000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0

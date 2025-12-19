@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: Card132
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_145
+  Title: Thanksgiving Interrupted
+  Description: "It\u2019s Thanksgiving dinner.\nEveryone is checking Black Friday
+    deals.\nThe turkey is getting cold."
+  Artwork: {fileID: -7267237256298905276, guid: 008cadf8c3124d54ba15767cc3ca409c, type: 3}
+  leftAnswer: Join the deal hunt
+  rightAnswer: Put the phone down
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
+  leftSociabilityImpact: -1
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 0
+  rightSociabilityImpact: 1
+  impactType: 03000000
+  ageImpact: 1
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0
