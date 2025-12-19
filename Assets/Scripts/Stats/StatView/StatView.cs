@@ -98,7 +98,7 @@ public class StatView : MonoBehaviour
         sociabilityImage.fillAmount = Mathf.Clamp01(model.SociabilityPercantage);
     }
 
-    [Method] // optional if you use any inspector tool
+    // [Method] // optional if you use any inspector tool
     public void UpdateHeartValue(float value)
     {
         AnimateBar(
@@ -109,7 +109,7 @@ public class StatView : MonoBehaviour
         );
     }
 
-    [Method]
+    // // [Method]
     public void UpdateCareerValue(float value)
     {
         AnimateBar(
@@ -120,7 +120,7 @@ public class StatView : MonoBehaviour
         );
     }
 
-    [Method]
+    // [Method]
     public void UpdateHappinessValue(float value)
     {
         AnimateBar(
@@ -131,7 +131,7 @@ public class StatView : MonoBehaviour
         );
     }
 
-    [Method]
+    // [Method]
     public void UpdateSociabilityValue(float value)
     {
         AnimateBar(
@@ -259,7 +259,7 @@ public class StatView : MonoBehaviour
 
 
 
-    [Method]
+    // [Method]
     public void UpdateAgeText(float age)
     {
         ageText.text = $"{Mathf.FloorToInt(age)}"; // Display age as an integer
@@ -279,7 +279,7 @@ public class StatView : MonoBehaviour
         .SetEase(ageEaseCurve); // <-- Inspector’da curve olarak ayarlayabilirsin
     }
 
-    [Method]
+    // [Method]
     public void AnimateFailAnimation()
     {
         Debug.Log("Animating age text fail animation");

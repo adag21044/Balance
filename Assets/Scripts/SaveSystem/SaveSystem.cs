@@ -24,7 +24,7 @@ public class SaveSystem : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    [Method(onlyPlayMode: true)]
+    // [Method(onlyPlayMode: true)]
     public void SaveNow()
     {
         if (StatModel.Instance != null)
@@ -34,7 +34,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    [Method(onlyPlayMode: true)]
+    // [Method(onlyPlayMode: true)]
     public void LoadNow()
     {
         if (StatModel.Instance != null)
@@ -44,7 +44,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    [Method(onlyPlayMode: true)]
+    //[Method(onlyPlayMode: true)]
     public void ResetNow()
     {
         if (StatModel.Instance != null)
