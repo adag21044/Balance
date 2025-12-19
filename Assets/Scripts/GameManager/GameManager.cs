@@ -145,7 +145,6 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
 
-        // 🔴 KRİTİK SATIR
         StatModel.ResetStaticEvents();
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
