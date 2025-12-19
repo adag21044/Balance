@@ -10,34 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: BN6
+  m_Name: Card124
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_131
-  Title: "Retailer Accused of \u201CTyranny\u201D After New Dress Rule"
-  Description: 'Breaking News: A major retailer is facing backlash after requiring
-    customers to wear pants.
-
-    Critics say freedom was never meant to be this
-    restrictive.
-
-    Shirts remain optional.'
-  Artwork: {fileID: 498838752646315594, guid: e50c8fe8ef26d234f8e6af46c02f8f48, type: 3}
-  leftAnswer: 
-  rightAnswer: 
+  Id: card_137
+  Title: Smart Everything
+  Description: Your house is now fully smart. Lights, doors, fridge, toilet. The
+    system updates overnight and forgets who you are
+  Artwork: {fileID: 2635890857844677758, guid: 60ee46679df1ec84887d534887333b07, type: 3}
+  leftAnswer: Reset system
+  rightAnswer: Adapt
   leftHeartImpact: 0
   leftCareerImpact: 0
-  leftHappinessImpact: 0
+  leftHappinessImpact: -5
   leftSociabilityImpact: 0
-  rightHeartImpact: 0
+  rightHeartImpact: -1
   rightCareerImpact: 0
   rightHappinessImpact: 0
   rightSociabilityImpact: 0
-  impactType: 
-  ageImpact: 0
+  impactType: 0200000000000000
+  ageImpact: 1
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
-  isOnlyOnce: 1
+  lifeStage: 0
+  isOnlyOnce: 0
