@@ -9,6 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Balance.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 4c1ccb458f6f67a44a09bf0ed594c9d2, type: 2}
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: cfe77b653d385984ea4cab501b6e3b92, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 3d180e1a610c8bc409751e43241c6fa8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
