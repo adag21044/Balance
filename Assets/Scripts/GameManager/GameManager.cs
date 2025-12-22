@@ -38,6 +38,11 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
 
+    private async void Start()
+    {
+        await LoadGameAsync();
+    }
+
     private void OnEnable()
     {
         Debug.Log("[GameManager] OnEnable");
@@ -161,6 +166,37 @@ public class GameManager : MonoBehaviour
 
         StatModel.ResetStaticEvents();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private async UniTask LoadGameAsync()
+    {
+        if (startScreenAnimator != null)
+            startScreenAnimator.gameObject.SetActive(false);
+
+        LoadingUI.Instance.Show();
+
+        // %0 → %20 (loading başladı hissi)
+        LoadingUI.Instance.SetProgress(0.2f);
+        await UniTask.Delay(200);
+
+        // SAVE LOAD
+        SaveSystem.Instance.LoadStats(StatModel.Instance);
+
+        // %20 → %80 (save yükleniyor hissi)
+        LoadingUI.Instance.SetProgress(0.8f);
+
+        await UniTask.WaitUntil(() => SaveSystem.Instance.IsLoaded);
+
+        // UI init
+        statController.InitializeFromModel();
+
+        // %100
+        await LoadingUI.Instance.CompleteAndHide();
+
+        startScreenAnimator.EnableBlinkText();
+        
+        if (startScreenAnimator != null)
+            startScreenAnimator.gameObject.SetActive(true);
     }
 }
 

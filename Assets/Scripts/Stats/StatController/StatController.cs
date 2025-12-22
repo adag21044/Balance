@@ -9,8 +9,6 @@ public class StatController : MonoBehaviour
     {
         statModel = StatModel.Instance;
 
-        SaveSystem.Instance.LoadStats(statModel);
-
         statView.SnapToModel(statModel);
         statView.UpdateAgeText(statModel.age);
     }
@@ -77,5 +75,11 @@ public class StatController : MonoBehaviour
         statView.SnapToModel(statModel);
         statView.UpdateAgeText(statModel.age);
         HideAllPointers();
+    }
+
+    public void InitializeFromModel()
+    {
+        statView.SnapToModel(statModel);
+        statView.UpdateAgeText(statModel.age);
     }
 }

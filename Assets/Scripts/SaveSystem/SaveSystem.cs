@@ -5,6 +5,7 @@ using System.Reflection;
 public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem Instance { get; private set; }
+    public bool IsLoaded { get; private set; }
 
     private const string AgeKey = "Age";
     private const string HeartKey = "Heart";
@@ -22,6 +23,7 @@ public class SaveSystem : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        IsLoaded = false;
     }
 
     private void Update()
@@ -87,6 +89,8 @@ public class SaveSystem : MonoBehaviour
             ?.SetValue(model, PlayerPrefs.GetFloat(HappinessKey, 0.5f));
         model.GetType().GetField("sociabilityPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
             ?.SetValue(model, PlayerPrefs.GetFloat(SociabilityKey, 0.5f));
+        
+        IsLoaded = true; 
     }
 
     // Reset to defaults (called on fail)
