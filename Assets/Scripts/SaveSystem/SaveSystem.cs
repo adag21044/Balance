@@ -24,6 +24,15 @@ public class SaveSystem : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Update()
+    {
+        // Only debugging purposes
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            ResetNow();
+        }
+    }
+
     // [Method(onlyPlayMode: true)]
     public void SaveNow()
     {
@@ -44,7 +53,7 @@ public class SaveSystem : MonoBehaviour
         }
     }
 
-    //[Method(onlyPlayMode: true)]
+    // [Method(onlyPlayMode: true)]
     public void ResetNow()
     {
         if (StatModel.Instance != null)

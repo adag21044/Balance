@@ -1,7 +1,8 @@
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
+using Cysharp.Threading.Tasks;
+using System.Threading;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     public StatModel statModel => StatModel.Instance;
 
     private bool gameFinished = false;
+
     [SerializeField] private CardInitialAnimation cardInitialAnimation;
     [SerializeField] private StartScreenAnimator startScreenAnimator;
     [SerializeField] private SoundManager soundManager;
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         Instance = this;
     }
 
@@ -72,81 +75,91 @@ public class GameManager : MonoBehaviour
         if (startScreenAnimator != null)
             startScreenAnimator.gameObject.SetActive(false);
 
-
         if (cardInitialAnimation != null)
             cardInitialAnimation.StartAnimation();
 
         statController.statView.AnimateAgeText(StatModel.Instance.age);
     }
 
-
     public void FinishGame(GameOverCause cause)
     {
+        // Guard: prevent double finish triggers from multiple stat events
+        if (gameFinished)
+            return;
+
+        gameFinished = true;
+
         Debug.Log($"[GameManager] FinishGame CALLED with cause={cause}");
 
-
-
-        // 1-based -> 0-based index conversion is handled below
         switch (cause)
         {
             case GameOverCause.Heart:
                 cardController.SetEndGameCardByIndices(0, 3);
-
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayHeartFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Heart cause");
-                StartCoroutine(ReloadSceneAfterDelay(5f));
+                ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
 
             case GameOverCause.Career:
                 cardController.SetEndGameCardByIndices(3, 5);
-
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayCareerFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Career cause");
-                StartCoroutine(ReloadSceneAfterDelay(5f));
+                ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
 
             case GameOverCause.Happiness:
                 cardController.SetEndGameCardByIndex(6);
-
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayHappinessFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Happiness cause");
-                StartCoroutine(ReloadSceneAfterDelay(5f));
+                ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
 
             case GameOverCause.Sociability:
                 cardController.SetEndGameCardByIndex(5);
-
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlaySociabilityFailSound();
                 SaveSystem.Instance.ResetStats(statModel);
                 Debug.Log("Sociability cause");
-                StartCoroutine(ReloadSceneAfterDelay(5f));
+                ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
 
             default:
                 Debug.LogError($"[GameManager] FinishGame called with unknown cause: {cause}");
-                StartCoroutine(ReloadSceneAfterDelay(5f));
+                ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
         }
+
         Debug.Log($"[GameManager] Game Over by {cause}");
-
-
-        gameFinished = true;
-        if (gameFinished) return; // guard
     }
-    
-    private IEnumerator ReloadSceneAfterDelay(float delay)
+
+    private async UniTaskVoid ReloadSceneAfterDelayAsync(float delaySeconds)
     {
-        yield return new WaitForSeconds(delay);
+        // CancellationToken: auto-cancel if GameObject is destroyed during scene change
+        CancellationToken token = this.GetCancellationTokenOnDestroy();
+
+        try
+        {
+            // WaitForSeconds-equivalent (scaled time).
+            // If you want it to work even when Time.timeScale == 0, set ignoreTimeScale: true.
+            await UniTask.Delay(
+                TimeSpan.FromSeconds(delaySeconds),
+                ignoreTimeScale: false,
+                cancellationToken: token
+            );
+        }
+        catch (OperationCanceledException)
+        {
+            // Object destroyed or scene changed before delay finished
+            return;
+        }
 
         StatModel.ResetStaticEvents();
-
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
