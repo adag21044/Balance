@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_112
   Title: Movie Award Night
   Description: The wrong movie wins again.
-  Artwork: {fileID: 0}
+  Artwork: {fileID: 8938330455912774052, guid: 4986d10d5526b134b800b27941e4d08a, type: 3}
   leftAnswer: 
   rightAnswer: 
   leftHeartImpact: 0

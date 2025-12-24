@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_110
   Title: Conspiracy Uncle
   Description: "He sends you a 9-minute \u201Cdocumentary.\u201D"
-  Artwork: {fileID: 0}
+  Artwork: {fileID: -861832536396315964, guid: 638042e5b1597dd438093f6e9f96ab78, type: 3}
   leftAnswer: Watch it
   rightAnswer: Mute uncle
   leftHeartImpact: -1

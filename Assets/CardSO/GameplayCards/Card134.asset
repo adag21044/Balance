@@ -16,7 +16,7 @@ MonoBehaviour:
   Title: Bathroom Gaming Upgrade
   Description: "You see an ad for a handheld console.\n\u201CPerfect for bathroom
     breaks.\u201D\nYou think about how long you sit there."
-  Artwork: {fileID: 0}
+  Artwork: {fileID: 3162373174251935369, guid: 2ff7609b6ebe2254a818172537858093, type: 3}
   leftAnswer: Buy it
   rightAnswer: Absolutely not
   leftHeartImpact: -2

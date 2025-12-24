@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_111
   Title: Parking Ticket
   Description: You got one minute after meter expired.
-  Artwork: {fileID: 0}
+  Artwork: {fileID: -2381360508892854045, guid: 77dafa704e899ba41a1af8ed3eb70efc, type: 3}
   leftAnswer: Appeal it
   rightAnswer: Pay and move on
   leftHeartImpact: 0
@@ -33,5 +33,5 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
+  lifeStage: 0
   isOnlyOnce: 0

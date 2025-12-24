@@ -16,7 +16,7 @@ MonoBehaviour:
   Title: Error 420
   Description: "Too many crypto bros trying to apply for a job at MoBurger\u2019s.
     The site is temporarily unavailable."
-  Artwork: {fileID: 0}
+  Artwork: {fileID: 4862942810962518623, guid: 3c1688d9612aed14abecb6533c023497, type: 3}
   leftAnswer: 
   rightAnswer: 
   leftHeartImpact: 0

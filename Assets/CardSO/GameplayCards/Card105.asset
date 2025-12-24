@@ -17,9 +17,9 @@ MonoBehaviour:
   Description: You've had a dry cough for weeks. Your insurance has a $500 deductible
     for specialist visits. Do you ignore it and hope it goes away, or pay up to see
     a doctor?
-  Artwork: {fileID: 0}
-  leftAnswer: 
-  rightAnswer: 
+  Artwork: {fileID: -3391051901041756559, guid: a1a23ab90600a2640bab7a60a19ce535, type: 3}
+  leftAnswer: Ignore It
+  rightAnswer: See a doctor
   leftHeartImpact: -12
   leftCareerImpact: 0
   leftHappinessImpact: -5
@@ -35,5 +35,5 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 0
   isOnlyOnce: 0
