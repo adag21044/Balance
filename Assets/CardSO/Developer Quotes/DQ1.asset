@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: DQ1
   m_EditorClassIdentifier: 
-  Id: card_020
+  Id: card_001
   Title: Developer Greetings
   Description: Hello, I am the creator of the game.
   Artwork: {fileID: 391119372839055237, guid: 71088cc9f53a03b44bd5642a6feb2901, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 5
+  isOnlyOnce: 0

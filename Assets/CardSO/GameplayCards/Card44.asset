@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card44
   m_EditorClassIdentifier: 
-  Id: card_044
+  Id: card_061
   Title: Hot Dog Eating Contest
   Description: The county fair is hosting a hot dog eating contest.
   Artwork: {fileID: -8923963635845085037, guid: 9e88eeb845e31e3459dfe113e99048f6, type: 3}

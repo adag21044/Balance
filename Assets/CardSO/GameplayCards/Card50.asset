@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card50
   m_EditorClassIdentifier: 
-  Id: card_050
+  Id: card_067
   Title: Ski Weekend
   Description: Friends invite you skiing in the Rockies.
   Artwork: {fileID: -4827945602346349350, guid: 5738b4e454ef73f4db53b32cfc7d9b1b, type: 3}

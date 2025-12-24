@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card21
   m_EditorClassIdentifier: 
-  Id: card_021
+  Id: card_038
   Title: Doctor Checkup
   Description: "You feel chest pain \u2014 do you go for a checkup?"
   Artwork: {fileID: -6711902685553691125, guid: 15744960af39a76459bd2f242415318a, type: 3}

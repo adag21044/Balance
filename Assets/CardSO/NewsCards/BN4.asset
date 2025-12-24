@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: BN4
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_127
+  Id: card_023
   Title: Survey Reveals Confidence
   Description: 'Breaking News: According to a recent survey, 8% of Americans believe
     they could defeat a lion in a fist fight.'

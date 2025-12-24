@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card113
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_123
+  Id: card_130
   Title: The AI Replacement
   Description: Your company introduced an AI that does 80% of your job. Your boss
     calls it "Efficiency."

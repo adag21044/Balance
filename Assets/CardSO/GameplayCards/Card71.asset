@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card71
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_071
+  Id: card_088
   Title: Government Shutdown (Again)
   Description: "The government shuts down. National parks close, but your bills don\u2019t."
   Artwork: {fileID: -6332933329176021413, guid: 11cb267c39c6a7041bc8ab551dc81696, type: 3}

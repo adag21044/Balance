@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card62
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_062
+  Id: card_079
   Title: Small Town Hero
   Description: You rescued a kitten from a storm drain. The mayor gives you a medal
     at the diner.

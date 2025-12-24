@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card7
   m_EditorClassIdentifier: 
-  Id: card_007
+  Id: card_032
   Title: Scholarship Offer
   Description: "You received a competitive scholarship for a tough computer science
     program. It\u2019s a great career step, but the workload will be heavy."
@@ -35,3 +35,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 2
+  isOnlyOnce: 0

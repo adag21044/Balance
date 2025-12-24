@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card120
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_133
+  Id: card_137
   Title: Risk vs. Reward
   Description: Your friend wants you to invest in their startup. Risk your savings
     or play it safe with index funds?

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card101
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_112
+  Id: card_118
   Title: Movie Award Night
   Description: The wrong movie wins again.
   Artwork: {fileID: 8938330455912774052, guid: 4986d10d5526b134b800b27941e4d08a, type: 3}

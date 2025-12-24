@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card87
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_096
+  Id: card_104
   Title: Error 420
   Description: "Too many crypto bros trying to apply for a job at MoBurger\u2019s.
     The site is temporarily unavailable."

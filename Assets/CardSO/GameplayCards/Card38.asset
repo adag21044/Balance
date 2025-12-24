@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card38
   m_EditorClassIdentifier: 
-  Id: card_038
+  Id: card_055
   Title: Karen Strikes
   Description: A Karen screams to see the manager as you shop for cereal.
   Artwork: {fileID: 8575933842199897409, guid: ef49b0776f9afa74294d30662d0a366f, type: 3}

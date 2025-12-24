@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: NC2
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_079
+  Id: card_012
   Title: Gas Station Stop
   Description: You stop for gas. The cashier watches you a little too long.
   Artwork: {fileID: -5868278492234119940, guid: 757105fe31fc19043997dcad5779e871, type: 3}

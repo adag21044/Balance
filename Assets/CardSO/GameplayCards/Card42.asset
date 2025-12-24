@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card42
   m_EditorClassIdentifier: 
-  Id: card_042
+  Id: card_059
   Title: Haunted Motel
   Description: "A cheap roadside motel has \u201Cone room left.\u201D Locals whisper
     it\u2019s haunted."

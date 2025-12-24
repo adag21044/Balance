@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card128
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_141
+  Id: card_145
   Title: Smart Fridge Knows Too Much
   Description: "Your smart fridge sends a notification.\nIt says you\u2019re low
     on milk.\nIt also suggests a diet plan and life insurance."

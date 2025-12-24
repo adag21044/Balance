@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card19
   m_EditorClassIdentifier: 
-  Id: card_019
+  Id: card_037
   Title: Heart Attack
   Description: Suddenly your chest feels tight and you can't breathe
   Artwork: {fileID: -1494555456095830644, guid: 2c944e41e363f494baaea92ea57561ea, type: 3}

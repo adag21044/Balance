@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card80
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_089
+  Id: card_097
   Title: Second Amendment Right
   Description: A debate starts at the diner about constitutional rights.
   Artwork: {fileID: -5923310657074039522, guid: d799a92dfd35cc745b44aeb1e3c758c3, type: 3}

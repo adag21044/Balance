@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card95
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_106
+  Id: card_112
   Title: Halloween Costume
   Description: You dress up as a politician
   Artwork: {fileID: 6176134895254939438, guid: 9af02616254164e4aaa269cff7707938, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card119
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_132
+  Id: card_136
   Title: Jury Duty Summons
   Description: "You\u2019ve been called for jury duty. It\u2019s your civic duty,
     but it will take all week. Do you try to fake an excuse or show up?"

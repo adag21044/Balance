@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: PT3
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_153
+  Title: Contesting the Ticket
+  Description: You can submit an online appeal or request a court hearing.
+  Artwork: {fileID: 6682187476200865297, guid: 7fd8890269db5b44dbf8b0036be6baeb, type: 3}
+  leftAnswer: Online appeal
+  rightAnswer: Go to court
+  leftHeartImpact: 0
+  leftCareerImpact: -1
+  leftHappinessImpact: 1
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: -2
+  rightHappinessImpact: 0
+  rightSociabilityImpact: -1
+  impactType: 010000000200000003000000
+  ageImpact: 0
+  isChainCard: 1
+  nextOnLeft: {fileID: 11400000, guid: e85fa5c926e796c46bc5b1ea386be9ab, type: 2}
+  nextOnRight: {fileID: 11400000, guid: 825a34ab746f75943a5ed927730bacee, type: 2}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0

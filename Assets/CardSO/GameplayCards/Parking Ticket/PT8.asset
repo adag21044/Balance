@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: PT8
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_158
+  Title: Verdict
+  Description: You lose the case. Court fees apply.
+  Artwork: {fileID: 7492722229104397477, guid: 3f8998d1e0de669488d527412cd70634, type: 3}
+  leftAnswer: Pay quietly
+  rightAnswer: Complain online
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: -1
+  leftSociabilityImpact: 0
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 0
+  rightSociabilityImpact: -1
+  impactType: 0200000003000000
+  ageImpact: 0
+  isChainCard: 0
+  nextOnLeft: {fileID: 0}
+  nextOnRight: {fileID: 0}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card77
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_086
+  Id: card_094
   Title: Wokeflix Originals
   Description: A superhero show where the real villain is... traditional values.
   Artwork: {fileID: -1364837042163800332, guid: 7e74c98fc28223e4a9525ceeb83aa681, type: 3}

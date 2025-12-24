@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card68
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_068
+  Id: card_085
   Title: Streaming Subscription Overload
   Description: You have seven subscriptions and nothing to watch.
   Artwork: {fileID: -1424077593037816156, guid: 38c0e3244eb894243bca801b0b74d547, type: 3}

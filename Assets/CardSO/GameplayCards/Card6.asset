@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card6
   m_EditorClassIdentifier: 
-  Id: card_006
+  Id: card_031
   Title: Gym Membership
   Description: A new gym has opened near your house. Will you join?
   Artwork: {fileID: 8085268007778768734, guid: 70f1425c88152fe458cfe1478468ce0b, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 3
+  isOnlyOnce: 0

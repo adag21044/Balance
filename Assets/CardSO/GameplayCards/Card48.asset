@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card48
   m_EditorClassIdentifier: 
-  Id: card_048
+  Id: card_065
   Title: Desert Road Trip
   Description: Your friends propose a spontaneous road trip through the Nevada desert
     -no maps, no plan.

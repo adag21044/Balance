@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card33
   m_EditorClassIdentifier: 
-  Id: card_033
+  Id: card_050
   Title: Credit Card Offer
   Description: A bank offers you a credit card with rewards, but debt may build up
     fast.

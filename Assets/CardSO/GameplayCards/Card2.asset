@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card2
   m_EditorClassIdentifier: 
-  Id: card_002
+  Id: card_027
   Title: Overtime
   Description: Your boss asks you to stay late to finish a project.
   Artwork: {fileID: -3733744629007151920, guid: 380671e4cbc3f024d9b074aaf9601e0f, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 3
+  isOnlyOnce: 0

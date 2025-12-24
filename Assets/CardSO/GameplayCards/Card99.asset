@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card99
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_110
+  Id: card_116
   Title: Conspiracy Uncle
   Description: "He sends you a 9-minute \u201Cdocumentary.\u201D"
   Artwork: {fileID: -861832536396315964, guid: 638042e5b1597dd438093f6e9f96ab78, type: 3}

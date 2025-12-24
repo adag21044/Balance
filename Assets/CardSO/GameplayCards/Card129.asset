@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card129
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_142
+  Id: card_146
   Title: AI Knows You Better
   Description: 'You ask an AI for help writing an email.
 

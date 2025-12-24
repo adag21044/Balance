@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card60
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_060
+  Id: card_077
   Title: The HOA Showdown
   Description: "Your neighbor\u2019s mailbox is painted the wrong shade of beige.
     The HOA demands action."

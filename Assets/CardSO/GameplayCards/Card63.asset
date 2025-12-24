@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card63
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_063
+  Id: card_080
   Title: The Backyard Project
   Description: "You decide to build a shed \u201Cwithout instructions.\u201D Three
     neighbors join uninvited."

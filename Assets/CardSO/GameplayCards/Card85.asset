@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card85
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_094
+  Id: card_102
   Title: News War
   Description: "Two TVs at the gym: one blasting Falcon News, the other ANN (American
     News Network). Everyone\u2019s pretending not to watch."

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: NC7
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_084
+  Id: card_017
   Title: Quiet Breakfast
   Description: A diner. Morning sun through the window. You drink your coffee and
     think about nothing at all.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: BN2
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_104
+  Id: card_021
   Title: New Study Finds Sleep Replaces Coffee
   Description: 'Breaking News: Experts shocked to discover eight hours of sleep works
     better than caffeine.'

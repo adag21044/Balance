@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card103
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_113
+  Id: card_120
   Title: The Phone Update
   Description: Your phone updates overnight. It looks exactly the same, but slower.
   Artwork: {fileID: 9075274322033749681, guid: 5c10a7c8e5c6aef4da84a807555aa2fa, type: 3}

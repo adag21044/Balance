@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card78
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_087
+  Id: card_095
   Title: Pronoun Policy at Work
   Description: HR requires everyone to list pronouns on their badges.
   Artwork: {fileID: 9030128014429698439, guid: e8c13716e22d154469f233601b98452d, type: 3}

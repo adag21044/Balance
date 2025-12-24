@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card18
   m_EditorClassIdentifier: 
-  Id: card_018
+  Id: card_036
   Title: Social Destruction
   Description: You got into an irreversible argument with your closest group of friends
   Artwork: {fileID: 713574229117447886, guid: 3dc2a2769c48bca4d91c5734d4a4bbd8, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 5
+  isOnlyOnce: 0

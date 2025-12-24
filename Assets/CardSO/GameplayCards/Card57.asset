@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card57
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_057
+  Id: card_074
   Title: 'Cornfield Chase '
   Description: "You run into the cornfield with your phone flashlight. The glowing
     thing starts moving faster toward you. It\u2019s\u2026 a raccoon wearing a glow

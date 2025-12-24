@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card35
   m_EditorClassIdentifier: 
-  Id: card_035
+  Id: card_052
   Title: Mortgage
   Description: Your dream house comes with a big mortgage commitment.
   Artwork: {fileID: -5484484300997199050, guid: 0dbee710009c85548b5fed574c6bda6d, type: 3}

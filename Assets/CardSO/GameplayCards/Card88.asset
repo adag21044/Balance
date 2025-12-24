@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card88
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_097
+  Id: card_105
   Title: Patriot Alert
   Description: "After a drone delivery lands in your yard, two ICE agents show up
     asking if you\u2019ve seen 'foreign technology'"

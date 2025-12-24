@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card89
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_098
+  Id: card_106
   Title: Meme War Heats Up
   Description: "President posts a meme mocking Governor \u2014 the internet erupts."
   Artwork: {fileID: -386636483808341803, guid: af5c4adfbe02a554187989996028cb1e, type: 3}

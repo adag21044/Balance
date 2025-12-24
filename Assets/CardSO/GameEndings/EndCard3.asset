@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: EndCard3
   m_EditorClassIdentifier: 
-  Id: card_011
+  Id: card_006
   Title: Unemployed
   Description: Without work or direction, you fell into hardship. Survival became
     impossible.
@@ -35,3 +35,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 0
+  isOnlyOnce: 0

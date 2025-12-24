@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card94
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_105
+  Id: card_111
   Title: Tipping Debate
   Description: Barista glares at you.
   Artwork: {fileID: 7489870469163936571, guid: 3da7b05758b15a249a8c5a013039710b, type: 3}

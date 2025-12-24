@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card76
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_076
+  Id: card_093
   Title: Crypto Coworker
   Description: "Your coworker won\u2019t stop talking about a new coin called 'BananaToken.'"
   Artwork: {fileID: 4391942777128156563, guid: 9e8a4ccdbb697af4da393b90fcadcf9e, type: 3}

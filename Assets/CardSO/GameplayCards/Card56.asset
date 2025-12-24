@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card56
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_056
+  Id: card_073
   Title: It Was Just Carl
   Description: "Turns out, it wasn\u2019t an alien or a monster. It was your neighbor
     Carl wearing a headlamp, looking for his lost lawnmower."

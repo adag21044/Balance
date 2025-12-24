@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card130
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_143
+  Id: card_147
   Title: Christmas Bonus Rumor
   Description: "Someone at work says there might be a Christmas bonus this year.\nNo
     one knows how much.\nOr if it\u2019s real."

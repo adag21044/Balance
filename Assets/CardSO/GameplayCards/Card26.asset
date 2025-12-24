@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card26
   m_EditorClassIdentifier: 
-  Id: card_026
+  Id: card_043
   Title: Yoga Class
   Description: A new yoga class is available in your area. Do you join?
   Artwork: {fileID: 5398119371451078017, guid: 5cdeee6a8d84d2244827e30658601a68, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card123
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_136
+  Id: card_140
   Title: Better Offer
   Description: "A rival company offers you 20% more salary. During the call, they
     casually mention how helpful it would be if you shared some \u201Cinternal insights\u201D

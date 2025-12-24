@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card83
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_092
+  Id: card_100
   Title: Freedom Above All
   Description: "A protester waves a flag shouting: 'Don\u2019t tread on me!'"
   Artwork: {fileID: -7266521487842861772, guid: 561f851b30e444b459ba84d1ec0227af, type: 3}

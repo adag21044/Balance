@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card100
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_111
+  Id: card_117
   Title: Parking Ticket
   Description: You got one minute after meter expired.
   Artwork: {fileID: -2381360508892854045, guid: 77dafa704e899ba41a1af8ed3eb70efc, type: 3}

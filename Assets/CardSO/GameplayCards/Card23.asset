@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card23
   m_EditorClassIdentifier: 
-  Id: card_023
+  Id: card_040
   Title: Diet Plan
   Description: Doctor suggests a strict diet. Do you follow it?
   Artwork: {fileID: -7911028265580959754, guid: 38b5176c34ebed34fb7715c7781069ec, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card93
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_102
+  Id: card_110
   Title: Office Romance
   Description: Two coworkers start dating. Productivity drops.
   Artwork: {fileID: -1844190141187979863, guid: 5f2407ecbb24e0c49a2c430a627b27f5, type: 3}

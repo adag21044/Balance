@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card72
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_072
+  Id: card_089
   Title: Printer Jam Again
   Description: You hit 'print' 12 times. Now the printer is spewing paper like a
     volcano.

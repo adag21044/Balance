@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: EndCard6
   m_EditorClassIdentifier: 
-  Id: card_014
+  Id: card_009
   Title: Alone in the Crowd
   Description: No friends, no family, no one left to hear your voice. Loneliness
     becomes your only companion.
@@ -35,3 +35,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 5
+  isOnlyOnce: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card115
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_125
+  Id: card_132
   Title: Freedom Air Pest Control
   Description: "Farmers in Texas complain about feral hogs destroying land.\r\nA
     private company offers helicopter-based \u201Cpest control\u201D \u2014 and civilians

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card114
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_124
+  Id: card_131
   Title: The Infinite Loop
   Description: A politician on TV claims that taxing you more and doubling the minimum
     wage will somehow make your $7 eggs cheaper. Do you buy into this "New Math"?

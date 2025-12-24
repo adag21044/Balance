@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card69
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_069
+  Id: card_086
   Title: Email Server Crash
   Description: A government office loses thousands of emails overnight.
   Artwork: {fileID: 6605474295554432592, guid: 2a338d571b8e26c47991c2efdc94449a, type: 3}

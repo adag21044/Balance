@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card41
   m_EditorClassIdentifier: 
-  Id: card_041
+  Id: card_058
   Title: UFO Sighting
   Description: "Locals swear they saw a UFO hovering over a cornfield. You\u2019re
     nearby."

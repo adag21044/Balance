@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card134
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_147
+  Id: card_151
   Title: Bathroom Gaming Upgrade
   Description: "You see an ad for a handheld console.\n\u201CPerfect for bathroom
     breaks.\u201D\nYou think about how long you sit there."

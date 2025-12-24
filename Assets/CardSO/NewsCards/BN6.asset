@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: BN6
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_131
+  Id: card_025
   Title: "Retailer Accused of \u201CTyranny\u201D After New Dress Rule"
   Description: 'Breaking News: A major retailer is facing backlash after requiring
     customers to wear pants.

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card92
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_101
+  Id: card_109
   Title: Mandatory Fun Day
   Description: "The boss declares a team-building day\u2026 at a paintball park."
   Artwork: {fileID: 6707794364360091111, guid: 7cf45a7d10ef1f84595ddd3afeaf68cb, type: 3}

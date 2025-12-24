@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
+  m_Name: PT6
+  m_EditorClassIdentifier: Assembly-CSharp::CardSO
+  Id: card_156
+  Title: Court Day
+  Description: You stand before the judge. The officer is present.
+  Artwork: {fileID: 2438570948075280693, guid: d2a14b8af43e54b4aa9586d46321a208, type: 3}
+  leftAnswer: Be respectful
+  rightAnswer: Argue aggressively
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
+  leftSociabilityImpact: 1
+  rightHeartImpact: 0
+  rightCareerImpact: 0
+  rightHappinessImpact: 0
+  rightSociabilityImpact: -2
+  impactType: 03000000
+  ageImpact: 0
+  isChainCard: 1
+  nextOnLeft: {fileID: 11400000, guid: ac4923ca5fda9594abad1dc788169244, type: 2}
+  nextOnRight: {fileID: 11400000, guid: edb139c9b2293e44a9ef33cc6f73e4e3, type: 2}
+  nextPoolLeft: []
+  nextPoolRight: []
+  lifeStage: 0
+  isOnlyOnce: 0

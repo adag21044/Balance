@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card51
   m_EditorClassIdentifier: 
-  Id: card_051
+  Id: card_068
   Title: Ivy League Party
   Description: A Yale student invites you to a campus party.
   Artwork: {fileID: 6902216134727900279, guid: 15f15d18d7ea01e45bebc6e3c736836d, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card131
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_144
+  Id: card_148
   Title: Doorbuster Madness
   Description: "The store opens at 5 AM.\nThere are only three TVs.\nYou\u2019re
     not sure you even need one.\nBut it\u2019s 60% off."

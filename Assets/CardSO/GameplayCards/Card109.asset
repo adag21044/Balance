@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card109
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_119
+  Id: card_126
   Title: The Lemonade Stand Raid
   Description: Your daughter is selling lemonade on the sidewalk. A city inspector
     arrives and demands to see a 'Commercial Food License' and a health certificate.

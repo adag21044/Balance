@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card86
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_095
+  Id: card_103
   Title: Meme Diplomacy
   Description: The Vice President posts a meme mocking himself.
   Artwork: {fileID: -145061343222229436, guid: 3669b32dad1c8c6458c69ed1d64fe29e, type: 3}

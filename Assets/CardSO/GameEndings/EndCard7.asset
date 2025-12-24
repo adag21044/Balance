@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: EndCard7
   m_EditorClassIdentifier: 
-  Id: card_015
+  Id: card_010
   Title: Faded Joy
   Description: All your ambitions dissolved into emptiness. With no spark left to
     chase, even waking up feels meaningless.
@@ -35,3 +35,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 5
+  isOnlyOnce: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: NC8
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_085
+  Id: card_018
   Title: Desert Reflection
   Description: The desert stretches endlessly. You realize some roads never lead
     anywhere, yet you walk them anyway.

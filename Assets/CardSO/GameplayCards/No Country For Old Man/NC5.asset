@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: NC5
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_082
+  Id: card_015
   Title: Old Sheriff
   Description: An old sheriff stops by your car. 'Funny how the world changes, huh?'
     he says.

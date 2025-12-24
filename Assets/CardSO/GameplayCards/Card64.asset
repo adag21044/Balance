@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card64
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_064
+  Id: card_081
   Title: Gas Price Philosophy
   Description: "Gas hits $5 a gallon. Your friend says \u201Cit\u2019s for the planet.\u201D"
   Artwork: {fileID: 8016915940297462038, guid: fb32e03ced06e104e80072ef7afb18d3, type: 3}

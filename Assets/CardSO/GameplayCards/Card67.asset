@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card67
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_067
+  Id: card_084
   Title: AI Writes Your Essay
   Description: "A new app promises it can \u201Cwrite anything for you.\u201D"
   Artwork: {fileID: 5518704958344836477, guid: ca78919a5c378f6418516c0fbb0fffb4, type: 3}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card96
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_107
+  Id: card_113
   Title: Writing Memoir
   Description: You feel nostalgic.
   Artwork: {fileID: 194530174711727668, guid: f7b15d1e5e325154180afcd5485a63d7, type: 3}

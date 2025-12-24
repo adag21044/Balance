@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card16
   m_EditorClassIdentifier: 
-  Id: card_016
+  Id: card_034
   Title: The Meaninglessness of Life
   Description: The days seem meaningless, you don't enjoy anything
   Artwork: {fileID: -7750549816878195505, guid: a894b98c7c3528d44a7eaeb4c810775b, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 0
+  isOnlyOnce: 0

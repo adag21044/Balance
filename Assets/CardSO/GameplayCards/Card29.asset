@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card29
   m_EditorClassIdentifier: 
-  Id: card_029
+  Id: card_046
   Title: Meditation
   Description: A mindfulness retreat opens nearby. Do you attend?
   Artwork: {fileID: -2928212667995565158, guid: ceb5ba1f11e69c2449080b581cd3f9b3, type: 3}

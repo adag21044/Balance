@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: DQ3
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_077
+  Id: card_003
   Title: Artificial Inspiration
   Description: All sprites in this game were generated using AI.
   Artwork: {fileID: -4501359582192414139, guid: 8fd2239e0db95c54ebf7625c0387bb9e, type: 3}

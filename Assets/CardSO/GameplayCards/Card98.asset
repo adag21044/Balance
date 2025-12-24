@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card98
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_109
+  Id: card_115
   Title: Electric Car Charger
   Description: The charger costs more than gas this month.
   Artwork: {fileID: 8550432637362848463, guid: 909c46d8479b9714386d656ef1fcc227, type: 3}

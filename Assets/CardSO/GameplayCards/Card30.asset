@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card30
   m_EditorClassIdentifier: 
-  Id: card_030
+  Id: card_047
   Title: Join the Basketball Team
   Description: Joining the new basketball team may improve health and popularity
     but cut study time.

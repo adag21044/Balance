@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card4
   m_EditorClassIdentifier: 
-  Id: card_004
+  Id: card_029
   Title: Family Dinner
   Description: Your parents invite you for a family dinner.
   Artwork: {fileID: 2273637850481659594, guid: 8de0db7a7d5570b4a9ae0e7b3f828d67, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 3
+  isOnlyOnce: 0

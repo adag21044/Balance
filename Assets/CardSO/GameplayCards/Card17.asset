@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card17
   m_EditorClassIdentifier: 
-  Id: card_017
+  Id: card_035
   Title: Illegal Agreement
   Description: An illegal job offer has arrived. It could be very lucrative.
   Artwork: {fileID: 4257240071881101714, guid: a40e5ffa2bcd36841977abd999434818, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 0
+  isOnlyOnce: 0

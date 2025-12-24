@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card112
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_122
+  Id: card_129
   Title: The Subscription
   Description: "A streaming service removed a classic movie because it\u2019s \"problematic\"
     by today's standards."

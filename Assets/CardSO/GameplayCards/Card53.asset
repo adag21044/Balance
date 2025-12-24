@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card53
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_053
+  Id: card_070
   Title: Black Friday Chaos
   Description: Walmart opens at 4 AM. You see a 50% off TV ad.
   Artwork: {fileID: -7207211361733195252, guid: a2ea9b7817bab134b94147057a3757e2, type: 3}

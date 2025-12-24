@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card5
   m_EditorClassIdentifier: 
-  Id: card_005
+  Id: card_030
   Title: Extreme Sports
   Description: An opportunity for bungee jumping arises. Do you take it?
   Artwork: {fileID: 9170336767706615490, guid: 1878778cee10d84468f75ab739c0f900, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 3
+  isOnlyOnce: 0

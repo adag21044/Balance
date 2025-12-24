@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card91
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_100
+  Id: card_108
   Title: Coffee Thief
   Description: Someone keeps stealing your labeled coffee mug
   Artwork: {fileID: 8438189668832008794, guid: 2893ffdf887cd0649b85b4d82816b569, type: 3}

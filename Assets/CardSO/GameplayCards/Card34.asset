@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card34
   m_EditorClassIdentifier: 
-  Id: card_034
+  Id: card_051
   Title: Student Loan
   Description: College is expensive, so the bank offers a student loan.
   Artwork: {fileID: -222250215983714188, guid: 815ab927f1c803e42bb8abd4ff73f885, type: 3}

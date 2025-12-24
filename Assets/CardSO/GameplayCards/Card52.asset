@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card52
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_052
+  Id: card_069
   Title: Super Bowl Party
   Description: Your neighbors invite you to watch the Super Bowl.
   Artwork: {fileID: -5724947560642884824, guid: b40eb630f2f7f9e47aef92a8f3c1e36a, type: 3}

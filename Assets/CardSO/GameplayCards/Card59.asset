@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card59
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_059
+  Id: card_076
   Title: The Heat Wave
   Description: "It\u2019s 112\xB0F outside. Your neighbor is baking cookies on his
     car hood again."

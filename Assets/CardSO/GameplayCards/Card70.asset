@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card70
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_070
+  Id: card_087
   Title: Bureaucracy 101
   Description: You need a form to get a form that lets you apply for another form.
   Artwork: {fileID: 4439593772087336792, guid: c24472fa575bf964c8102982dd244278, type: 3}

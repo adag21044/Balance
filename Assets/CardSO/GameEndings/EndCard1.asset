@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: EndCard1
   m_EditorClassIdentifier: 
-  Id: card_009
+  Id: card_004
   Title: Accident due to low energy
   Description: You had an accident due to low energy
   Artwork: {fileID: -522686965825236288, guid: 465e0d787af05db48b58c015b5f32fb6, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 0
+  isOnlyOnce: 0

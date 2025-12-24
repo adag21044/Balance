@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card117
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_128
+  Id: card_134
   Title: Monster Truck Rally
   Description: 'Grave Digger vs. Megalodon! Mud flying, engines roaring, beer flowing. '
   Artwork: {fileID: 6968549215765488610, guid: 3d61288cbb6999540a91fad51ac8e169, type: 3}

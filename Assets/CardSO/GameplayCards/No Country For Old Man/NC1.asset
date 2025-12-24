@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: NC1
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_078
+  Id: card_011
   Title: Lost Wallet
   Description: You find a wallet on a lonely road. No ID, just a few bills inside.
   Artwork: {fileID: -8639974175089592262, guid: 90693ca932f8b3a4cb624a13f243b217, type: 3}

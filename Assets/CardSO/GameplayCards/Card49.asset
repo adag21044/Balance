@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card49
   m_EditorClassIdentifier: 
-  Id: card_049
+  Id: card_066
   Title: "Surf\u2019s Up"
   Description: "A surfer buddy calls: \u201CThe waves are perfect!\u201D"
   Artwork: {fileID: 2481005517453139310, guid: bb053e46dcbc59e428497ae595a8ed4a, type: 3}

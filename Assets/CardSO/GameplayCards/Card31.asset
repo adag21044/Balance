@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card31
   m_EditorClassIdentifier: 
-  Id: card_031
+  Id: card_048
   Title: First Apartment
   Description: You found a small apartment downtown.
   Artwork: {fileID: -6519295723219974881, guid: 5efba064165494b41a26a6016faad661, type: 3}

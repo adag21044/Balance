@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
   m_Name: Card3
   m_EditorClassIdentifier: 
-  Id: card_003
+  Id: card_028
   Title: Weekend Trip
   Description: Your friends are going on a spontaneous weekend trip.
   Artwork: {fileID: 8284676879855425092, guid: 0d89bfc4b2babd0449714393081e43a5, type: 3}
@@ -34,3 +34,4 @@ MonoBehaviour:
   nextPoolLeft: []
   nextPoolRight: []
   lifeStage: 3
+  isOnlyOnce: 0
