@@ -2,42 +2,91 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource audioSource;
+    [Header("Audio")]
+    [SerializeField] private AudioSource ambientAudioSource;
 
-    public AudioClip heartFailSoundClip;
-    public AudioClip careerFailSoundClip;
-    public AudioClip happinessFailSoundClip;
-    public AudioClip sociabilityFailSoundClip;
+    [SerializeField] private AudioClip heartFailSoundClip;
+    [SerializeField] private AudioClip careerFailSoundClip;
+    [SerializeField] private AudioClip happinessFailSoundClip;
+    [SerializeField] private AudioClip sociabilityFailSoundClip;
+
+    [Header("UI")]
+    [SerializeField] private GameObject soundDisabledIcon;
+
+    // Single source of truth
+    private bool isSoundOn = true;
+
+    private void Start()
+    {
+        ApplySoundState();
+    }
+
+    #region Public API
+
+    public void ToggleSound()
+    {
+        isSoundOn = !isSoundOn;
+        ApplySoundState();
+
+        Debug.Log("[SoundManager] Sound toggled. IsSoundOn: " + isSoundOn);
+    }
+
+    public void SetSound(bool enabled)
+    {
+        isSoundOn = enabled;
+        ApplySoundState();
+    }
+
+    #endregion
+
+    #region Internal
+
+    private void ApplySoundState()
+    {
+        if (ambientAudioSource != null)
+        {
+            ambientAudioSource.mute = !isSoundOn;
+        }
+
+        if (soundDisabledIcon != null)
+        {
+            soundDisabledIcon.SetActive(!isSoundOn);
+        }
+    }
+
+    private void PlayFailSound(AudioClip clip)
+    {
+        if (!isSoundOn) return;
+
+        if (ambientAudioSource != null && clip != null)
+        {
+            ambientAudioSource.PlayOneShot(clip);
+        }
+    }
+
+    #endregion
+
+    #region Fail Sounds
 
     public void PlayHeartFailSound()
     {
-        if (audioSource != null && heartFailSoundClip != null)
-        {
-            audioSource.PlayOneShot(heartFailSoundClip);
-        }
+        PlayFailSound(heartFailSoundClip);
     }
 
     public void PlayCareerFailSound()
     {
-        if (audioSource != null && careerFailSoundClip != null)
-        {
-            audioSource.PlayOneShot(careerFailSoundClip);
-        }
+        PlayFailSound(careerFailSoundClip);
     }
 
     public void PlayHappinessFailSound()
     {
-        if (audioSource != null && happinessFailSoundClip != null)
-        {
-            audioSource.PlayOneShot(happinessFailSoundClip);
-        }
+        PlayFailSound(happinessFailSoundClip);
     }
 
     public void PlaySociabilityFailSound()
     {
-        if (audioSource != null && sociabilityFailSoundClip != null)
-        {
-            audioSource.PlayOneShot(sociabilityFailSoundClip);
-        }
+        PlayFailSound(sociabilityFailSoundClip);
     }
+
+    #endregion
 }
