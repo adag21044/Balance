@@ -40,6 +40,13 @@ public class CardController : MonoBehaviour,
     [SerializeField] private Queue<CardSO> nextCards = new Queue<CardSO>();
     [SerializeField] private int PRELOAD_COUNT = 5;
 
+    #if UNITY_EDITOR
+    [Header("DEBUG (Editor Only)")]
+    [SerializeField] private bool debugForceNextCard = false;
+    [SerializeField] private CardSO debugNextCard;
+    #endif
+
+
     #region Unity Lifecycle
     private void Awake()
     {
@@ -513,6 +520,16 @@ public class CardController : MonoBehaviour,
 
     private CardSO ChooseNextCard(CardSO current, SwipeDirection dir)
     {
+    #if UNITY_EDITOR
+        if (debugForceNextCard && debugNextCard != null)
+        {
+            var forced = debugNextCard;
+            debugNextCard = null;
+            debugForceNextCard = false;
+            return forced;
+        }
+    #endif
+
         // 1) direct chain
         if (current != null)
         {
