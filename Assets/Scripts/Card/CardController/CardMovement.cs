@@ -74,12 +74,24 @@ public class CardMovement : MonoBehaviour,
         }
     }
 
+    private void OnDisable()
+    {
+        swipeCts?.Cancel();
+        swipeCts?.Dispose();
+        swipeCts = null;
+
+        DOTween.Kill(transform);
+        if (img != null)
+            DOTween.Kill(img);
+    }
+
     private async UniTaskVoid PlaySwipeAsync(bool draggedLeft)
     {
         swipeLocked = true;
 
         swipeCts?.Cancel();
         swipeCts = new CancellationTokenSource();
+        var token = swipeCts.Token;
 
         float offscreenX = draggedLeft
             ? transform.localPosition.x - screenWidth
@@ -88,24 +100,35 @@ public class CardMovement : MonoBehaviour,
         float targetAngle = draggedLeft ? maxTiltAngle * 2f : -maxTiltAngle * 2f;
 
         Sequence seq = DOTween.Sequence();
+
         seq.Append(transform.DOLocalMoveX(offscreenX, swipeDuration).SetEase(Ease.InQuad))
-        .Join(transform.DOLocalRotate(new Vector3(0, 0, targetAngle), swipeDuration))
-        .Join(img.DOFade(0f, swipeDuration));
+        .Join(transform.DOLocalRotate(new Vector3(0, 0, targetAngle), swipeDuration));
+
+        if (img != null)
+        {
+            seq.Join(img.DOFade(0f, swipeDuration));
+        }
 
         try
         {
-            // 🔴 ÖNEMLİ: AsUniTask()
-            await seq.AsyncWaitForCompletion().AsUniTask();
+            await seq.AsyncWaitForCompletion()
+                 .AsUniTask()
+                 .AttachExternalCancellation(token);
         }
         catch (OperationCanceledException)
         {
-            // ignore
+            swipeLocked = false;
+            return; // ignore
         }
+
+        if (this == null || !gameObject.activeInHierarchy) return;
 
         // reset
         transform.localPosition = initialPos;
         transform.localRotation = Quaternion.identity;
-        img.color = new Color(img.color.r, img.color.g, img.color.b, 1f);
+
+        if (img != null)
+            img.color = new Color(img.color.r, img.color.g, img.color.b, 1f);
 
         swipeLocked = false;
         Swiped?.Invoke(draggedLeft);

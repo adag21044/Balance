@@ -82,10 +82,6 @@ public class StatView : MonoBehaviour
         happinessPtrTimer?.Kill(false);
         sociabilityPtrTimer?.Kill(false);
 
-        heartPointer.gameObject.SetActive(false);
-        careerPointer.gameObject.SetActive(false);
-        happinessPointer.gameObject.SetActive(false);
-        sociabilityPointer.gameObject.SetActive(false);
     }
 
 
