@@ -1,6 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
+using Cysharp.Threading.Tasks;
+using System.Threading;
 
 public class StartScreenAnimator : MonoBehaviour
 {
@@ -8,6 +11,7 @@ public class StartScreenAnimator : MonoBehaviour
     [SerializeField] private TMP_Text touchToStartText;
 
     private Tween blinkTween;
+    [SerializeField] private Image fadeOverlay;
 
     private void Awake()
     {
@@ -48,5 +52,30 @@ public class StartScreenAnimator : MonoBehaviour
         blinkTween?.Kill();
         touchToStartText.alpha = 1f;
         touchToStartText.gameObject.SetActive(false);
+    }
+
+    public async UniTask PlayStartTransitionAsync(CancellationToken token)
+    {
+        // Blink durdur
+        DisableBlinkText();
+
+        // Overlay aç
+        fadeOverlay.gameObject.SetActive(true);
+
+        Color c = fadeOverlay.color;
+        c.a = 1f;
+        fadeOverlay.color = c;
+
+        // Siyah → şeffaf
+        await fadeOverlay
+        .DOFade(0f, 1.2f)
+        .SetEase(Ease.InOutSine)
+        .AsyncWaitForCompletion();
+
+
+        fadeOverlay.gameObject.SetActive(false);
+
+        // Start screen kapat
+        gameObject.SetActive(false);
     }
 }

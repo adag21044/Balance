@@ -75,17 +75,27 @@ public class GameManager : MonoBehaviour
 
     public void OnStartButtonPressed()
     {
+        StartGameFlowAsync().Forget();
+    }
+
+    private async UniTaskVoid StartGameFlowAsync()
+    {
         Debug.Log("[GameManager] Start button pressed");
         StartButtonPressed?.Invoke();
 
-        if (startScreenAnimator != null)
-            startScreenAnimator.gameObject.SetActive(false);
+        var token = this.GetCancellationTokenOnDestroy();
 
+        // 1️⃣ Fade (dark → light)
+        if (startScreenAnimator != null)
+            await startScreenAnimator.PlayStartTransitionAsync(token);
+
+        // 2️⃣ Fade bittikten sonra deck animasyonu
         if (cardInitialAnimation != null)
             cardInitialAnimation.StartAnimation();
 
         statController.statView.AnimateAgeText(StatModel.Instance.age);
     }
+
 
     public void FinishGame(GameOverCause cause)
     {
