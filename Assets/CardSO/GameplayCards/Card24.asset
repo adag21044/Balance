@@ -33,5 +33,5 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 5
+  lifeStage: 0
   isOnlyOnce: 0
