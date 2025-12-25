@@ -101,7 +101,7 @@ public class StatModel
         if (card.ageImpact != 0)
         {
             float beforeAge = age;
-            age += card.ageImpact / 2; // burada istediğin mantığa göre clamp ekleyebilirsin
+            age += card.ageImpact;
             Debug.Log($"[StatModel] age before={beforeAge}, impact={card.ageImpact}, after={age}");
             OnAgeChanged?.Invoke(age);
         }

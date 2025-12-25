@@ -27,7 +27,7 @@ MonoBehaviour:
   rightHappinessImpact: 0
   rightSociabilityImpact: 1
   impactType: 000000000200000003000000
-  ageImpact: 1
+  ageImpact: 0.25
   isChainCard: 1
   nextOnLeft: {fileID: 11400000, guid: 862577fca929acb43aeb3d3c17e25b8a, type: 2}
   nextOnRight: {fileID: 11400000, guid: 46e9ba895e88cd841be6ade8acda8f8d, type: 2}
