@@ -159,6 +159,8 @@ public class CardController : MonoBehaviour,
             cardView.AnimateSwipeOut(toLeft, Screen.width)
                     .OnComplete(() =>
                     {
+                        StatModel.CancelPreview();
+
                         // Domain notify + apply impacts
                         Model.NotifySwiped(lastSwipeDir);
                         StatModel.Instance.ApplyCard(decidedCard, lastSwipeDir);
@@ -187,6 +189,7 @@ public class CardController : MonoBehaviour,
             statView.ShowHeartPointer(false);
             statView.ShowCareerPointer(false);
             statView.ShowHappinessPointer(false);
+            statView.ShowSociabilityPointer(false);
         }
     }
 
