@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: BN1
+  m_Name: NC7
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_020
-  Title: President Cancels Meeting for Golf
-  Description: "Breaking News: The President skips a crisis meeting for \u201Cimportant
-    golf diplomacy.\u201D"
-  Artwork: {fileID: 9041924767219642196, guid: 3e92995f1a12b3b4e9c573815c4cc6a8, type: 3}
+  Id: card_017
+  Title: Quiet Breakfast
+  Description: A diner. Morning sun through the window. You drink your coffee and
+    think about nothing at all.
+  Artwork: {fileID: -2832580409811671290, guid: ef8af91fc0dd56e498ffb763b150e36d, type: 3}
   leftAnswer: 
   rightAnswer: 
   leftHeartImpact: 0
@@ -34,5 +34,8 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 0
   isOnlyOnce: 0
+  contributesToProgress: 1
+  compensatesSkippedCard: 0
+  isFinalCard: 0

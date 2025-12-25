@@ -33,5 +33,8 @@ MonoBehaviour:
   nextOnRight: {fileID: 11400000, guid: 218c636b39b3e414aa90b063f83d4673, type: 2}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
+  lifeStage: 0
   isOnlyOnce: 0
+  contributesToProgress: 1
+  compensatesSkippedCard: 1
+  isFinalCard: 0

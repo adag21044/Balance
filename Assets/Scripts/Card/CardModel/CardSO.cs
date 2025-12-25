@@ -40,6 +40,14 @@ public class CardSO : ScriptableObject
 
     public LifeStage lifeStage;
     public bool isOnlyOnce; // If true, this card can be used only once per game
+
+    [Header("Progress Tracker")]
+    [Header("Progress")]
+    public bool contributesToProgress = true;
+    public bool compensatesSkippedCard = false; // 2x olacak mı?
+
+    [Header("Flow")]
+    public bool isFinalCard = false;
 }
 
 public enum ImpactType

@@ -46,6 +46,7 @@ public class CardController : MonoBehaviour,
     [SerializeField] private CardSO debugNextCard;
     #endif
 
+    [SerializeField] private RunController runController;
 
     #region Unity Lifecycle
     private void Awake()
@@ -203,6 +204,7 @@ public class CardController : MonoBehaviour,
         cardView.SetContent(cardSO);
         cardView.CaptureInitial();
         initialLocalPos = cardView.RectT.localPosition;
+        runController?.OnCardDisplayed(cardSO);
     }
 
     private void OnInitialAnimationDone()
@@ -231,6 +233,7 @@ public class CardController : MonoBehaviour,
         // Ensure visible; CardInitialAnimation reveals using scale, not alpha
         if (!canvasGroup) canvasGroup = cardView.GetComponent<CanvasGroup>();
         if (canvasGroup) canvasGroup.alpha = 1f;
+
 
         // Let the animation drive the transform (it sets scale/position)
         if (cardInitialAnimation != null)
@@ -341,6 +344,8 @@ public class CardController : MonoBehaviour,
 
         // Rebind visuals
         cardView.SetContent(cardSO);
+
+        runController?.OnCardDisplayed(cardSO);
 
         // Clean transform + show
         CleanAndShowCard();

@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CardInitialAnimation cardInitialAnimation;
     [SerializeField] private StartScreenAnimator startScreenAnimator;
     [SerializeField] private SoundManager soundManager;
+    [SerializeField] private RunController runController;
 
     private void Awake()
     {

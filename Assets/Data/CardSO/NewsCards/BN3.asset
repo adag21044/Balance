@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: NC8
+  m_Name: BN3
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_018
-  Title: Desert Reflection
-  Description: The desert stretches endlessly. You realize some roads never lead
-    anywhere, yet you walk them anyway.
-  Artwork: {fileID: 6132719619657667809, guid: 8c786433d2b720f44a5ce9e11b835e4d, type: 3}
+  Id: card_022
+  Title: The Frozen Texan
+  Description: 'Breaking News: A man in Texas burns furniture to stay warm. The senator
+    flies to Cancun.'
+  Artwork: {fileID: 8807805026301071445, guid: 4a9de42300942124f95c2557bd8f8e16, type: 3}
   leftAnswer: 
   rightAnswer: 
   leftHeartImpact: 0
@@ -34,5 +34,8 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 1
-  isOnlyOnce: 0
+  lifeStage: 0
+  isOnlyOnce: 1
+  contributesToProgress: 1
+  compensatesSkippedCard: 0
+  isFinalCard: 0

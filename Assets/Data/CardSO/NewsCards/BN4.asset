@@ -10,18 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 915f0feedca98f9429d3eba56a8e6650, type: 3}
-  m_Name: BN6
+  m_Name: BN4
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
-  Id: card_025
-  Title: "Retailer Accused of \u201CTyranny\u201D After New Dress Rule"
-  Description: 'Breaking News: A major retailer is facing backlash after requiring
-    customers to wear pants.
-
-    Critics say freedom was never meant to be this
-    restrictive.
-
-    Shirts remain optional.'
-  Artwork: {fileID: 498838752646315594, guid: e50c8fe8ef26d234f8e6af46c02f8f48, type: 3}
+  Id: card_023
+  Title: Survey Reveals Confidence
+  Description: 'Breaking News: According to a recent survey, 8% of Americans believe
+    they could defeat a lion in a fist fight.'
+  Artwork: {fileID: 6138481802768717598, guid: 11949940ef5ed3541858240914e59027, type: 3}
   leftAnswer: 
   rightAnswer: 
   leftHeartImpact: 0
@@ -39,5 +34,8 @@ MonoBehaviour:
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 4
+  lifeStage: 0
   isOnlyOnce: 1
+  contributesToProgress: 1
+  compensatesSkippedCard: 0
+  isFinalCard: 0
