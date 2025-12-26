@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndices(0, 3);
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayHeartFailSound();
-                SaveSystem.Instance.ResetStats(statModel);
+                SaveSystem.Instance.ResetStatsOnFail(statModel);
                 Debug.Log("Heart cause");
                 ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndices(3, 5);
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayCareerFailSound();
-                SaveSystem.Instance.ResetStats(statModel);
+                SaveSystem.Instance.ResetStatsOnFail(statModel);
                 Debug.Log("Career cause");
                 ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndex(6);
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlayHappinessFailSound();
-                SaveSystem.Instance.ResetStats(statModel);
+                SaveSystem.Instance.ResetStatsOnFail(statModel);
                 Debug.Log("Happiness cause");
                 ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
                 cardController.SetEndGameCardByIndex(5);
                 statController.statView.AnimateFailAnimation();
                 soundManager.PlaySociabilityFailSound();
-                SaveSystem.Instance.ResetStats(statModel);
+                SaveSystem.Instance.ResetStatsOnFail(statModel);
                 Debug.Log("Sociability cause");
                 ReloadSceneAfterDelayAsync(5f).Forget();
                 break;
@@ -189,14 +189,6 @@ public class GameManager : MonoBehaviour
         // %0 → %20 (loading başladı hissi)
         LoadingUI.Instance.SetProgress(0.2f);
         await UniTask.Delay(200);
-
-        // SAVE LOAD
-        SaveSystem.Instance.LoadStats(StatModel.Instance);
-
-        // %20 → %80 (save yükleniyor hissi)
-        LoadingUI.Instance.SetProgress(0.8f);
-
-        await UniTask.WaitUntil(() => SaveSystem.Instance.IsLoaded);
 
         // UI init
         statController.InitializeFromModel();

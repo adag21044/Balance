@@ -41,6 +41,7 @@ public class StatModel
     public static event Action OnFail;
 
     public const float IMPACT_SCALE = 0.01f;
+    public event Action<int> OnHighestAgeReached;
 
     public StatModel()
     {
@@ -102,13 +103,15 @@ public class StatModel
         {
             float beforeAge = age;
             age += card.ageImpact;
-            Debug.Log($"[StatModel] age before={beforeAge}, impact={card.ageImpact}, after={age}");
-            OnAgeChanged?.Invoke(age);
-        }
 
-        if (SaveSystem.Instance != null)
-        {
-            SaveSystem.Instance.SaveStats(this);
+            int flooredAge = Mathf.FloorToInt(age);
+
+            Debug.Log($"[StatModel] age before={beforeAge}, impact={card.ageImpact}, after={age}");
+
+            
+
+
+            OnAgeChanged?.Invoke(age);
         }
     }
 

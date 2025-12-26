@@ -1,17 +1,14 @@
 using UnityEngine;
-using System;
 using System.Reflection;
 
 public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem Instance { get; private set; }
-    public bool IsLoaded { get; private set; }
 
-    private const string AgeKey = "Age";
-    private const string HeartKey = "Heart";
-    private const string CareerKey = "Career";
-    private const string HappinessKey = "Happiness";
-    private const string SociabilityKey = "Sociability";
+    private const string HighestAgeKey = "HighestAge";
+
+    private const int DefaultAge = 18;
+    private const float DefaultStat = 0.5f;
 
     private void Awake()
     {
@@ -23,95 +20,64 @@ public class SaveSystem : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        IsLoaded = false;
     }
 
-    private void Update()
+    // CALLED ONLY ON FAIL
+    public void ResetStatsOnFail(StatModel model)
     {
-        // Only debugging purposes
-        if(Input.GetKeyDown(KeyCode.R))
+        int currentAge = Mathf.FloorToInt(model.age);
+        int highestAge = PlayerPrefs.GetInt(HighestAgeKey, DefaultAge);
+
+        if (currentAge > highestAge)
         {
-            ResetNow();
+            PlayerPrefs.SetInt(HighestAgeKey, currentAge);
+            PlayerPrefs.Save();
+            Debug.Log($"[SaveSystem] HighestAge updated → {currentAge}");
         }
+
+        // RESET RUN (NOT SAVED)
+        model.age = DefaultAge;
+        SetAllStats(model, DefaultStat);
     }
 
-    // [Method(onlyPlayMode: true)]
-    public void SaveNow()
+    public int GetHighestAge()
     {
-        if (StatModel.Instance != null)
-        {
-            SaveStats(StatModel.Instance);
-            Debug.Log("[SaveSystem] Manual Save via button");
-        }
+        return PlayerPrefs.GetInt(HighestAgeKey, DefaultAge);
     }
 
-    // [Method(onlyPlayMode: true)]
-    public void LoadNow()
+    private void SetAllStats(StatModel model, float value)
     {
-        if (StatModel.Instance != null)
-        {
-            LoadStats(StatModel.Instance);
-            Debug.Log("[SaveSystem] Manual Load via button");
-        }
-    }
+        typeof(StatModel).GetField("heartPercantage",
+            BindingFlags.NonPublic | BindingFlags.Instance)?.SetValue(model, value);
 
-    // [Method(onlyPlayMode: true)]
-    public void ResetNow()
-    {
-        if (StatModel.Instance != null)
-        {
-            ResetStats(StatModel.Instance);
-            Debug.Log("[SaveSystem] Manual Reset via button");
-        }
-    }
+        typeof(StatModel).GetField("careerPercantage",
+            BindingFlags.NonPublic | BindingFlags.Instance)?.SetValue(model, value);
 
-    // Save all stats
-    public void SaveStats(StatModel model)
-    {
-        PlayerPrefs.SetFloat(HeartKey, model.HeartPercantage);
-        PlayerPrefs.SetFloat(CareerKey, model.CareerPercantage);
-        PlayerPrefs.SetFloat(HappinessKey, model.HappinessPercantage);
-        PlayerPrefs.SetFloat(SociabilityKey, model.SociabilityPercantage);
-        PlayerPrefs.SetInt(AgeKey, Mathf.FloorToInt(model.age));
-        PlayerPrefs.Save();
-    }
+        typeof(StatModel).GetField("happinessPercantage",
+            BindingFlags.NonPublic | BindingFlags.Instance)?.SetValue(model, value);
 
-    // Load all stats into model
-    public void LoadStats(StatModel model)
-    {
-        model.age = PlayerPrefs.GetInt(AgeKey, 18);
-        // Default değer 0.5f olacak şekilde
-        model.GetType().GetField("heartPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, PlayerPrefs.GetFloat(HeartKey, 0.5f));
-        model.GetType().GetField("careerPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, PlayerPrefs.GetFloat(CareerKey, 0.5f));
-        model.GetType().GetField("happinessPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, PlayerPrefs.GetFloat(HappinessKey, 0.5f));
-        model.GetType().GetField("sociabilityPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, PlayerPrefs.GetFloat(SociabilityKey, 0.5f));
-        
-        IsLoaded = true; 
-    }
-
-    // Reset to defaults (called on fail)
-    public void ResetStats(StatModel model)
-    {
-        model.age = 18;
-        typeof(StatModel).GetField("heartPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, 0.5f);
-        typeof(StatModel).GetField("careerPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, 0.5f);
-        typeof(StatModel).GetField("happinessPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, 0.5f);
-        typeof(StatModel).GetField("sociabilityPercantage", BindingFlags.NonPublic | BindingFlags.Instance)
-            ?.SetValue(model, 0.5f);
-
-        SaveStats(model);
+        typeof(StatModel).GetField("sociabilityPercantage",
+            BindingFlags.NonPublic | BindingFlags.Instance)?.SetValue(model, value);
     }
 
     public void DeleteAll()
     {
-        PlayerPrefs.DeleteAll();
-        Debug.Log("[SaveSystem] All data deleted");
+        PlayerPrefs.DeleteKey(HighestAgeKey);
+        Debug.Log("[SaveSystem] HighestAge deleted");
+    }
+
+    public bool TryUpdateHighestAge(int currentAge)
+    {
+        int highestAge = PlayerPrefs.GetInt(HighestAgeKey, DefaultAge);
+
+        if (currentAge > highestAge)
+        {
+            PlayerPrefs.SetInt(HighestAgeKey, currentAge);
+            PlayerPrefs.Save();
+            Debug.Log($"[SaveSystem] New HighestAge reached: {currentAge}");
+            return true; // IMPORTANT
+        }
+
+        return false;
     }
 }

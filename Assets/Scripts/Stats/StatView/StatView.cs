@@ -49,6 +49,7 @@ public class StatView : MonoBehaviour
     [SerializeField] private Image TopImage;
     [SerializeField] private Image BottomImage;
     [SerializeField] private Camera mainCamera;
+    [SerializeField] private TextMeshProUGUI highestAgeText;
 
 
     private void Awake()
@@ -299,5 +300,10 @@ public class StatView : MonoBehaviour
         TopImage.DOColor(endColor, 0.5f).SetEase(Ease.OutQuad);
         BottomImage.DOColor(endColor, 0.5f).SetEase(Ease.OutQuad);
         mainCamera.DOColor(Color.white, 0.5f).SetEase(Ease.OutQuad);
+    }
+
+    public void UpdateHighestAge(int age)
+    {
+        highestAgeText.text = "Highest Age: " + age.ToString();
     }
 }

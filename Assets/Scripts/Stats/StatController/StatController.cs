@@ -33,6 +33,8 @@ public class StatController : MonoBehaviour
 
         // FAIL
         StatModel.OnFail += OnFail;
+
+        statModel.OnHighestAgeReached += statView.UpdateHighestAge;
     }
 
     private void OnDisable()
@@ -52,6 +54,8 @@ public class StatController : MonoBehaviour
 
         StatModel.OnPreviewCancelled -= HideAllPointers;
         StatModel.OnFail -= OnFail;
+
+        statModel.OnHighestAgeReached -= statView.UpdateHighestAge;
     }
 
     // ================= POINTER CALLBACKS =================
@@ -71,9 +75,14 @@ public class StatController : MonoBehaviour
 
     private void OnFail()
     {
-        SaveSystem.Instance.ResetStats(statModel);
+        SaveSystem.Instance.ResetStatsOnFail(statModel);
+
         statView.SnapToModel(statModel);
         statView.UpdateAgeText(statModel.age);
+
+        // 🔥 Highest Age UI refresh
+        statView.UpdateHighestAge(SaveSystem.Instance.GetHighestAge()); 
+
         HideAllPointers();
     }
 
@@ -81,5 +90,6 @@ public class StatController : MonoBehaviour
     {
         statView.SnapToModel(statModel);
         statView.UpdateAgeText(statModel.age);
+        statView.UpdateHighestAge(SaveSystem.Instance.GetHighestAge());
     }
 }
