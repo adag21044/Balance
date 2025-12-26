@@ -15,7 +15,7 @@ MonoBehaviour:
   Id: card_008
   Title: Final Breath
   Description: "Your body couldn\u2019t endure the weight of your choices. Life quietly
-    fades away"
+    fades away."
   Artwork: {fileID: 7800567039959220115, guid: 71f7cbc655464be4c83c4b0981c220e3, type: 3}
   leftAnswer: 
   rightAnswer: 
@@ -36,3 +36,6 @@ MonoBehaviour:
   nextPoolRight: []
   lifeStage: 5
   isOnlyOnce: 0
+  contributesToProgress: 1
+  compensatesSkippedCard: 0
+  isFinalCard: 0

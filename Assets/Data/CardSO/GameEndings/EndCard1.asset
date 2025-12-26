@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: card_004
   Title: Accident due to low energy
-  Description: You had an accident due to low energy
+  Description: You had an accident due to low energy.
   Artwork: {fileID: -522686965825236288, guid: 465e0d787af05db48b58c015b5f32fb6, type: 3}
   leftAnswer: 
   rightAnswer: 
@@ -35,3 +35,6 @@ MonoBehaviour:
   nextPoolRight: []
   lifeStage: 0
   isOnlyOnce: 0
+  contributesToProgress: 1
+  compensatesSkippedCard: 0
+  isFinalCard: 0

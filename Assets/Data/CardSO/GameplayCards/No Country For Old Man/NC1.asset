@@ -16,8 +16,8 @@ MonoBehaviour:
   Title: Lost Wallet
   Description: You find a wallet on a lonely road. No ID, just a few bills inside.
   Artwork: {fileID: -8639974175089592262, guid: 90693ca932f8b3a4cb624a13f243b217, type: 3}
-  leftAnswer: Take the money.
-  rightAnswer: Leave it where it lies.
+  leftAnswer: Take the money
+  rightAnswer: Leave it where it lies
   leftHeartImpact: -1
   leftCareerImpact: 0
   leftHappinessImpact: 1
