@@ -13,25 +13,29 @@ MonoBehaviour:
   m_Name: Card97
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   Id: card_114
-  Title: Writing Memoir
-  Description: You feel nostalgic.
-  Artwork: {fileID: 194530174711727668, guid: f7b15d1e5e325154180afcd5485a63d7, type: 3}
-  leftAnswer: Start writing
-  rightAnswer: Watch TV instead
-  leftHeartImpact: 1
-  leftCareerImpact: 1
-  leftHappinessImpact: 3
+  Title: AI Performance Review
+  Description: "Management announces that AI will soon evaluate productivity.\nSuddenly,
+    the people who\u2019ve been coasting for years look\u2026 nervous."
+  Artwork: {fileID: 7228567654199481529, guid: e5a83cd654b25394bb278de487b3f8f9, type: 3}
+  leftAnswer: 0
+  rightAnswer: 0
+  leftHeartImpact: 0
+  leftCareerImpact: 0
+  leftHappinessImpact: 0
   leftSociabilityImpact: 0
   rightHeartImpact: 0
-  rightCareerImpact: -5
+  rightCareerImpact: 0
   rightHappinessImpact: 0
-  rightSociabilityImpact: -1
-  impactType: 00000000010000000200000003000000
+  rightSociabilityImpact: 0
+  impactType: 
   ageImpact: 0.25
   isChainCard: 0
   nextOnLeft: {fileID: 0}
   nextOnRight: {fileID: 0}
   nextPoolLeft: []
   nextPoolRight: []
-  lifeStage: 3
+  lifeStage: 0
   isOnlyOnce: 1
+  contributesToProgress: 1
+  compensatesSkippedCard: 0
+  isFinalCard: 0
